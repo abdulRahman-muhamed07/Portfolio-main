@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title id="pageTitle">Project Details | Abdelrahman Mohamed</title>
+
+  <!-- Favicon (optional) -->
+  <link rel="icon" href="assets/profile/profile.jpg" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
+
+  <!-- AOS (Animate On Scroll) CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+
+  <!-- Icons (Tabler Icons) -->
+  <link rel="stylesheet" href="https://unpkg.com/@tabler/icons-webfont@2.47.0/tabler-icons.min.css" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="project-detail.css" />
+</head>
+
+<body>
+  <!-- Loading Spinner -->
+  <div id="loadingSpinner" class="loading-spinner">
+    <div class="spinner"></div>
+    <p>Loading project details...</p>
+  </div>
+
+  <!-- Error Message -->
+  <div id="errorMessage" class="error-message" style="display: none;">
+    <div class="error-content">
+      <i class="ti ti-alert-circle"></i>
+      <h2>Project Not Found</h2>
+      <p>The requested project could not be found.</p>
+      <a href="index.html" class="btn primary">
+        <i class="ti ti-arrow-left"></i>
+        <span>Back to Portfolio</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div id="mainContent" style="display: none;">
+    <!-- Creative Background Effects -->
+    <div class="bg-effects">
+      <div class="radial r1"></div>
+      <div class="radial r2"></div>
+      <div class="radial r3"></div>
+      <canvas id="particleCanvas" class="particle-canvas"></canvas>
+      <div class="cursor-follower" id="cursorFollower"></div>
+    </div>
+
+    <header class="site-header">
+      <nav class="nav container">
+        <a class="brand" href="index.html" aria-label="Home">
+          <span class="brand__logo">AM</span>
+          <span class="brand__text">Abdelrahman Mohamed</span>
+        </a>
+        <button class="nav__toggle" id="navToggle" aria-label="Open Menu">
+          <i class="ti ti-menu-2"></i>
+        </button>
+        <ul class="nav__links" id="navLinks">
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#skills">Skills</a></li>
+          <li><a href="index.html#experience">Experience</a></li>
+          <li><a href="index.html#education">Education</a></li>
+          <li><a href="index.html#projects">Projects</a></li>
+        </ul>
+        <div class="actions">
+          <button id="themeToggle" class="btn-icon" aria-label="Toggle theme">
+            <i class="ti ti-moon-stars"></i>
+          </button>
+          <a href="index.html" class="btn outline">
+            <i class="ti ti-arrow-left"></i>
+            <span>Back to Portfolio</span>
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Project Hero -->
+      <section class="project-hero container" id="hero">
+        <div class="project-hero__content" data-aos="fade-up" data-aos-delay="100">
+          <h1 class="project-title" id="projectTitle">Project Title</h1>
+          <p class="project-subtitle" id="projectSubtitle">Project description...</p>
+
+          <div class="project-links" id="projectLinks" data-aos="fade-up" data-aos-delay="150">
+            <!-- Links will be populated dynamically -->
+          </div>
+        </div>
+
+        <div class="project-hero__media" data-aos="zoom-in" data-aos-delay="200">
+          <div class="project-cover-container">
+            <img id="projectCover" src="" alt="" class="project-cover" />
+            <div class="project-cover-overlay">
+              <i class="ti ti-external-link"></i>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Project Description -->
+      <section class="section container" id="description">
+        <header class="section__header" data-aos="fade-up">
+          <div class="section__icon floating" aria-hidden="true"><i class="ti ti-file-text"></i></div>
+          <div>
+            <h2>About This Project</h2>
+            <p class="muted">Comprehensive overview and key details.</p>
+          </div>
+        </header>
+        <div class="project-description" data-aos="fade-up" data-aos-delay="100">
+          <p id="projectDescription">Project description will be loaded here...</p>
+        </div>
+      </section>
+
+      <!-- Project Features -->
+      <section class="section container" id="features">
+        <header class="section__header" data-aos="fade-up">
+          <div class="section__icon floating" aria-hidden="true"><i class="ti ti-star"></i></div>
+          <div>
+            <h2>Key Features</h2>
+            <p class="muted">What makes this project special.</p>
+          </div>
+        </header>
+        <div class="features-grid" id="featuresGrid" data-aos="fade-up" data-aos-delay="100">
+          <!-- Features will be populated dynamically -->
+        </div>
+      </section>
+
+      <!-- Technologies Used -->
+      <section class="section container" id="technologies">
+        <header class="section__header" data-aos="fade-up">
+          <div class="section__icon floating" aria-hidden="true"><i class="ti ti-tool"></i></div>
+          <div>
+            <h2>Technologies Used</h2>
+            <p class="muted">Tools and frameworks that powered this project.</p>
+          </div>
+        </header>
+        <div class="tech-grid" id="techGrid" data-aos="fade-up" data-aos-delay="100">
+          <!-- Technologies will be populated dynamically -->
+        </div>
+      </section>
+
+      <!-- Project Gallery -->
+      <section class="section container" id="gallery">
+        <header class="section__header" data-aos="fade-up">
+          <div class="section__icon floating" aria-hidden="true"><i class="ti ti-photo"></i></div>
+          <div>
+            <h2>Project Gallery</h2>
+            <p class="muted">Screenshots and visual demonstrations.</p>
+          </div>
+        </header>
+        <div class="project-gallery" id="projectGallery" data-aos="fade-up" data-aos-delay="100">
+          <!-- Gallery will be populated dynamically -->
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section class="section container" id="contact">
+        <header class="section__header" data-aos="fade-up">
+          <div class="section__icon floating"><i class="ti ti-mail"></i></div>
+          <div>
+            <h2>Interested in Similar Work?</h2>
+            <p class="muted">Let's discuss your project requirements.</p>
+          </div>
+        </header>
+        <div class="contact-content" data-aos="fade-up" data-aos-delay="100">
+          <div class="contact-card">
+            <div class="contact-hero">
+              <div class="contact-icon-group">
+                <div class="contact-floating-icon">
+                  <i class="ti ti-message-circle"></i>
+                </div>
+                <div class="contact-floating-icon delay-1">
+                  <i class="ti ti-sparkles"></i>
+                </div>
+                <div class="contact-floating-icon delay-2">
+                  <i class="ti ti-rocket"></i>
+                </div>
+              </div>
+              <h3 class="contact-title">Ready to Build Something Amazing?</h3>
+              <p class="contact-description">
+                <span class="highlight">Let's turn your ideas into reality</span> together.
+              </p>
+            </div>
+
+            <div class="cta-enhanced">
+              <a class="btn-enhanced outline" href="mailto:mohamedrashadhyg@gmail.com">
+                <div class="btn-icon-wrapper">
+                  <i class="ti ti-mail"></i>
+                </div>
+                <div class="btn-content">
+                  <span class="btn-main">Send me an email</span>
+                  <span class="btn-sub">Let's discuss your project</span>
+                </div>
+                <i class="ti ti-arrow-right btn-arrow"></i>
+              </a>
+
+              <a class="btn-enhanced outline" href="https://wa.me/201555761846">
+                <div class="btn-icon-wrapper">
+                  <i class="ti ti-brand-whatsapp"></i>
+                </div>
+                <div class="btn-content">
+                  <span class="btn-main">Send me on WhatsApp</span>
+                  <span class="btn-sub">Quick chat about ideas</span>
+                </div>
+                <i class="ti ti-arrow-right btn-arrow"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Success Toast -->
+    <div id="toast" class="toast"></div>
+
+    <footer class="site-footer">
+      <div class="container footer__content">
+        <span>© <span id="year"></span> Abdelrahman Mohamed. All rights reserved.</span>
+        <button id="backToTop" class="btn-icon magic-btn" aria-label="Back to top"><i
+            class="ti ti-arrow-up"></i></button>
+      </div>
+    </footer>
+
+    <!-- Image Modal for Gallery -->
+    <div id="imageModal" class="image-modal">
+      <div class="image-modal__backdrop"></div>
+      <div class="image-modal__content">
+        <button class="image-modal__close" id="imageModalClose">
+          <i class="ti ti-x"></i>
+        </button>
+        <img id="modalImage" src="" alt="" class="image-modal__img" />
+        <div class="image-modal__nav">
+          <button class="image-modal__prev" id="modalPrev"><i class="ti ti-chevron-left"></i></button>
+          <button class="image-modal__next" id="modalNext"><i class="ti ti-chevron-right"></i></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- AOS (Animate On Scroll) JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!-- App Script -->
+  <script src="project-detail.js"></script>
+</body>
+
+</html>

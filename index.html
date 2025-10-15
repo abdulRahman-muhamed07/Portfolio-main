@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio | Abdelrahman Mohamed</title>
+
+  <!-- Favicon (optional) -->
+  <!-- <link rel="icon" href="assets/profile/profile.jpg" /> -->
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
+
+  <!-- AOS (Animate On Scroll) CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+
+  <!-- Icons (Tabler Icons) -->
+  <link rel="stylesheet" href="https://unpkg.com/@tabler/icons-webfont@2.47.0/tabler-icons.min.css" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- Loading Screen -->
+  <div id="loadingScreen" class="loading-screen">
+    <div class="loading-content">
+      <div class="loading-logo">
+        <div class="logo-circle">
+          <span class="logo-text">AM</span>
+        </div>
+      </div>
+      <div class="loading-spinner">
+        <div class="spinner-ring"></div>
+      </div>
+      <p class="loading-text">Loading Portfolio...</p>
+      <div class="loading-progress">
+        <div class="progress-bar" id="progressBar"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Content (Hidden initially) -->
+  <div id="mainContent" style="opacity: 0; visibility: hidden; transition: all 0.5s ease;">
+    <!-- Creative Background Effects -->
+    <div class="bg-effects">
+      <div class="radial r1"></div>
+      <div class="radial r2"></div>
+      <div class="radial r3"></div>
+      <canvas id="particleCanvas" class="particle-canvas"></canvas>
+      <div class="cursor-follower" id="cursorFollower"></div>
+    </div>
+
+    <header class="site-header">
+      <nav class="nav container">
+        <a class="brand" href="#hero" aria-label="Home">
+          <span class="brand__logo">AM</span>
+          <span class="brand__text">Abdelrahman Mohamed</span>
+        </a>
+        <button class="nav__toggle" id="navToggle" aria-label="Open Menu">
+          <i class="ti ti-menu-2"></i>
+        </button>
+        <ul class="nav__links" id="navLinks">
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#projects">Projects</a></li>
+        </ul>
+        <div class="actions">
+          <button id="themeToggle" class="btn-icon" aria-label="Toggle theme">
+            <i class="ti ti-moon-stars"></i>
+          </button>
+          <a id="cvDownload" class="btn primary" href="#" download>
+            <i class="ti ti-download"></i>
+            <span>Download CV</span>
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Hero -->
+      <section class="hero container" id="hero">
+        <div class="hero__content" data-aos="fade-up" data-aos-delay="50">
+          <!-- <div class="hero__badge animated-badge">✨ Flutter Developer</div> -->
+          <h1 id="name" class="typing-text">—</h1>
+          <p id="title" class="subtitle typing-subtitle">—</p>
+          <div class="hero__stats" data-aos="fade-up" data-aos-delay="150">
+            <div class="stat animated-counter" data-target="0">
+              <span id="projectsNum">0</span>
+              <small>Projects 🚀</small>
+            </div>
+            <div class="stat animated-counter" data-target="0">
+              <span id="experienceNum">0</span>
+              <small>Years Experience 💼</small>
+            </div>
+            <div class="stat animated-counter" data-target="0">
+              <span id="customersNum">0</span>
+              <small>Happy Clients 😊</small>
+            </div>
+          </div>
+          <div class="hero__cta" data-aos="fade-up" data-aos-delay="250">
+            <a href="#projects" class="btn primary"><i class="ti ti-rocket"></i><span>View Projects</span></a>
+            <a href="#contact" class="btn outline"><i class="ti ti-mail"></i><span>Contact</span></a>
+          </div>
+          <div class="social" id="socialLinks" aria-label="Social links"></div>
+        </div>
+        <div class="hero__image" data-aos="zoom-in" data-aos-delay="200">
+          <div class="profile-container">
+            <img id="profileImg" src="" alt="Profile" class="profile-img" />
+            <div class="profile-ring"></div>
+            <div class="profile-pulse"></div>
+            <div class="profile-status" title="Available for opportunities"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- About -->
+      <section class="section container" id="about">
+        <header class="section__header" data-aos="fade-up">
+          <div class="section__icon floating" aria-hidden="true"><i class="ti ti-user"></i></div>
+          <div>
+            <h2>About Me</h2>
+            <p class="muted">A quick intro and how I build great apps.</p>
+          </div>
+        </header>
+        <div class="about__content" data-aos="fade-up" data-aos-delay="100">
+          <p id="aboutMe">—</p>
+        </div>
+      </section>
+
+      <!-- Skills -->
+      <section class="section container" id="skills">
+        <header class="section__header" data-aos="fade-up">
+          <div class="section__icon floating" aria-hidden="true"><i class="ti ti-chart-bar"></i></div>
+          <div>
+            <h2>Skills</h2>
+            <p class="muted">Three focused categories: Technical, Soft, and Tools.</p>
+          </div>
+        </header>
+        <div class="tech-simple" data-aos="fade-up" data-aos-delay="50">
+          <div class="tech-group">
+            <h3 class="tech-group__title"><i class="ti ti-brand-flutter"></i> Frontend & Frameworks</h3>
+            <div id="frontendSkills" class="chip-grid"></div>
+          </div>
+          <div class="tech-group">
+            <h3 class="tech-group__title"><i class="ti ti-server"></i> Backend & Database</h3>
+            <div id="backendSkills" class="chip-grid"></div>
+          </div>
+          <div class="tech-group">
+            <h3 class="tech-group__title"><i class="ti ti-tools"></i> Development Tools</h3>
+            <div id="toolsSkills" class="chip-grid"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Experience -->
+      <section class="section container" id="experience">
+        <header class="section__header" data-aos="fade-up">
+          <div class="section__icon floating"><i class="ti ti-briefcase"></i></div>
+          <div>
+            <h2>Experience</h2>
+            <p class="muted">Roles, impact, and outcomes.</p>
+          </div>
+        </header>
+        <div id="experienceTimeline" class="timeline" data-aos="fade-up" data-aos-delay="100"></div>
+      </section>
+
+      <!-- Education -->
+      <section class="section container" id="education">
+        <header class="section__header" data-aos="fade-up">
+          <div class="section__icon floating"><i class="ti ti-school"></i></div>
+          <div>
+            <h2>Education</h2>
+            <p class="muted">Foundations that support my practice.</p>
+          </div>
+        </header>
+        <div id="educationList" class="cards" data-aos="fade-up" data-aos-delay="100"></div>
+      </section>
+
+      <!-- Projects -->
+      <section class="section container" id="projects">
+        <header class="section__header" data-aos="fade-up">
+          <div class="section__icon floating"><i class="ti ti-layout-grid"></i></div>
+          <div>
+            <h2>Projects</h2>
+            <p class="muted">Selected works and shipped products.</p>
+          </div>
+        </header>
+        <div id="projectsGrid" class="projects-grid" data-aos="fade-up" data-aos-delay="100"></div>
+      </section>
+
+      <!-- Contact -->
+      <section class="section container" id="contact">
+        <header class="section__header" data-aos="fade-up">
+          <div class="section__icon floating"><i class="ti ti-mail"></i></div>
+          <div>
+            <h2>Contact</h2>
+            <p class="muted">Let's work together on your next project.</p>
+          </div>
+        </header>
+        <div class="contact-content" data-aos="fade-up" data-aos-delay="100">
+          <div class="contact-info">
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="ti ti-map-pin"></i>
+              </div>
+              <div>
+                <h4>Location</h4>
+                <p id="location">—</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="ti ti-phone"></i>
+              </div>
+              <div>
+                <h4>Phone</h4>
+                <a id="phone" href="#">—</a>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="ti ti-mail"></i>
+              </div>
+              <div>
+                <h4>Email</h4>
+                <a id="email" href="#">—</a>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="ti ti-brand-linkedin"></i>
+              </div>
+              <div>
+                <h4>LinkedIn</h4>
+                <a id="linkedin" href="#" target="_blank" rel="noopener noreferrer">—</a>
+              </div>
+            </div>
+          </div>
+          <div class="contact-card">
+            <div class="contact-hero">
+              <div class="contact-icon-group">
+                <div class="contact-floating-icon">
+                  <i class="ti ti-message-circle"></i>
+                </div>
+                <div class="contact-floating-icon delay-1">
+                  <i class="ti ti-sparkles"></i>
+                </div>
+                <div class="contact-floating-icon delay-2">
+                  <i class="ti ti-rocket"></i>
+                </div>
+              </div>
+              <h3 class="contact-title">Ready to Build Something Amazing?</h3>
+              <p class="contact-description">
+                <span class="highlight">Let's turn your ideas into reality</span> together.
+              </p>
+            </div>
+
+            <div class="cta-enhanced">
+              <a id="emailCTA" class="btn-enhanced outline" href="#">
+                <div class="btn-icon-wrapper">
+                  <i class="ti ti-mail"></i>
+                </div>
+                <div class="btn-content">
+                  <span class="btn-main">Send me an email</span>
+                  <span class="btn-sub">Let's discuss your project</span>
+                </div>
+                <i class="ti ti-arrow-right btn-arrow"></i>
+              </a>
+
+              <a id="whatsappCTA" class="btn-enhanced outline" href="#">
+                <div class="btn-icon-wrapper">
+                  <i class="ti ti-brand-whatsapp"></i>
+                </div>
+                <div class="btn-content">
+                  <span class="btn-main">Send me on WhatsApp</span>
+                  <span class="btn-sub">Quick chat about ideas</span>
+                </div>
+                <i class="ti ti-arrow-right btn-arrow"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Easter Egg Terminal -->
+    <div id="easterEggTerminal" class="terminal-overlay">
+      <div class="terminal">
+        <div class="terminal-header">
+          <div class="terminal-controls">
+            <span class="control close" id="terminalClose"></span>
+            <span class="control minimize"></span>
+            <span class="control maximize"></span>
+          </div>
+          <span class="terminal-title">Mohamed's Terminal</span>
+        </div>
+        <div class="terminal-body" id="terminalBody">
+          <div class="terminal-line">
+            <span class="prompt">visitor@portfolio:~$</span>
+            <span class="command">whoami</span>
+          </div>
+          <div class="terminal-output">
+            You discovered the secret terminal! 🎉<br>
+            Welcome, curious explorer! Here are some fun commands:<br>
+            • <span class="cmd-highlight">skills</span> - Show my technical skills<br>
+            • <span class="cmd-highlight">projects</span> - List my projects<br>
+            • <span class="cmd-highlight">contact</span> - Get my contact info<br>
+            • <span class="cmd-highlight">joke</span> - Random dev joke<br>
+            • <span class="cmd-highlight">clear</span> - Clear terminal<br>
+            • <span class="cmd-highlight">exit</span> - Close terminal
+          </div>
+          <div class="terminal-input-line">
+            <span class="prompt">visitor@portfolio:~$</span>
+            <input type="text" id="terminalInput" class="terminal-input" placeholder="Type a command..." />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Success Toast -->
+    <div id="toast" class="toast"></div>
+
+    <footer class="site-footer">
+      <div class="container footer__content">
+        <span>© <span id="year"></span> Abdelrahman Mohamed. All rights reserved. <span class="secret-trigger"
+            onclick="showEasterEgg()" title="Click me!">🎮</span></span>
+        <button id="backToTop" class="btn-icon magic-btn" aria-label="Back to top"><i
+            class="ti ti-arrow-up"></i></button>
+      </div>
+    </footer>
+  </div> <!-- End of mainContent -->
+
+  <!-- AOS (Animate On Scroll) JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!-- App Script -->
+  <script src="script.js"></script>
+</body>
+
+</html>

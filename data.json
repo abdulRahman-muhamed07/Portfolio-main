@@ -1,0 +1,129 @@
+{
+  "personal_info": {
+    "name": "Abdelrahman Mohamed",
+    "title": ".NET Developer | ASP.NET, C#, SQL Server, Laravel",
+    "profile_image": "assets/profile/profile.jpg",
+    "location": "Cairo, Egypt",
+    "contact": {
+      "phone": "+20 106 556 4618",
+      "email": "abdelrahmanelsepaay43@gmail.com"
+    },
+    "social_links": [
+      {
+        "platform": "GitHub",
+        "url": "https://github.com/abdulRahman-muhamed07"
+      },
+      {
+        "platform": "LinkedIn",
+        "url": "https://www.linkedin.com/in/abdelrahman-mohamed-835b65282/"
+      }
+    ],
+    "cv_download": "assets/downloads/abdelrahman_dot_net_cv.pdf",
+    "about_me": "Entry-level .NET Developer with strong knowledge of C#, ASP.NET, and SQL Server. Experienced in developing scalable web applications using both .NET and PHP Laravel frameworks. Passionate about clean code, learning new technologies, and building modern, maintainable solutions that deliver real business value."
+  },
+  "projects_num": "2",
+  "experience_num": "1",
+  "customers_num": "0",
+  "skills": {
+    "soft_skills": [
+      "Fast Learner",
+      "Team Player",
+      "Problem Solver",
+      "Analytical Thinking",
+      "Attention to Detail",
+      "Adaptable",
+      "Goal Oriented"
+    ],
+    "technical_skills": [
+      "C#, ASP.NET MVC, Blazor",
+      "Entity Framework Core",
+      "SQL Server & LINQ",
+      "HTML, CSS, JavaScript",
+      "PHP Laravel Framework",
+      "RESTful APIs",
+      "Repository Pattern",
+      "Authentication & Authorization",
+      "Localization & Multi-language Support",
+      "OOP & Design Patterns",
+      "Git & GitHub"
+    ]
+  },
+  "education": [
+    {
+      "degree": "Bachelor’s Degree in Commerce (English Section)",
+      "institution": "Helwan University",
+      "specialization": "Accounting",
+      "date_range": "Sep 2019 - Oct 2023"
+    }
+  ],
+  "experience": [
+    {
+      "title": "Freelance .NET Developer",
+      "company": "Self-Employed",
+      "location": "Cairo, Egypt",
+      "date_range": "2024 - Present",
+      "description_points": [
+        "Developed personal and client projects using ASP.NET Core and Blazor.",
+        "Implemented authentication, role-based authorization, and localization features.",
+        "Focused on clean code, maintainability, and scalability."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "E-Commerce Web Application (.NET Version)",
+      "cover_image": "assets/covers/ecommerce-dotnet.png",
+      "short_description": "A multi-role e-commerce web app built using .NET (Blazor MVC) with admin dashboard and localization.",
+      "description": "Developed a complete e-commerce platform with an admin dashboard using .NET Blazor MVC. Implemented Repository Design Pattern, clean architecture principles, and role-based access control (Admin, Super Admin, User). Added multi-language support for a global experience.",
+      "features": [
+        "Role-based authentication and authorization",
+        "Admin dashboard for managing users, orders, and products",
+        "Localization and multi-language support",
+        "Repository pattern and clean code architecture",
+        "Responsive and scalable front-end design"
+      ],
+      "technologies_used": [
+        "C#",
+        "ASP.NET Core",
+        "Blazor MVC",
+        "Entity Framework Core",
+        "SQL Server",
+        "Bootstrap",
+        "Identity Authentication"
+      ],
+      "links": [
+        {
+          "type": "GitHub",
+          "url": "https://github.com/abdulRahman-muhamed07"
+        }
+      ]
+    },
+    {
+      "name": "E-Commerce Web Application (Laravel Version)",
+      "cover_image": "assets/covers/ecommerce-laravel.png",
+      "short_description": "A Laravel version of the same e-commerce app focusing on backend and clean architecture.",
+      "description": "Rebuilt the same e-commerce project using Laravel framework to strengthen backend development skills. Implemented authentication, role-based access, and localization. Ensured scalability, clean code, and maintainable architecture.",
+      "features": [
+        "Role-based authentication",
+        "Admin dashboard for managing users, products, and orders",
+        "Localization for multi-language support",
+        "Structured and reusable architecture",
+        "Clean and scalable backend"
+      ],
+      "technologies_used": [
+        "PHP",
+        "Laravel",
+        "MySQL",
+        "Blade Templates",
+        "Bootstrap",
+        "RESTful APIs"
+      ],
+      "links": [
+        {
+          "type": "GitHub",
+          "url": "https://github.com/abdulRahman-muhamed07"
+        }
+      ]
+    }
+  ]
+}
