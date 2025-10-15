@@ -247,7 +247,7 @@ function hideTerminal() {
 const terminalCommands = {
   skills: () => 'Flutter, Dart, Firebase, Bloc, Provider, Riverpod, Clean Architecture, MVVM, OOP, SOLID Principles',
   projects: () => 'Imtyaze, Tadabar, Kidglish, Lifeline, Bank Dash',
-  contact: () => 'Email: mohamedrashadhyg@gmail.com | Phone: +20 155 576 1846',
+  contact: () => 'Email: abdelrahmanelsepaay43@gmail.com | Phone: +20 155 576 1846',
   joke: () => {
     const jokes = [
       'Why do programmers prefer dark mode? Because light attracts bugs! 🐛',
