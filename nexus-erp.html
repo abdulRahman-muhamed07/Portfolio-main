@@ -178,6 +178,27 @@ body.collapsed .brand{justify-content:center;padding-left:0;padding-right:0}
 .chip.on span{background:rgba(255,255,255,.22);color:#fff}
 .chip:hover:not(.on){border-color:var(--muted)}
 
+/* Kanban (Team Tasks) */
+.kan{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;align-items:start}
+.kan-col{background:var(--panel2);border:1px solid var(--border);border-radius:14px;padding:12px;min-height:140px}
+.kan-head{display:flex;align-items:center;gap:8px;padding:2px 2px 12px;font-weight:700;font-size:13px}
+.kan-head .cnt{margin-left:auto;background:var(--panel);border:1px solid var(--border);border-radius:99px;padding:1px 8px;font-size:11px;color:var(--muted)}
+.kan-list{display:flex;flex-direction:column;gap:10px;min-height:40px}
+.kan-card{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:12px 13px;box-shadow:var(--shadow);transition:.15s}
+.kan-card:hover{transform:translateY(-1px);border-color:var(--muted)}
+.kan-card .k-title{font-size:13px;font-weight:600;line-height:1.4;margin-bottom:9px}
+.kan-card .k-meta{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.kan-card .k-acts{display:flex;gap:4px;align-items:center;justify-content:flex-end;margin-top:10px}
+.kan-card.due-over{border-left:3px solid var(--red)}
+.kan-card.due-today{border-left:3px solid var(--amber)}
+.prio-High,.prio-Medium,.prio-Low{display:inline-flex;align-items:center;padding:2px 9px;border-radius:99px;font-size:10.5px;font-weight:700}
+.prio-High{color:#f87171;background:rgba(239,68,68,.1)}
+.prio-Medium{color:#fbbf24;background:rgba(245,158,11,.12)}
+.prio-Low{color:#34d399;background:rgba(16,185,129,.12)}
+.k-due{font-size:11px;color:var(--muted)}
+.k-assignee{display:inline-flex;align-items:center;gap:5px;font-size:11px;color:var(--muted);font-weight:600}
+@media(max-width:1100px){.kan{grid-template-columns:1fr}}
+
 /* Toolbar */
 .toolbar{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;margin-bottom:16px}
 .toolbar-right{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
@@ -332,6 +353,7 @@ body.collapsed .brand{justify-content:center;padding-left:0;padding-right:0}
     <div class="nav-sec">People</div>
     <a class="nav-item" data-view="customers" title="Customers"><i class="fa-solid fa-users"></i><span class="nav-label">Customers</span></a>
     <a class="nav-item" data-view="hr" title="Human Resources"><i class="fa-solid fa-user-tie"></i><span class="nav-label">Human Resources</span></a>
+    <a class="nav-item" data-view="tasks" title="Team Tasks"><i class="fa-solid fa-list-check"></i><span class="nav-label">Team Tasks</span></a>
     <div class="nav-sec">Finance</div>
     <a class="nav-item" data-view="finance" title="Finance"><i class="fa-solid fa-wallet"></i><span class="nav-label">Finance</span></a>
     <a class="nav-item" data-view="assets" title="Fixed Assets"><i class="fa-solid fa-building-columns"></i><span class="nav-label">Assets</span></a>
@@ -472,11 +494,13 @@ function seed(){
   const au=[['fa-right-to-bracket','Signed in','Auth','admin@nexuserp.io'],['fa-cart-shopping','New order','Orders',orders[0].id+' · '+orders[0].customerName],['fa-file-invoice-dollar','Invoice paid','Finance','INV-2401'],['fa-box','Stock received','Inventory','120 × Glide Wireless Mouse'],['fa-file-lines','Quote created','Quotes','QT-2402'],['fa-gear','Settings updated','Settings','Tax rate set to 8%']];
   au.forEach((a,i)=>audit.push({id:'sd'+i,time:hoursAgoISO(2+i*9),user:'Alex Morgan',role:'Administrator',icon:a[0],action:a[1],module:a[2],target:a[3],detail:''}));
   const assets=[{id:'AST-001',name:'Dell PowerEdge Server',category:'IT Equipment',purchaseDate:daysAgoISO(760),cost:12500,salvage:1200,usefulLifeYears:5,status:'In Service',disposedOn:null},{id:'AST-002',name:'Ford Transit Delivery Van',category:'Vehicles',purchaseDate:daysAgoISO(620),cost:28500,salvage:5000,usefulLifeYears:6,status:'In Service',disposedOn:null},{id:'AST-003',name:'MacBook Pro 16" (Marketing)',category:'IT Equipment',purchaseDate:daysAgoISO(180),cost:3200,salvage:400,usefulLifeYears:4,status:'In Service',disposedOn:null},{id:'AST-004',name:'Office Furniture — HQ Floor 2',category:'Furniture',purchaseDate:daysAgoISO(1100),cost:9600,salvage:900,usefulLifeYears:8,status:'In Service',disposedOn:null}];
-  return {version:2,profile:{name:'Alex Morgan',email:'alex.morgan@nexuserp.io',role:'Administrator'},config:{taxRate:8,shippingFee:25,freeShipOver:1000},budget:{cats:budgetCatsFromTotal(expSeries(rawRev(orders))[11])},prefs:{emailNotif:true,digest:false,lowStock:true},ui:{collapsed:false},theme:'light',seq:{order:1065,product:1015,cust:511,emp:211,sup:307,po:9007,inv:2411,quote:2407,asset:5},products,customers,employees,suppliers,orders,invoices,quotes,pos,notifications,activities,movements,audit,assets};
+  const TASKS=[['Finalize Q2 sales forecast','Priya Sharma','High','In Progress',4],['Renegotiate vendor contract — Shenzhen Nova','Daniel Reyes','High','To Do',9],['Audit October receivable aging','Tom Becker','Medium','To Do',12],['Prepare board finance summary','Tom Becker','Medium','In Progress',3],['Roll out new onboarding checklist','Lucia Fernandez','Medium','Done',0],['Fix stock discrepancy in receiving bay','Ryan Foster','High','In Progress',1],['Update pricing matrix for Q3 catalog','Aisha Bello','Low','To Do',18],['Migrate CI pipeline to new runner','Marcus Chen','Low','Done',0]];
+  const tasks=TASKS.map((d,i)=>({id:'TSK-'+(1001+i),title:d[0],assignee:d[1],priority:d[2],status:d[3],due:d[4]>0?daysAgoISO(-d[4]):'',created:daysAgoISO(ri(2,30))}));
+  return {version:3,profile:{name:'Alex Morgan',email:'alex.morgan@nexuserp.io',role:'Administrator'},config:{taxRate:8,shippingFee:25,freeShipOver:1000},budget:{cats:budgetCatsFromTotal(expSeries(rawRev(orders))[11])},prefs:{emailNotif:true,digest:false,lowStock:true},ui:{collapsed:false},theme:'light',seq:{order:1065,product:1015,cust:511,emp:211,sup:307,po:9007,inv:2411,quote:2407,asset:5,task:1015},products,customers,employees,suppliers,orders,invoices,quotes,pos,notifications,activities,movements,audit,assets,tasks};
 }
 let db;
 function save(){localStorage.setItem(LS_KEY,JSON.stringify(db));}
-function load(){try{const raw=localStorage.getItem(LS_KEY);if(raw){const d=JSON.parse(raw);if(d&&Array.isArray(d.orders)&&(d.version===1||d.version===2)){if(!d.quotes)d.quotes=[];if(!d.movements)d.movements=[];if(!d.seq)d.seq={};if(!d.seq.quote)d.seq.quote=2407;if(!d.seq.asset)d.seq.asset=1;if(!d.audit)d.audit=[];if(!d.config)d.config={taxRate:8,shippingFee:25,freeShipOver:1000};if(!d.budget||!d.budget.cats)d.budget={cats:budgetCatsFromTotal(expSeries(rawRev(d.orders))[11])};if(!Array.isArray(d.orders[0].payments))d.orders.forEach(o=>o.payments=o.payments||[]);d.orders.forEach(o=>{if(!Array.isArray(o.returns))o.returns=[];if(o.discPct==null)o.discPct=0;});if(!Array.isArray(d.quotes[0]&&d.quotes[0].returns))d.quotes.forEach(q=>{if(q.discPct==null)q.discPct=0;});(d.customers||[]).forEach(c=>{if(c.terms==null)c.terms='Net 30';if(c.creditLimit==null)c.creditLimit=(c.tier==='VIP'?100000:(c.tier==='Standard'?50000:25000));if(c.hold==null)c.hold=false;});if(!d.assets||!Array.isArray(d.assets))d.assets=[];d.assets.forEach(a=>{if(a.salvage==null)a.salvage=0;if(a.usefulLifeYears==null)a.usefulLifeYears=5;if(a.status==null)a.status='In Service';if(a.disposedOn==null)a.disposedOn=null;});d.version=2;save();db=d;return;}}}catch(e){}db=seed();save();}
+function load(){try{const raw=localStorage.getItem(LS_KEY);if(raw){const d=JSON.parse(raw);if(d&&Array.isArray(d.orders)&&(d.version===1||d.version===2||d.version===3)){if(!d.quotes)d.quotes=[];if(!d.movements)d.movements=[];if(!d.seq)d.seq={};if(!d.seq.quote)d.seq.quote=2407;if(!d.seq.asset)d.seq.asset=1;if(!d.audit)d.audit=[];if(!d.config)d.config={taxRate:8,shippingFee:25,freeShipOver:1000};if(!d.budget||!d.budget.cats)d.budget={cats:budgetCatsFromTotal(expSeries(rawRev(d.orders))[11])};if(!Array.isArray(d.orders[0].payments))d.orders.forEach(o=>o.payments=o.payments||[]);d.orders.forEach(o=>{if(!Array.isArray(o.returns))o.returns=[];if(o.discPct==null)o.discPct=0;});if(!Array.isArray(d.quotes[0]&&d.quotes[0].returns))d.quotes.forEach(q=>{if(q.discPct==null)q.discPct=0;});(d.customers||[]).forEach(c=>{if(c.terms==null)c.terms='Net 30';if(c.creditLimit==null)c.creditLimit=(c.tier==='VIP'?100000:(c.tier==='Standard'?50000:25000));if(c.hold==null)c.hold=false;});if(!d.assets||!Array.isArray(d.assets))d.assets=[];d.assets.forEach(a=>{if(a.salvage==null)a.salvage=0;if(a.usefulLifeYears==null)a.usefulLifeYears=5;if(a.status==null)a.status='In Service';if(a.disposedOn==null)a.disposedOn=null;});if(!Array.isArray(d.tasks))d.tasks=[];if(!d.seq.task)d.seq.task=1015;d.version=3;save();db=d;return;}}}catch(e){}db=seed();save();}
 
 /* ================= STATE ================= */
 let currentView='';
@@ -492,6 +516,7 @@ const ctl={
   movements:{q:'',page:1,per:10},
   customers:{q:'',tier:'all',page:1,per:8},
   hr:{q:'',dept:'all',page:1,per:8},
+  tasks:{q:'',assignee:'all',page:1,per:30},
   assets:{q:'',cat:'all',page:1,per:10},
   audit:{q:'',module:'all',user:'all',page:1,per:12}
 };
@@ -552,10 +577,10 @@ const ROLE_DESC={
   Administrator:'Complete access, including delete & reset'
 };
 const ROLE_MODULES={
-  Viewer:['dashboard','orders','inventory','customers','procurement','reports'],
-  Analyst:['dashboard','orders','inventory','customers','procurement','finance','assets','reports','settings'],
-  Manager:['dashboard','orders','inventory','customers','procurement','finance','assets','hr','reports','settings','audit'],
-  Administrator:['dashboard','orders','inventory','customers','procurement','finance','assets','hr','reports','settings','audit']
+  Viewer:['dashboard','orders','inventory','customers','procurement','tasks','reports'],
+  Analyst:['dashboard','orders','inventory','customers','procurement','finance','assets','tasks','reports','settings'],
+  Manager:['dashboard','orders','inventory','customers','procurement','finance','assets','hr','tasks','reports','settings','audit'],
+  Administrator:['dashboard','orders','inventory','customers','procurement','finance','assets','hr','tasks','reports','settings','audit']
 };
 function can(p){return (ROLE_RANK[db.profile.role]||1)>=(p==='view'?1:p==='export'?2:p==='create'?3:p==='edit'?3:4);}
 function guard(p,msg){if(!can(p)){toast(msg||'Insufficient permissions for this action','fa-lock','warn');return false;}return true;}
@@ -889,6 +914,75 @@ function mountHR(){
     if(b.dataset.hact==='edit'){if(!guard('edit'))return;openEmployeeModal(e);}
     else{if(!guard('delete'))return;confirmModal('Delete employee',`Remove ${e.name} from the directory?`,()=>{db.employees.splice(db.employees.indexOf(e),1);audit('fa-trash','Employee deleted','HR',e.name);save();toast('Employee removed','fa-trash','warn');rerender();});}});
   const ne=$('#btnHrNew');if(ne)ne.onclick=()=>{if(guard('create'))openEmployeeModal(null);};
+}
+
+/* ----- Team Tasks (Kanban) ----- */
+const TASK_COLS=[{k:'To Do',ic:'fa-regular fa-circle',c:'#f59e0b'},{k:'In Progress',ic:'fa-solid fa-spinner',c:'#3b82f6'},{k:'Done',ic:'fa-regular fa-circle-check',c:'#10b981'}];
+const TASK_PRIO=['Low','Medium','High'];
+function taskDueInfo(t){
+  if(!t.due)return'';
+  const days=Math.ceil((new Date(t.due)-new Date())/864e5);
+  if(t.status==='Done')return `<span class="k-due"><i class="fa-regular fa-calendar-check"></i> ${fmtDate(t.due)}</span>`;
+  if(days<0)return `<span class="k-due" style="color:var(--red);font-weight:700"><i class="fa-regular fa-calendar-xmark"></i> ${Math.abs(days)}d overdue</span>`;
+  if(days===0)return `<span class="k-due" style="color:var(--amber);font-weight:700"><i class="fa-solid fa-fire"></i> Due today</span>`;
+  return `<span class="k-due"><i class="fa-regular fa-calendar"></i> ${fmtDate(t.due)} (${days}d)</span>`;
+}
+function viewTasks(){
+  const c=ctl.tasks;
+  const q=c.q.toLowerCase();
+  const filtered=db.tasks.filter(t=>{
+    if(c.assignee!=='all'&&t.assignee!==c.assignee)return false;
+    if(q&&!(t.title.toLowerCase().includes(q)||t.assignee.toLowerCase().includes(q)))return false;
+    return true;
+  });
+  const open=db.tasks.filter(t=>t.status!=='Done').length;
+  const overdue=db.tasks.filter(t=>t.status!=='Done'&&t.due&&new Date(t.due)<new Date()).length;
+  const assignees=[...new Set(db.tasks.map(t=>t.assignee))];
+  const colHtml=TASK_COLS.map(col=>{
+    const items=filtered.filter(t=>t.status===col.k);
+    const cards=items.map(t=>{
+      const over=t.due&&t.status!=='Done';
+      const overCls=over&&new Date(t.due)<new Date()?'due-over':(over&&Math.abs((new Date(t.due)-new Date())/864e5)<1?'due-today':'');
+      let acts='';
+      if(col.k!=='Done'&&can('edit'))acts+=`<button class="icon-btn sm" data-tact="adv" data-id="${t.id}" title="Move forward"><i class="fa-solid fa-arrow-right"></i></button>`;
+      if(can('edit'))acts+=`<button class="icon-btn sm" data-tact="edit" data-id="${t.id}" title="Edit"><i class="fa-regular fa-pen-to-square"></i></button>`;
+      if(can('delete'))acts+=`<button class="icon-btn sm danger" data-tact="del" data-id="${t.id}" title="Delete"><i class="fa-regular fa-trash-can"></i></button>`;
+      return `<div class="kan-card ${overCls}"><div class="k-title">${esc(t.title)}</div><div class="k-meta"><span class="prio-${t.priority}">${t.priority}</span><span class="k-assignee">${avatar(t.assignee,20)}<span>${esc(t.assignee)}</span></span>${taskDueInfo(t)}</div><div class="k-acts">${acts}</div></div>`;
+    }).join('')||'<div class="empty" style="padding:26px 10px"><i class="fa-regular fa-folder-open"></i>No tasks</div>';
+    return `<div class="kan-col"><div class="kan-head"><i class="${col.ic}" style="color:${col.c}"></i>${col.k}<span class="cnt">${items.length}</span></div><div class="kan-list">${cards}</div></div>`;
+  }).join('');
+  return `<div class="alert-strip" style="border-color:rgba(99,102,241,.3);background:rgba(99,102,241,.08)"><i class="fa-solid fa-list-check" style="color:var(--primary)"></i><span><b>${db.tasks.length}</b> total · <b>${open}</b> open · <b style="color:var(--red)">${overdue}</b> overdue</span>${can('create')?`<button class="btn btn-primary btn-xs" id="btnTaskNew" style="margin-left:auto"><i class="fa-solid fa-plus"></i> New Task</button>`:''}</div>
+  <div class="toolbar"><div class="chips"><button class="chip ${c.assignee==='all'?'on':''}" data-tchip="all">All<span>${db.tasks.length}</span></button>${assignees.map(a=>`<button class="chip ${c.assignee===a?'on':''}" data-tchip="${esc(a)}">${esc(a)}<span>${db.tasks.filter(t=>t.assignee===a).length}</span></button>`).join('')}</div><div class="toolbar-right"><div class="search-box"><i class="fa-solid fa-magnifying-glass"></i><input id="taskSearch" placeholder="Search tasks…" value="${esc(c.q)}"></div></div></div>
+  <div class="kan">${colHtml}</div>`;
+}
+function mountTasks(){
+  const c=ctl.tasks;
+  bindSearch('#taskSearch',c);restoreFocus(c,'#taskSearch');
+  $$('#view [data-tchip]').forEach(b=>b.onclick=()=>{c.assignee=b.dataset.tchip;c.page=1;rerender();});
+  $$('#view [data-tact]').forEach(b=>b.onclick=()=>{const t=db.tasks.find(x=>x.id===b.dataset.id);
+    const a=b.dataset.tact;
+    if(a==='adv'){if(!guard('edit'))return;const idx=TASK_COLS.findIndex(col=>col.k===t.status);t.status=TASK_COLS[Math.min(idx+1,TASK_COLS.length-1)].k;addActivity('fa-forward',`Task "${t.title}" moved to ${t.status}`);audit('fa-forward','Task moved','Team Tasks',t.id,`${t.title} → ${t.status}`);save();toast('Task moved to '+t.status);rerender();}
+    if(a==='edit'){if(!guard('edit'))return;openTaskModal(t);}
+    if(a==='del'){if(!guard('delete'))return;confirmModal('Delete task',`Remove "${t.title}"?`,()=>{db.tasks.splice(db.tasks.indexOf(t),1);audit('fa-trash','Task deleted','Team Tasks',t.title);save();toast('Task deleted','fa-trash','warn');rerender();});}});
+  const nt=$('#btnTaskNew');if(nt)nt.onclick=()=>{if(guard('create'))openTaskModal(null);};
+}
+function openTaskModal(t){
+  const editing=!!t;
+  openModal(`<div class="modal-head"><div><h3>${editing?'Edit Task':'New Task'}</h3><p>${editing?'Update the task details':'Assign a task to a team member'}</p></div><button class="icon-btn modal-close"><i class="fa-solid fa-xmark"></i></button></div>
+  <form id="tForm" class="modal-body">
+    <label>Title<input id="tt-title" required maxlength="120" value="${editing?esc(t.title):''}"></label>
+    <div class="frow2"><label>Assignee<select id="tt-asn">${db.employees.map(e=>`<option value="${esc(e.name)}" ${editing&&t.assignee===e.name?'selected':''}>${esc(e.name)}</option>`).join('')}</select></label><label>Status<select id="tt-status">${TASK_COLS.map(col=>`<option value="${col.k}" ${editing&&t.status===col.k?'selected':''}>${col.k}</option>`).join('')}</select></label></div>
+    <div class="frow2"><label>Priority<select id="tt-prio">${TASK_PRIO.map(p=>`<option ${editing&&t.priority===p?'selected':''}>${p}</option>`).join('')}</select></label><label>Due Date<input type="date" id="tt-due" value="${editing&&t.due?t.due.slice(0,10):''}"></label></div>
+  </form>
+  <div class="modal-foot"><div class="spacer"></div><button class="btn btn-ghost modal-close">Cancel</button><button class="btn btn-primary" id="tt-save"><i class="fa-solid fa-check"></i> ${editing?'Save Changes':'Create Task'}</button></div>`,520);
+  $('#tForm').onsubmit=e=>{e.preventDefault();$('#tt-save').click();};
+  $('#tt-save').onclick=()=>{
+    const title=$('#tt-title').value.trim();if(!title){toast('Enter a task title','fa-triangle-exclamation','warn');return;}
+    const due=$('#tt-due').value?new Date($('#tt-due').value+'T12:00:00').toISOString():'';
+    if(editing){Object.assign(t,{title,assignee:$('#tt-asn').value,status:$('#tt-status').value,priority:$('#tt-prio').value,due});audit('fa-pen-to-square','Task updated','Team Tasks',t.id,title);}
+    else{db.tasks.push({id:'TSK-'+(db.seq.task++),title,assignee:$('#tt-asn').value,status:$('#tt-status').value,priority:$('#tt-prio').value,due,created:new Date().toISOString()});audit('fa-circle-plus','Task created','Team Tasks',title,$('#tt-asn').value);addActivity('fa-list-check',`New task assigned: ${title} → ${$('#tt-asn').value}`);}
+    save();closeModal();toast(editing?'Task updated':'Task created');rerender();
+  };
 }
 
 /* ----- Procurement ----- */
@@ -1444,6 +1538,7 @@ const VIEWS={
   inventory:{title:'Inventory',sub:'Stock levels, valuation and adjustments',render:viewInventory,mount:mountInventory},
   customers:{title:'Customers',sub:'CRM — accounts and lifetime value',render:viewCustomers,mount:mountCustomers},
   hr:{title:'Human Resources',sub:'Team, departments and payroll',render:viewHR,mount:mountHR},
+  tasks:{title:'Team Tasks',sub:'Kanban board for internal operations and follow-ups',render:viewTasks,mount:mountTasks},
   procurement:{title:'Procurement',sub:'Purchase orders and suppliers',render:viewProcurement,mount:mountProcurement},
   finance:{title:'Finance',sub:'Revenue, expenses and receivables',render:viewFinance,mount:mountFinance},
   assets:{title:'Fixed Assets',sub:'Asset register and depreciation schedules',render:viewAssets,mount:mountAssets},
