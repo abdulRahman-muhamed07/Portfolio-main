@@ -19,10 +19,10 @@
       }
     ],
     "cv_download": "assets/downloads/AbdelrahmanElSebaay.pdf",
-    "about_me": "Entry-level .NET Developer with strong knowledge of C#, ASP.NET, and SQL Server. Experienced in developing scalable web applications using both .NET and PHP Laravel frameworks. Passionate about clean code, learning new technologies, and building modern, maintainable solutions that deliver real business value."
+    "about_me": ".NET Developer with strong knowledge of C#, ASP.NET, and SQL Server. Experienced in developing scalable web applications using both .NET and PHP Laravel frameworks. Built a complete ERP system (XeoTech ERP) for Soul Tech as a part-time full-stack developer, covering sales, inventory, finance, HR, and procurement. Passionate about clean code, learning new technologies, and building modern, maintainable solutions that deliver real business value."
   },
-  "projects_num": "2",
-  "experience_num": "1",
+  "projects_num": "3",
+  "experience_num": "2",
   "customers_num": "0",
   "skills": {
     "soft_skills": [
@@ -58,6 +58,18 @@
   ],
   "experience": [
     {
+      "title": "Full-Stack Web Developer (Part-Time)",
+      "company": "Soul Tech",
+      "location": "Cairo, Egypt",
+      "date_range": "Feb 2025 - Jul 2026",
+      "description_points": [
+        "Designed and built XeoTech ERP, a complete ERP system, from scratch to manage sales, inventory, CRM, HR, procurement, finance, and fixed assets.",
+        "Implemented role-based access control with 4 user roles (Admin, Manager, Analyst, Viewer) and a searchable audit log.",
+        "Built analytics dashboards with Chart.js and reporting with CSV/JSON export, plus backup/restore functionality.",
+        "Worked part-time turning business workflows into automated, digital processes used by the team daily."
+      ]
+    },
+    {
       "title": "Freelance .NET Developer",
       "company": "Self-Employed",
       "location": "Cairo, Egypt",
@@ -70,6 +82,35 @@
     }
   ],
   "projects": [
+    {
+      "name": "XeoTech ERP — Business Suite",
+      "cover_image": "assets/covers/dashboard.png",
+      "short_description": "A complete ERP system built for Soul Tech covering sales, inventory, finance, HR, and procurement.",
+      "description": "A full-featured, self-contained ERP business suite developed with vanilla JavaScript for Soul Tech. It includes role-based login (Admin, Manager, Analyst, Viewer), a live dashboard with KPIs and Chart.js charts, sales orders, inventory with low-stock and out-of-stock alerts, CRM, HR & payroll, procurement and suppliers, finance (invoices, quotes, receivables), fixed assets with depreciation schedules, reports with CSV/JSON export, a searchable audit log, notifications, and backup/restore — all persisted in localStorage with dark/light theming.",
+      "features": [
+        "Role-based authentication and authorization (4 roles)",
+        "Live dashboard with KPIs and Chart.js visualizations",
+        "Sales orders, quotes, invoices, and receivables management",
+        "Inventory tracking with low-stock and out-of-stock alerts",
+        "CRM, HR & payroll, procurement, and fixed-asset modules",
+        "Reports with CSV/JSON export and a full audit log",
+        "Backup/restore and dark/light theme support"
+      ],
+      "technologies_used": [
+        "HTML5",
+        "CSS3",
+        "Vanilla JavaScript",
+        "Chart.js",
+        "Font Awesome",
+        "LocalStorage"
+      ],
+      "links": [
+        {
+          "type": "GitHub",
+          "url": "https://github.com/abdulRahman-muhamed07"
+        }
+      ]
+    },
     {
       "name": "E-Commerce Web Application (.NET Version)",
       "cover_image": "assets/covers/ecommerce-dotnet.png",
