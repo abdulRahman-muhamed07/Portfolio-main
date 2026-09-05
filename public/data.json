@@ -21,7 +21,7 @@
     "cv_download": "assets/downloads/AbdelrahmanElSebaay.pdf",
     "about_me": ".NET Developer with strong knowledge of C#, ASP.NET, and SQL Server. Experienced in developing scalable web applications using both .NET and PHP Laravel frameworks. Built a complete ERP system (XeoTech ERP) for Soul Tech as a part-time full-stack developer, covering sales, inventory, finance, HR, and procurement. Passionate about clean code, learning new technologies, and building modern, maintainable solutions that deliver real business value."
   },
-  "projects_num": "3",
+  "projects_num": "5",
   "experience_num": "2",
   "customers_num": "0",
   "skills": {
@@ -83,31 +83,104 @@
   ],
   "projects": [
     {
-      "name": "XeoTech ERP — Business Suite",
+      "name": "XeoTech ERP — Enterprise Business Suite",
       "cover_image": "assets/covers/dashboard.png",
-      "short_description": "A complete ERP system built for Soul Tech covering sales, inventory, finance, HR, and procurement.",
-      "description": "A full-featured, self-contained ERP business suite developed with vanilla JavaScript for Soul Tech. It includes role-based login (Admin, Manager, Analyst, Viewer), a live dashboard with KPIs and Chart.js charts, sales orders, inventory with low-stock and out-of-stock alerts, CRM, HR & payroll, procurement and suppliers, finance (invoices, quotes, receivables), fixed assets with depreciation schedules, reports with CSV/JSON export, a searchable audit log, notifications, and backup/restore — all persisted in localStorage with dark/light theming.",
+      "short_description": "Production-style ERP platform built with ASP.NET Core, Clean Architecture, EF Core, SQL Server, and JWT-based security.",
+      "description": "A full-featured ERP platform designed to centralize core business operations in one system. The backend is built with ASP.NET Core Web API following Clean Architecture, with EF Core and SQL Server for relational persistence, JWT authentication with refresh tokens, repository and unit-of-work abstractions, centralized exception handling, health checks, rate limiting, audit logging, and automated CI. The system covers sales orders and quotes, customers and suppliers, inventory and stock control, payments and invoices, procurement and purchase orders, HR and employees, finance, budgets, expenses, fixed assets, reporting, notifications, and dashboard analytics.",
       "features": [
-        "Role-based authentication and authorization (4 roles)",
-        "Live dashboard with KPIs and Chart.js visualizations",
-        "Sales orders, quotes, invoices, and receivables management",
-        "Inventory tracking with low-stock and out-of-stock alerts",
-        "CRM, HR & payroll, procurement, and fixed-asset modules",
-        "Reports with CSV/JSON export and a full audit log",
-        "Backup/restore and dark/light theme support"
+        "Clean Architecture with Domain, Application, Infrastructure, and API layers",
+        "JWT authentication with refresh-token flow and role-based authorization",
+        "Sales, orders, quotes, invoices, payments, returns, and receivables workflows",
+        "Inventory management with stock validation and low-stock monitoring",
+        "Procurement, suppliers, purchase orders, HR, finance, assets, and depreciation modules",
+        "Centralized exception handling, audit logging, notifications, and health checks",
+        "Dashboard metrics, reporting, CSV/JSON export, and automated CI validation"
       ],
       "technologies_used": [
-        "HTML5",
-        "CSS3",
-        "Vanilla JavaScript",
-        "Chart.js",
-        "Font Awesome",
-        "LocalStorage"
+        "C#",
+        "ASP.NET Core Web API",
+        ".NET 10",
+        "Entity Framework Core",
+        "SQL Server",
+        "Clean Architecture",
+        "JWT Authentication",
+        "Repository Pattern",
+        "Unit of Work",
+        "AutoMapper",
+        "xUnit",
+        "GitHub Actions"
       ],
       "links": [
         {
           "type": "GitHub",
-          "url": "https://github.com/abdulRahman-muhamed07"
+          "url": "https://github.com/abdulRahman-muhamed07/nexus-erp"
+        }
+      ]
+    },
+    {
+      "name": "HR System Backend",
+      "cover_image": "assets/covers/dummy.png",
+      "short_description": "Production-style HR management API built with ASP.NET Core and Clean Architecture for secure, maintainable employee workflows.",
+      "description": "A backend-focused HR management API engineered around Clean Architecture and separation of concerns. The system uses ASP.NET Core, JWT authentication with role-based access control, EF Core persistence, repository abstractions, centralized error handling, secure PBKDF2 password hashing, pagination and search, rate limiting support, health checks, automated CI, and unit tests. The architecture keeps business rules independent from infrastructure while supporting SQL Server for relational deployments and SQLite for local development.",
+      "features": [
+        "Clean Architecture with Domain, Application, Infrastructure, and API layers",
+        "JWT authentication and role-based authorization",
+        "Secure PBKDF2 password hashing and authentication workflows",
+        "Employee-oriented HR operations with pagination and search",
+        "Repository abstractions with EF Core persistence separation",
+        "Centralized exception handling, rate limiting, health checks, CI, and tests"
+      ],
+      "technologies_used": [
+        "C#",
+        "ASP.NET Core Web API",
+        ".NET 10",
+        "Entity Framework Core",
+        "SQL Server",
+        "SQLite",
+        "Clean Architecture",
+        "JWT",
+        "RBAC",
+        "Repository Pattern",
+        "xUnit",
+        "GitHub Actions"
+      ],
+      "links": [
+        {
+          "type": "GitHub",
+          "url": "https://github.com/abdulRahman-muhamed07/HrSystem.Backend"
+        }
+      ]
+    },
+    {
+      "name": "Smart Real Estate API",
+      "cover_image": "assets/covers/dummy.png",
+      "short_description": "Real-estate backend for property listings, search, bookings, favorites, reviews, and admin moderation using ASP.NET Core and SQL Server.",
+      "description": "A complete real-estate backend designed around transactional business workflows and role-based access. The API supports property listing management, advanced search and filtering, sale and rent scenarios, booking lifecycle management, favorites, reviews, and admin moderation. It uses ASP.NET Core with EF Core and SQL Server, JWT authentication for User, Vendor, and Admin roles, validated image storage behind an abstraction, centralized exception handling with trace IDs, Swagger/OpenAPI, and Docker Compose for local API and SQL Server development.",
+      "features": [
+        "JWT authentication with User, Vendor, and Admin roles",
+        "Property CRUD with admin approval and moderation workflow",
+        "Search, filtering, sorting, and page-based pagination",
+        "Sale and rental listings with validated property images",
+        "Booking lifecycle with pending, confirmed, rejected, and cancelled states",
+        "Favorites, reviews, admin dashboard, and user/property administration",
+        "SQL Server persistence, EF Core, traceable errors, Swagger, and Docker Compose"
+      ],
+      "technologies_used": [
+        "C#",
+        "ASP.NET Core Web API",
+        ".NET 10",
+        "Entity Framework Core",
+        "SQL Server",
+        "JWT Authentication",
+        "Swagger/OpenAPI",
+        "Docker Compose",
+        "Clean Architecture",
+        "xUnit"
+      ],
+      "links": [
+        {
+          "type": "GitHub",
+          "url": "https://github.com/abdulRahman-muhamed07/RealEstate"
         }
       ]
     },
