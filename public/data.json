@@ -21,7 +21,7 @@
     "cv_download": "assets/downloads/AbdelrahmanElSebaay.pdf",
     "about_me": ".NET Developer with strong knowledge of C#, ASP.NET, and SQL Server. Experienced in developing scalable web applications using both .NET and PHP Laravel frameworks. Built a complete ERP system (XeoTech ERP) for Soul Tech as a part-time full-stack developer, covering sales, inventory, finance, HR, and procurement. Passionate about clean code, learning new technologies, and building modern, maintainable solutions that deliver real business value."
   },
-  "projects_num": "5",
+  "projects_num": "3",
   "experience_num": "2",
   "customers_num": "0",
   "skills": {
@@ -181,61 +181,6 @@
         {
           "type": "GitHub",
           "url": "https://github.com/abdulRahman-muhamed07/RealEstate"
-        }
-      ]
-    },
-    {
-      "name": "E-Commerce Web Application (.NET Version)",
-      "cover_image": "assets/covers/ecommerce-dotnet.png",
-      "short_description": "A multi-role e-commerce web app built using .NET (Blazor MVC) with admin dashboard and localization.",
-      "description": "Developed a complete e-commerce platform with an admin dashboard using .NET Blazor MVC. Implemented Repository Design Pattern, clean architecture principles, and role-based access control (Admin, Super Admin, User). Added multi-language support for a global experience.",
-      "features": [
-        "Role-based authentication and authorization",
-        "Admin dashboard for managing users, orders, and products",
-        "Localization and multi-language support",
-        "Repository pattern and clean code architecture",
-        "Responsive and scalable front-end design"
-      ],
-      "technologies_used": [
-        "C#",
-        "ASP.NET Core",
-        "Blazor MVC",
-        "Entity Framework Core",
-        "SQL Server",
-        "Bootstrap",
-        "Identity Authentication"
-      ],
-      "links": [
-        {
-          "type": "GitHub",
-          "url": "https://github.com/abdulRahman-muhamed07"
-        }
-      ]
-    },
-    {
-      "name": "E-Commerce Web Application (Laravel Version)",
-      "cover_image": "assets/covers/ecommerce-laravel.png",
-      "short_description": "A Laravel version of the same e-commerce app focusing on backend and clean architecture.",
-      "description": "Rebuilt the same e-commerce project using Laravel framework to strengthen backend development skills. Implemented authentication, role-based access, and localization. Ensured scalability, clean code, and maintainable architecture.",
-      "features": [
-        "Role-based authentication",
-        "Admin dashboard for managing users, products, and orders",
-        "Localization for multi-language support",
-        "Structured and reusable architecture",
-        "Clean and scalable backend"
-      ],
-      "technologies_used": [
-        "PHP",
-        "Laravel",
-        "MySQL",
-        "Blade Templates",
-        "Bootstrap",
-        "RESTful APIs"
-      ],
-      "links": [
-        {
-          "type": "GitHub",
-          "url": "https://github.com/abdulRahman-muhamed07"
         }
       ]
     }
