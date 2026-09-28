@@ -245,9 +245,9 @@ function hideTerminal() {
 
 // Terminal commands
 const terminalCommands = {
-  skills: () => 'Flutter, Dart, Firebase, Bloc, Provider, Riverpod, Clean Architecture, MVVM, OOP, SOLID Principles',
-  projects: () => 'Imtyaze, Tadabar, Kidglish, Lifeline, Bank Dash',
-  contact: () => 'Email: abdelrahmanelsepaay43@gmail.com | Phone: +20 155 576 1846',
+  skills: () => 'C#, ASP.NET Core, REST APIs, EF Core, SQL Server, Clean Architecture, SOLID, JWT/RBAC, Docker, CI/CD',
+  projects: () => 'Nexus ERP, HR System Backend, Real Estate Platform',
+  contact: () => 'Email: abdelrahmanelsepaay07@gmail.com | Phone: 01065564618',
   joke: () => {
     const jokes = [
       'Why do programmers prefer dark mode? Because light attracts bugs! 🐛',
@@ -463,29 +463,65 @@ async function loadDataWithData(data) {
     eduList.appendChild(card);
   });
 
-  // Projects (without tech badges, with modal functionality)
-  const grid = document.getElementById('projectsGrid');
-  (data.projects || []).forEach((p, idx) => {
+  // Certifications
+  const certificationsList = document.getElementById('certificationsList');
+  (data.certifications || []).forEach(certification => {
     const card = el(`
-      <article class="project" data-aos="fade-up" data-aos-delay="${(idx % 3) * 100}" style="cursor: pointer;">
-        <div class="project__cover">
-          <img src="${sanitize(p.cover_image)}" alt="${sanitize(p.name)} cover" loading="lazy" />
-        </div>
-        <div class="project__body">
-          <h3 class="project__title">${sanitize(p.name)}</h3>
-          <div class="project__meta">${sanitize(p.short_description)}</div>
-          <div class="links">${(p.links || []).map(l => `<a class="link" href="${sanitize(l.url)}" target="_blank" rel="noopener" onclick="event.stopPropagation()"><i class="ti ti-external-link"></i><span>${sanitize(l.type)}</span></a>`).join('')}</div>
+      <article class="certification-card">
+        <div class="certification-icon"><i class="ti ti-certificate"></i></div>
+        <div>
+          <h4>${sanitize(certification.split(' — ')[0])}</h4>
+          <p>${sanitize(certification.includes(' — ') ? certification.slice(certification.indexOf(' — ') + 3) : 'Professional credential')}</p>
         </div>
       </article>`);
-    
-    // Add click event for navigation to dynamic project details page
-    card.addEventListener('click', () => {
+    certificationsList?.appendChild(card);
+  });
+
+  // Projects
+  const grid = document.getElementById('projectsGrid');
+  (data.projects || []).forEach((p, idx) => {
+    const techPreview = (p.technologies_used || []).slice(0, 5).map(tech =>
+      `<span class="project-tech">${sanitize(tech)}</span>`
+    ).join('');
+
+    const githubLink = (p.links || []).find(l => l.type === 'GitHub');
+
+    const card = el(`
+      <article class="project" data-aos="fade-up" data-aos-delay="${(idx % 3) * 100}" tabindex="0" role="button" aria-label="View ${sanitize(p.name)} details">
+        <div class="project__cover">
+          <img src="${sanitize(p.cover_image)}" alt="${sanitize(p.name)} project preview" loading="lazy" />
+          <div class="project__cover-overlay"><i class="ti ti-arrow-up-right"></i></div>
+        </div>
+        <div class="project__body">
+          <div class="project__eyebrow">
+            <span>${sanitize(p.category || 'Backend Project')}</span>
+            <span>${sanitize(p.role || 'Developer')}</span>
+          </div>
+          <h3 class="project__title">${sanitize(p.name)}</h3>
+          <div class="project__meta">${sanitize(p.short_description)}</div>
+          <div class="project-techs">${techPreview}</div>
+          <div class="project__actions">
+            <span class="project__open"><i class="ti ti-arrow-right"></i> View Details</span>
+            ${githubLink ? `<a class="link" href="${sanitize(githubLink.url)}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()"><i class="ti ti-brand-github"></i><span>GitHub</span></a>` : ''}
+          </div>
+        </div>
+      </article>`);
+
+    const openProject = () => {
       const projectName = p.name.toLowerCase()
-        .replace(/[^a-z0-9\s-]/g, '') // Remove special characters
-        .replace(/\s+/g, '-') // Replace spaces with hyphens
-        .replace(/-+/g, '-') // Replace multiple hyphens with single
+        .replace(/[^a-z0-9\s-]/g, '')
+        .replace(/\s+/g, '-')
+        .replace(/-+/g, '-')
         .trim();
       window.location.href = `project-details.html?project=${encodeURIComponent(projectName)}`;
+    };
+
+    card.addEventListener('click', openProject);
+    card.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        openProject();
+      }
     });
     grid.appendChild(card);
   });
@@ -498,27 +534,33 @@ loadDataWithEffects();
 
 // Skill icons mapping
 const skillIcons = {
-  'Flutter': 'ti-brand-flutter',
-  'Dart': 'ti-code',
-  'Firebase': 'ti-flame',
-  'Bloc': 'ti-layers-intersect',
-  'Provider': 'ti-share',
-  'Riverpod': 'ti-git-fork',
-  'REST': 'ti-api',
-  'SQLite': 'ti-database',
-  'Hive': 'ti-archive',
-  'GoRouter': 'ti-route',
-  'Architecture': 'ti-building-arch',
-  'MVVM': 'ti-hierarchy-3',
-  'Clean': 'ti-wash',
-  'OOP': 'ti-circles-relation',
-  'SOLID': 'ti-shield-check',
-  'Git': 'ti-brand-git',
-  'Testing': 'ti-bug',
-  'UI': 'ti-palette',
-  'Widget': 'ti-components',
-  'API': 'ti-plug',
-  'default': 'ti-code'
+  'ASP.NET': 'ti ti-brand-c-sharp',
+  'C#': 'ti ti-brand-c-sharp',
+  'REST': 'ti ti-api',
+  'API': 'ti ti-api',
+  'JWT': 'ti ti-key',
+  'RBAC': 'ti ti-shield-lock',
+  'SQL': 'ti ti-database',
+  'MySQL': 'ti ti-database',
+  'Entity Framework': 'ti ti-database',
+  'EF Core': 'ti ti-database',
+  'Clean': 'ti ti-building-arch',
+  'SOLID': 'ti ti-shield-check',
+  'Dependency': 'ti ti-git-merge',
+  'Repository': 'ti ti-stack-2',
+  'Unit of Work': 'ti ti-stack',
+  'xUnit': 'ti ti-test-pipe',
+  'Docker': 'ti ti-brand-docker',
+  'Git': 'ti ti-brand-git',
+  'GitHub': 'ti ti-brand-github',
+  'Swagger': 'ti ti-file-type-json',
+  'Postman': 'ti ti-send',
+  'Angular': 'ti ti-brand-angular',
+  'TypeScript': 'ti ti-brand-typescript',
+  'JavaScript': 'ti ti-brand-javascript',
+  'HTML': 'ti ti-brand-html5',
+  'Bootstrap': 'ti ti-brand-bootstrap',
+  'default': 'ti ti-code'
 };
 
 // Get skill proficiency based on keyword matching
@@ -555,40 +597,23 @@ function getSkillLevel(proficiency) {
 // Categorize skills
 function categorizeSkills(skills) {
   const categories = {
-    frontend: {
-      keywords: ['Flutter', 'Dart', 'UI', 'Widget', 'Responsive', 'Custom'],
-      skills: []
-    },
-    backend: {
-      keywords: ['Firebase', 'REST', 'API', 'SQLite', 'Hive', 'Database'],
-      skills: []
-    },
-    tools: {
-      keywords: ['Bloc', 'Provider', 'Riverpod', 'Git', 'Architecture', 'MVVM', 'Clean', 'OOP', 'SOLID', 'Testing', 'Debug'],
-      skills: []
-    }
+    backend: { keywords: ['ASP.NET', 'MVC', 'C#', 'REST', 'SignalR', 'Middleware', 'Microservices', 'JWT', 'RBAC'], skills: [] },
+    architecture: { keywords: ['SQL', 'MySQL', 'Entity Framework', 'EF Core', 'LINQ', 'Dapper', 'Eloquent', 'Indexing', 'Clean Architecture', 'SOLID', 'Dependency Injection', 'Design Patterns', 'Repository', 'Unit of Work'], skills: [] },
+    testing: { keywords: ['xUnit', 'Docker', 'Git', 'GitHub Actions', 'CI/CD', 'Postman', 'Swagger'], skills: [] },
+    frontend: { keywords: ['Laravel', 'Angular', 'TypeScript', 'JavaScript', 'HTML5', 'CSS3', 'Bootstrap'], skills: [] }
   };
-  
+
   skills.forEach(skill => {
     let categorized = false;
-    
-    // Check each category
-    Object.keys(categories).forEach(categoryKey => {
-      const category = categories[categoryKey];
-      if (!categorized && category.keywords.some(keyword => 
-        skill.toLowerCase().includes(keyword.toLowerCase())
-      )) {
-        category.skills.push(skill);
+    for (const key of Object.keys(categories)) {
+      if (!categorized && categories[key].keywords.some(keyword => skill.toLowerCase().includes(keyword.toLowerCase()))) {
+        categories[key].skills.push(skill);
         categorized = true;
       }
-    });
-    
-    // If not categorized, add to tools as default
-    if (!categorized) {
-      categories.tools.skills.push(skill);
     }
+    if (!categorized) categories.testing.skills.push(skill);
   });
-  
+
   return categories;
 }
 
@@ -616,33 +641,17 @@ function createSimpleSkillChip(skill) {
 // Create Simple Technical Skills with Categories
 function createEnhancedTechnicalSkills(skills) {
   const categories = categorizeSkills(skills);
-  
-  // Frontend Skills
-  const frontendContainer = document.getElementById('frontendSkills');
-  if (frontendContainer && categories.frontend.skills.length > 0) {
-    categories.frontend.skills.forEach(skill => {
-      const skillChip = createSimpleSkillChip(skill);
-      frontendContainer.appendChild(skillChip);
-    });
-  }
-  
-  // Backend Skills
-  const backendContainer = document.getElementById('backendSkills');
-  if (backendContainer && categories.backend.skills.length > 0) {
-    categories.backend.skills.forEach(skill => {
-      const skillChip = createSimpleSkillChip(skill);
-      backendContainer.appendChild(skillChip);
-    });
-  }
-  
-  // Tools Skills
-  const toolsContainer = document.getElementById('toolsSkills');
-  if (toolsContainer && categories.tools.skills.length > 0) {
-    categories.tools.skills.forEach(skill => {
-      const skillChip = createSimpleSkillChip(skill);
-      toolsContainer.appendChild(skillChip);
-    });
-  }
+  const containers = {
+    backend: document.getElementById('backendSkills'),
+    architecture: document.getElementById('architectureSkills'),
+    testing: document.getElementById('testingSkills'),
+    frontend: document.getElementById('frontendSkills')
+  };
+
+  Object.entries(containers).forEach(([key, container]) => {
+    if (!container) return;
+    categories[key].skills.forEach(skill => container.appendChild(createSimpleSkillChip(skill)));
+  });
 }
 
 
