@@ -1,12 +1,12 @@
 {
   "personal_info": {
-    "name": "Abdelrahman Mohamed",
-    "title": ".NET Developer | ASP.NET, C#, SQL Server, Laravel",
+    "name": "Abdelrahman Elsepaay",
+    "title": "Back-End Developer (.NET / ASP.NET Core)",
     "profile_image": "assets/profile/profile.jpg",
     "location": "Cairo, Egypt",
     "contact": {
-      "phone": "+20 106 556 4618",
-      "email": "abdelrahmanelsepaay43@gmail.com"
+      "phone": "01065564618",
+      "email": "abdelrahmanelsepaay07@gmail.com"
     },
     "social_links": [
       {
@@ -15,125 +15,153 @@
       },
       {
         "platform": "LinkedIn",
-        "url": "https://www.linkedin.com/in/abdelrahman-mohamed-835b65282/"
+        "url": "https://www.linkedin.com/in/abdulrahman/"
       }
     ],
     "cv_download": "assets/downloads/AbdelrahmanElSebaay.pdf",
-    "about_me": ".NET Developer with strong knowledge of C#, ASP.NET, and SQL Server. Experienced in developing scalable web applications using both .NET and PHP Laravel frameworks. Built a complete ERP system (XeoTech ERP) for Soul Tech as a part-time full-stack developer, covering sales, inventory, finance, HR, and procurement. Passionate about clean code, learning new technologies, and building modern, maintainable solutions that deliver real business value."
+    "about_me": "Back-End Developer with hands-on experience in .NET / ASP.NET Core, specializing in building high-performance RESTful Web APIs using Clean Architecture, SOLID principles, and Design Patterns. Proven track record of optimizing data retrieval performance and implementing secure JWT-based (RBAC) authentication. Experienced in Docker containerization and CI/CD pipelines."
   },
   "projects_num": "3",
   "experience_num": "2",
-  "customers_num": "0",
+  "customers_num": "4",
   "skills": {
-    "soft_skills": [
-      "Fast Learner",
-      "Team Player",
-      "Problem Solver",
-      "Analytical Thinking",
-      "Attention to Detail",
-      "Adaptable",
-      "Goal Oriented"
-    ],
     "technical_skills": [
-      "C#, ASP.NET MVC, Blazor",
-      "Entity Framework Core",
-      "SQL Server & LINQ",
-      "HTML, CSS, JavaScript",
-      "PHP Laravel Framework",
+      "ASP.NET Core (Web API)",
+      "MVC",
+      "C#",
       "RESTful APIs",
-      "Repository Pattern",
-      "Authentication & Authorization",
-      "Localization & Multi-language Support",
-      "OOP & Design Patterns",
-      "Git & GitHub"
+      "SignalR",
+      "Middleware",
+      "Microservices",
+      "JWT",
+      "RBAC",
+      "SQL Server",
+      "MySQL",
+      "Entity Framework Core",
+      "LINQ",
+      "Dapper",
+      "Eloquent",
+      "Indexing & Query Optimization",
+      "Clean Architecture",
+      "SOLID Principles",
+      "Dependency Injection",
+      "Design Patterns",
+      "Repository & Unit of Work",
+      "xUnit",
+      "Docker",
+      "Git & GitHub",
+      "GitHub Actions",
+      "CI/CD",
+      "Postman",
+      "Swagger",
+      "Laravel",
+      "Angular",
+      "TypeScript",
+      "JavaScript (ES6+)",
+      "HTML5/CSS3",
+      "Bootstrap"
     ]
   },
   "education": [
     {
-      "degree": "Bachelor’s Degree in Commerce (English Section)",
-      "institution": "Helwan University",
-      "specialization": "Accounting",
-      "date_range": "Sep 2019 - Oct 2023"
+      "degree": "Bachelor of Commerce (B.Com), English Section",
+      "institution": "Helwan University, Cairo",
+      "date_range": "Aug 2019 – Jul 2023"
     }
+  ],
+  "certifications": [
+    "Back-End Developer (.NET) Training — EraaSoft | 2024",
+    "Laravel Developer Certificate — Pioneers | 2024",
+    "Postman API Fundamentals Student Expert — Postman | 2024",
+    "Microsoft Learn Pathways: SQL Server & Azure SQL Modules"
   ],
   "experience": [
     {
-      "title": "Full-Stack Web Developer (Part-Time)",
-      "company": "Soul Tech",
+      "title": "Back-End / Full-Stack Developer",
+      "company": "XeoTech",
       "location": "Cairo, Egypt",
-      "date_range": "Feb 2025 - Jul 2026",
+      "date_range": "Mar 2026 – Aug 2026",
       "description_points": [
-        "Designed and built XeoTech ERP, a complete ERP system, from scratch to manage sales, inventory, CRM, HR, procurement, finance, and fixed assets.",
-        "Implemented role-based access control with 4 user roles (Admin, Manager, Analyst, Viewer) and a searchable audit log.",
-        "Built analytics dashboards with Chart.js and reporting with CSV/JSON export, plus backup/restore functionality.",
-        "Worked part-time turning business workflows into automated, digital processes used by the team daily."
+        "Contributed to XeoTech ERP, a large modular ERP platform spanning Accounting, HR & Payroll, Sales & CRM, Purchasing, Inventory, Manufacturing, Projects, Treasury, Tax, Workflow, Reports/BI, and Settings.",
+        "Implemented core business workflows (invoicing, purchase orders, goods receipts, stock movements, payroll, manufacturing orders, payments, approval flows) across 6+ ERP modules, maintaining data consistency and reducing manual processing errors.",
+        "Developed backend functionality with .NET and frontend interactions with Vanilla JavaScript, focusing on business rules, data consistency, and maintainable APIs."
       ]
     },
     {
-      "title": "Freelance .NET Developer",
-      "company": "Self-Employed",
+      "title": "Back-End Developer",
+      "company": "SoulTech",
       "location": "Cairo, Egypt",
-      "date_range": "2024 - Present",
+      "date_range": "Oct 2025 – Feb 2026",
       "description_points": [
-        "Developed personal and client projects using ASP.NET Core and Blazor.",
-        "Implemented authentication, role-based authorization, and localization features.",
-        "Focused on clean code, maintainability, and scalability."
+        "Developed ASP.NET Core APIs powering E-commerce and Mobile applications, supporting payments, order processing, and push notifications for a growing user base.",
+        "Reduced API response time by approximately 20% through EF Core query optimization and SQL indexing improvements.",
+        "Implemented JWT authentication and role-based access control, collaborating with mobile and front-end teams in an Agile environment across 2-week sprint cycles."
       ]
     }
   ],
   "projects": [
     {
-      "name": "XeoTech ERP — Enterprise Business Suite",
+      "name": "Nexus ERP",
+      "role": "Back-End / Full-Stack",
+      "category": "Enterprise ERP",
       "cover_image": "assets/covers/dashboard.png",
-      "short_description": "Production-style ERP platform built with ASP.NET Core, Clean Architecture, EF Core, SQL Server, and JWT-based security.",
-      "description": "A full-featured ERP platform designed to centralize core business operations in one system. The backend is built with ASP.NET Core Web API following Clean Architecture, with EF Core and SQL Server for relational persistence, JWT authentication with refresh tokens, repository and unit-of-work abstractions, centralized exception handling, health checks, rate limiting, audit logging, and automated CI. The system covers sales orders and quotes, customers and suppliers, inventory and stock control, payments and invoices, procurement and purchase orders, HR and employees, finance, budgets, expenses, fixed assets, reporting, notifications, and dashboard analytics.",
+      "short_description": "Full-stack business management platform with an ASP.NET Core backend and a standalone Vanilla JavaScript frontend.",
+      "description": "Nexus ERP is a full-stack business management system built around Clean Architecture. The backend uses ASP.NET Core Web API with Entity Framework Core and relational persistence, while the frontend is maintained separately with Vanilla HTML, CSS, and JavaScript. The platform brings sales, inventory, procurement, HR, finance, payments, reporting, notifications, and audit logging into one business suite.",
       "features": [
-        "Clean Architecture with Domain, Application, Infrastructure, and API layers",
-        "JWT authentication with refresh-token flow and role-based authorization",
-        "Sales, orders, quotes, invoices, payments, returns, and receivables workflows",
-        "Inventory management with stock validation and low-stock monitoring",
-        "Procurement, suppliers, purchase orders, HR, finance, assets, and depreciation modules",
-        "Centralized exception handling, audit logging, notifications, and health checks",
-        "Dashboard metrics, reporting, CSV/JSON export, and automated CI validation"
+        "Clean Architecture across Domain, Application, Infrastructure, and API layers",
+        "JWT authentication with refresh-token flow",
+        "Customers, suppliers, products, inventory, sales orders, and quotes",
+        "Payments, invoices, returns, procurement, and purchase orders",
+        "HR, finance, budgets, expenses, assets, and depreciation workflows",
+        "Dashboard metrics, reports, notifications, audit logging, and health checks",
+        "Automated CI with restore, Release build, and tests"
       ],
       "technologies_used": [
         "C#",
-        "ASP.NET Core Web API",
         ".NET 10",
+        "ASP.NET Core Web API",
         "Entity Framework Core",
         "SQL Server",
         "Clean Architecture",
-        "JWT Authentication",
-        "Repository Pattern",
-        "Unit of Work",
+        "JWT",
         "AutoMapper",
         "xUnit",
-        "GitHub Actions"
+        "GitHub Actions",
+        "Vanilla JavaScript"
       ],
       "links": [
         {
           "type": "GitHub",
           "url": "https://github.com/abdulRahman-muhamed07/nexus-erp"
         }
+      ],
+      "media": [
+        {
+          "type": "screenshot",
+          "url": "assets/covers/dashboard.png"
+        }
       ]
     },
     {
       "name": "HR System Backend",
-      "cover_image": "assets/covers/dummy.png",
+      "role": "Back-End",
+      "category": "HR Management API",
+      "cover_image": "assets/covers/hr-system.svg",
       "short_description": "Production-style HR management API built with ASP.NET Core and Clean Architecture for secure, maintainable employee workflows.",
-      "description": "A backend-focused HR management API engineered around Clean Architecture and separation of concerns. The system uses ASP.NET Core, JWT authentication with role-based access control, EF Core persistence, repository abstractions, centralized error handling, secure PBKDF2 password hashing, pagination and search, rate limiting support, health checks, automated CI, and unit tests. The architecture keeps business rules independent from infrastructure while supporting SQL Server for relational deployments and SQLite for local development.",
+      "description": "A backend-focused HR management API built with Clean Architecture and separation of concerns. The system is organized into Domain, Application, Infrastructure, and API layers and includes secure authentication, role-based access control, centralized error handling, repository abstractions, EF Core persistence, pagination and search, rate limiting support, health checks, CI, and automated tests.",
       "features": [
         "Clean Architecture with Domain, Application, Infrastructure, and API layers",
         "JWT authentication and role-based authorization",
-        "Secure PBKDF2 password hashing and authentication workflows",
-        "Employee-oriented HR operations with pagination and search",
+        "PBKDF2 password hashing and authentication workflows",
+        "Employee-focused operations with pagination and search",
         "Repository abstractions with EF Core persistence separation",
-        "Centralized exception handling, rate limiting, health checks, CI, and tests"
+        "Centralized errors, rate limiting support, health checks, CI, and tests",
+        "SQL Server support with SQLite for local development"
       ],
       "technologies_used": [
         "C#",
-        "ASP.NET Core Web API",
         ".NET 10",
+        "ASP.NET Core Web API",
         "Entity Framework Core",
         "SQL Server",
         "SQLite",
@@ -149,29 +177,37 @@
           "type": "GitHub",
           "url": "https://github.com/abdulRahman-muhamed07/HrSystem.Backend"
         }
+      ],
+      "media": [
+        {
+          "type": "screenshot",
+          "url": "assets/covers/hr-system.svg"
+        }
       ]
     },
     {
-      "name": "Smart Real Estate API",
-      "cover_image": "assets/covers/dummy.png",
-      "short_description": "Real-estate backend for property listings, search, bookings, favorites, reviews, and admin moderation using ASP.NET Core and SQL Server.",
-      "description": "A complete real-estate backend designed around transactional business workflows and role-based access. The API supports property listing management, advanced search and filtering, sale and rent scenarios, booking lifecycle management, favorites, reviews, and admin moderation. It uses ASP.NET Core with EF Core and SQL Server, JWT authentication for User, Vendor, and Admin roles, validated image storage behind an abstraction, centralized exception handling with trace IDs, Swagger/OpenAPI, and Docker Compose for local API and SQL Server development.",
+      "name": "Real Estate Platform",
+      "role": "Back-End",
+      "category": "Real Estate API",
+      "cover_image": "assets/covers/real-estate.svg",
+      "short_description": "ASP.NET Core real-estate backend for listings, advanced search, bookings, favorites, reviews, and admin moderation.",
+      "description": "A backend for a real-estate platform built with ASP.NET Core, Entity Framework Core, and SQL Server. The API supports property listing management, search and filtering, sale and rent scenarios, booking lifecycle workflows, favorites, reviews, image storage, and admin moderation with role-based access.",
       "features": [
         "JWT authentication with User, Vendor, and Admin roles",
-        "Property CRUD with admin approval and moderation workflow",
+        "Property create, update, delete, and admin approval workflows",
         "Search, filtering, sorting, and page-based pagination",
         "Sale and rental listings with validated property images",
-        "Booking lifecycle with pending, confirmed, rejected, and cancelled states",
-        "Favorites, reviews, admin dashboard, and user/property administration",
-        "SQL Server persistence, EF Core, traceable errors, Swagger, and Docker Compose"
+        "Booking workflow with pending, confirmed, rejected, and cancelled states",
+        "Favorites, reviews, admin dashboard, and moderation endpoints",
+        "Swagger/OpenAPI, centralized errors with trace IDs, and Docker Compose"
       ],
       "technologies_used": [
         "C#",
-        "ASP.NET Core Web API",
         ".NET 10",
+        "ASP.NET Core Web API",
         "Entity Framework Core",
         "SQL Server",
-        "JWT Authentication",
+        "JWT",
         "Swagger/OpenAPI",
         "Docker Compose",
         "Clean Architecture",
@@ -181,6 +217,16 @@
         {
           "type": "GitHub",
           "url": "https://github.com/abdulRahman-muhamed07/RealEstate"
+        }
+      ],
+      "media": [
+        {
+          "type": "screenshot",
+          "url": "https://raw.githubusercontent.com/abdulRahman-muhamed07/RealEstate/master/wwwroot/images/properties/4403179e-6e56-4d9d-9134-4f4d13e1316d.jpg"
+        },
+        {
+          "type": "screenshot",
+          "url": "https://raw.githubusercontent.com/abdulRahman-muhamed07/RealEstate/master/wwwroot/images/properties/bb2112cb-4023-49f9-b008-a00636b0e02f.jpg"
         }
       ]
     }
