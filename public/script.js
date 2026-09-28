@@ -422,7 +422,7 @@ async function loadDataWithData(data) {
   
   if (linkedinLink) {
     linkedinA.href = linkedinLink.url;
-    linkedinA.textContent = 'Abdelrahman Mohamed';
+    linkedinA.textContent = 'Abdelrahman Elsepaay';
   }
 
   // Social Links
