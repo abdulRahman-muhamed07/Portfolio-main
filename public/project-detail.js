@@ -80,10 +80,16 @@ function populateProjectData(project) {
   document.getElementById('projectSubtitle').textContent = project.short_description;
   document.getElementById('projectDescription').textContent = project.description;
 
+  const projectMeta = document.getElementById('projectMeta');
+  if (projectMeta) {
+    projectMeta.innerHTML = [project.category, project.role].filter(Boolean).map(value => `<span>${escapeHtml(value)}</span>`).join('');
+  }
+
   // Update project cover
   const projectCover = document.getElementById('projectCover');
   projectCover.src = project.cover_image;
-  projectCover.alt = `${project.name} Cover`;
+  projectCover.alt = `${project.name} project preview`;
+  projectCover.onerror = () => { projectCover.onerror = null; projectCover.src = 'assets/covers/dummy.png'; };
 
   // Generate project links
   const linksContainer = document.getElementById('projectLinks');
@@ -111,10 +117,7 @@ function populateProjectData(project) {
     project.features.forEach(feature => {
       const featureCard = document.createElement('div');
       featureCard.className = 'feature-card';
-      featureCard.innerHTML = `
-        <h3><i class="${getFeatureIcon(feature)}"></i>${feature}</h3>
-        <p>Advanced feature providing enhanced user experience and functionality.</p>
-      `;
+      featureCard.innerHTML = `<h3><i class="${getFeatureIcon(feature)}"></i>${escapeHtml(feature)}</h3>`;
       featuresGrid.appendChild(featureCard);
     });
   }
@@ -164,6 +167,10 @@ function populateProjectData(project) {
 }
 
 // Get project link icon based on type
+function escapeHtml(str) {
+  return (str || '').toString().replace(/[&<>"']/g, s => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[s]));
+}
+
 function getLinkIcon(type) {
   const icons = {
     'GitHub': 'ti ti-brand-github',
@@ -178,6 +185,21 @@ function getLinkIcon(type) {
 
 // Generate feature icons
 function getFeatureIcon(feature) {
+  const lower = feature.toLowerCase();
+  if (lower.includes('clean architecture')) return 'ti ti-building-arch';
+  if (lower.includes('jwt') || lower.includes('authentication')) return 'ti ti-shield-lock';
+  if (lower.includes('role-based') || lower.includes('rbac')) return 'ti ti-user-shield';
+  if (lower.includes('sql') || lower.includes('ef core') || lower.includes('repository')) return 'ti ti-database';
+  if (lower.includes('pagination') || lower.includes('search') || lower.includes('filtering')) return 'ti ti-filter';
+  if (lower.includes('docker')) return 'ti ti-brand-docker';
+  if (lower.includes('swagger')) return 'ti ti-file-type-json';
+  if (lower.includes('booking')) return 'ti ti-calendar-check';
+  if (lower.includes('favorites')) return 'ti ti-heart';
+  if (lower.includes('reviews')) return 'ti ti-star';
+  if (lower.includes('invoice') || lower.includes('payment')) return 'ti ti-receipt';
+  if (lower.includes('inventory') || lower.includes('product')) return 'ti ti-package';
+  if (lower.includes('hr') || lower.includes('employee')) return 'ti ti-users';
+
   const iconMap = {
     'High-quality video courses': 'ti ti-video',
     'Secure authentication': 'ti ti-shield-check',
