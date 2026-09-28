@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-label="Real Estate Platform cover">
+<defs><linearGradient id="g2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#091421"/><stop offset="1" stop-color="#102a3b"/></linearGradient><linearGradient id="b" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#22d3ee"/><stop offset="1" stop-color="#7c5cff"/></linearGradient></defs>
+<rect width="1200" height="675" rx="28" fill="url(#g2)"/>
+<circle cx="1040" cy="90" r="190" fill="#22d3ee" opacity=".1"/><circle cx="130" cy="640" r="220" fill="#7c5cff" opacity=".08"/>
+<rect x="90" y="100" width="1020" height="470" rx="26" fill="#ffffff" opacity=".045" stroke="#ffffff" stroke-opacity=".14"/>
+<text x="130" y="172" fill="#fff" font-family="Inter,Arial,sans-serif" font-size="42" font-weight="800">Real Estate Platform</text>
+<text x="130" y="210" fill="#9fb4c7" font-family="Inter,Arial,sans-serif" font-size="18">ASP.NET Core • SQL Server • JWT • Swagger</text>
+<g transform="translate(130 260)">
+<polygon points="0,150 150,30 300,150" fill="url(#b)" opacity=".92"/>
+<rect x="42" y="150" width="216" height="155" rx="8" fill="#14253a"/>
+<rect x="88" y="202" width="56" height="103" fill="#0b1728"/><rect x="166" y="202" width="56" height="103" fill="#0b1728"/>
+<rect x="68" y="170" width="180" height="8" rx="4" fill="#9eefff" opacity=".7"/>
+</g>
+<g transform="translate(510 270)"><rect width="520" height="250" rx="20" fill="#0b1525" stroke="#fff" stroke-opacity=".12"/>
+<text x="28" y="46" fill="#fff" font-family="Inter,Arial,sans-serif" font-size="22" font-weight="700">API Workflows</text>
+<g font-family="Inter,Arial,sans-serif" font-size="15"><rect x="28" y="70" width="210" height="44" rx="10" fill="#22d3ee" opacity=".12"/><text x="48" y="98" fill="#8eeeff">Listings &amp; Search</text><rect x="262" y="70" width="230" height="44" rx="10" fill="#7c5cff" opacity=".14"/><text x="282" y="98" fill="#cfc5ff">Bookings &amp; Moderation</text><rect x="28" y="132" width="210" height="44" rx="10" fill="#fff" opacity=".05"/><text x="48" y="160" fill="#dce7f8">Favorites &amp; Reviews</text><rect x="262" y="132" width="230" height="44" rx="10" fill="#fff" opacity=".05"/><text x="282" y="160" fill="#dce7f8">User / Vendor / Admin</text></g>
+<path d="M30 208h460" stroke="#ffffff" stroke-opacity=".12"/><text x="28" y="234" fill="#90a7bc" font-family="Inter,Arial,sans-serif" font-size="14">Pagination • Property images • Docker Compose</text></g>
+</svg>
