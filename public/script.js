@@ -534,8 +534,8 @@ loadDataWithEffects();
 
 // Skill icons mapping
 const skillIcons = {
-  'ASP.NET': 'ti ti-brand-c-sharp',
-  'C#': 'ti ti-brand-c-sharp',
+  'ASP.NET': 'ti ti-code',
+  'C#': 'ti ti-code',
   'REST': 'ti ti-api',
   'API': 'ti ti-api',
   'JWT': 'ti ti-key',
