@@ -191,11 +191,28 @@
           <div class="section__icon floating" aria-hidden="true"><i class="ti ti-photo"></i></div>
           <div>
             <h2>Project Gallery</h2>
-            <p class="muted">UI previews covering authentication, dashboards, user views, and core management workflows.</p>
+            <p class="muted">Four business-specific UI references selected to match the workflows this project covers.</p>
           </div>
         </header>
-        <div class="project-gallery" id="projectGallery" data-aos="fade-up" data-aos-delay="100">
-          <!-- Gallery will be populated dynamically -->
+        <div class="project-carousel" id="projectCarousel" data-aos="fade-up" data-aos-delay="100">
+          <div class="project-carousel__main">
+            <button class="carousel-nav prev" id="carouselPrev" type="button" aria-label="Previous image">
+              <i class="ti ti-chevron-left"></i>
+            </button>
+            <img id="carouselMainImage" src="" alt="" />
+            <div class="carousel-reference-badge" id="carouselReferenceBadge">Reference UI</div>
+            <button class="carousel-nav next" id="carouselNext" type="button" aria-label="Next image">
+              <i class="ti ti-chevron-right"></i>
+            </button>
+          </div>
+          <div class="project-carousel__caption">
+            <div>
+              <strong id="carouselCaption">—</strong>
+              <span id="carouselSource">—</span>
+            </div>
+            <span id="carouselCounter">1 / 4</span>
+          </div>
+          <div class="project-carousel__thumbs" id="carouselThumbs" aria-label="Project image thumbnails"></div>
         </div>
       </section>
 

@@ -103,7 +103,7 @@
       "name": "Nexus ERP",
       "role": "Back-End / Full-Stack",
       "category": "Enterprise ERP",
-      "cover_image": "assets/projects/nexus-erp/admin-dashboard.svg",
+      "cover_image": "https://www.shivtatva.tech/marketing/product-previews/product-preview-erp.png",
       "short_description": "Full-stack business management platform with an ASP.NET Core backend and a standalone Vanilla JavaScript frontend.",
       "description": "Nexus ERP is a full-stack business management system built around Clean Architecture. The backend uses ASP.NET Core Web API with Entity Framework Core and relational persistence, while the frontend is maintained separately with Vanilla HTML, CSS, and JavaScript. The platform brings sales, inventory, procurement, HR, finance, payments, reporting, notifications, and audit logging into one business suite.",
       "features": [
@@ -136,29 +136,32 @@
       ],
       "media": [
         {
-          "type": "ui-preview",
-          "label": "Login",
-          "url": "assets/projects/nexus-erp/login.svg"
+          "type": "reference-ui",
+          "label": "Dashboard / ERP Overview",
+          "url": "https://www.shivtatva.tech/marketing/product-previews/product-preview-erp.png",
+          "source_name": "Shiv Tatva ERP",
+          "source_url": "https://www.shivtatva.tech/marketing/product-previews/product-preview-erp.png"
         },
         {
-          "type": "ui-preview",
-          "label": "Register",
-          "url": "assets/projects/nexus-erp/register.svg"
+          "type": "reference-ui",
+          "label": "Sales Orders",
+          "url": "https://www.hardikzinzu.com/assets/images/webp/sales-order-monitor-1.webp",
+          "source_name": "ERPNext Sales Order Monitor",
+          "source_url": "https://www.hardikzinzu.com/assets/images/webp/sales-order-monitor-1.webp"
         },
         {
-          "type": "ui-preview",
-          "label": "Admin Dashboard",
-          "url": "assets/projects/nexus-erp/admin-dashboard.svg"
+          "type": "reference-ui",
+          "label": "Inventory & Warehouses",
+          "url": "https://payhip.com/cdn-cgi/image/format%3Dauto%2Cwidth%3D1500/https%3A/pe56d.s3.amazonaws.com/o_1jjmnecfecvaqmu1u5p1atb18m81f.png",
+          "source_name": "Bitnova ERP",
+          "source_url": "https://payhip.com/cdn-cgi/image/format%3Dauto%2Cwidth%3D1500/https%3A/pe56d.s3.amazonaws.com/o_1jjmnecfecvaqmu1u5p1atb18m81f.png"
         },
         {
-          "type": "ui-preview",
-          "label": "User Dashboard",
-          "url": "assets/projects/nexus-erp/user-dashboard.svg"
-        },
-        {
-          "type": "ui-preview",
-          "label": "Inventory & Orders",
-          "url": "assets/projects/nexus-erp/management.svg"
+          "type": "reference-ui",
+          "label": "Finance & Accounting",
+          "url": "https://cdn.techimply.com/uploads/buyersguide/description-image/1845941341722087.jpg",
+          "source_name": "NetSuite ERP",
+          "source_url": "https://cdn.techimply.com/uploads/buyersguide/description-image/1845941341722087.jpg"
         }
       ],
       "id": "nexus-erp",
@@ -198,7 +201,7 @@
       "name": "HR System Backend",
       "role": "Back-End",
       "category": "HR Management API",
-      "cover_image": "assets/projects/hr-system-backend/admin-dashboard.svg",
+      "cover_image": "https://cdn.dribbble.com/userupload/47258362/file/f919bd1fe1518f1e90963161dc035a02.png?resize=1600x1200",
       "short_description": "Production-style HR management API built with ASP.NET Core and Clean Architecture for secure, maintainable employee workflows.",
       "description": "A backend-focused HR management API built with Clean Architecture and separation of concerns. The system is organized into Domain, Application, Infrastructure, and API layers and includes secure authentication, role-based access control, centralized error handling, repository abstractions, EF Core persistence, pagination and search, rate limiting support, health checks, CI, and automated tests.",
       "features": [
@@ -232,29 +235,32 @@
       ],
       "media": [
         {
-          "type": "ui-preview",
-          "label": "Login",
-          "url": "assets/projects/hr-system-backend/login.svg"
+          "type": "reference-ui",
+          "label": "HR Dashboard",
+          "url": "https://cdn.dribbble.com/userupload/47258362/file/f919bd1fe1518f1e90963161dc035a02.png?resize=1600x1200",
+          "source_name": "HR SaaS Platform Dashboard",
+          "source_url": "https://cdn.dribbble.com/userupload/47258362/file/f919bd1fe1518f1e90963161dc035a02.png?resize=1600x1200"
         },
         {
-          "type": "ui-preview",
-          "label": "Register",
-          "url": "assets/projects/hr-system-backend/register.svg"
-        },
-        {
-          "type": "ui-preview",
-          "label": "Admin Dashboard",
-          "url": "assets/projects/hr-system-backend/admin-dashboard.svg"
-        },
-        {
-          "type": "ui-preview",
-          "label": "Employee Dashboard",
-          "url": "assets/projects/hr-system-backend/employee-dashboard.svg"
-        },
-        {
-          "type": "ui-preview",
+          "type": "reference-ui",
           "label": "Employee Management",
-          "url": "assets/projects/hr-system-backend/employees.svg"
+          "url": "https://cdn.dribbble.com/userupload/18202416/file/original-918d55de2e08288470218d66a0787b2d.png?resize=%7Bwidth%7Dx%7Bheight%7D&vertical=center",
+          "source_name": "Omega HR Management Dashboard",
+          "source_url": "https://cdn.dribbble.com/userupload/18202416/file/original-918d55de2e08288470218d66a0787b2d.png?resize=%7Bwidth%7Dx%7Bheight%7D&vertical=center"
+        },
+        {
+          "type": "reference-ui",
+          "label": "HR Workflow / Employee View",
+          "url": "https://cdn.dribbble.com/userupload/18202417/file/original-86ddf32b53b3d812061b6a3473e0ccdc.png?resize=%7Bwidth%7Dx%7Bheight%7D&vertical=center",
+          "source_name": "Omega HR Management Dashboard",
+          "source_url": "https://cdn.dribbble.com/userupload/18202417/file/original-86ddf32b53b3d812061b6a3473e0ccdc.png?resize=%7Bwidth%7Dx%7Bheight%7D&vertical=center"
+        },
+        {
+          "type": "reference-ui",
+          "label": "Payroll Runs",
+          "url": "https://saptta.com/images/home-screenshots/payroll.png",
+          "source_name": "Saptta HRMS",
+          "source_url": "https://saptta.com/images/home-screenshots/payroll.png"
         }
       ],
       "id": "hr-system-backend",
@@ -294,7 +300,7 @@
       "name": "Real Estate Platform",
       "role": "Back-End",
       "category": "Real Estate API",
-      "cover_image": "assets/projects/real-estate-platform/admin-dashboard.svg",
+      "cover_image": "https://s3.envato.com/files/729853800/Screenshot/07_preview7.jpg",
       "short_description": "ASP.NET Core real-estate backend for listings, advanced search, bookings, favorites, reviews, and admin moderation.",
       "description": "A backend for a real-estate platform built with ASP.NET Core, Entity Framework Core, and SQL Server. The API supports property listing management, search and filtering, sale and rent scenarios, booking lifecycle workflows, favorites, reviews, image storage, and admin moderation with role-based access.",
       "features": [
@@ -326,39 +332,32 @@
       ],
       "media": [
         {
-          "type": "ui-preview",
-          "label": "Login",
-          "url": "assets/projects/real-estate-platform/login.svg"
+          "type": "reference-ui",
+          "label": "Bookings & Visits",
+          "url": "https://s3.envato.com/files/729853800/Screenshot/07_preview7.jpg",
+          "source_name": "PropertyNext",
+          "source_url": "https://s3.envato.com/files/729853800/Screenshot/07_preview7.jpg"
         },
         {
-          "type": "ui-preview",
-          "label": "Register",
-          "url": "assets/projects/real-estate-platform/register.svg"
+          "type": "reference-ui",
+          "label": "Listings & Map",
+          "url": "https://cdn.dribbble.com/userupload/46324691/file/003bd5a54428842b52a942aa1882ce9d.jpg?resize=1600x1200",
+          "source_name": "Real Estate Admin Dashboard",
+          "source_url": "https://cdn.dribbble.com/userupload/46324691/file/003bd5a54428842b52a942aa1882ce9d.jpg?resize=1600x1200"
         },
         {
-          "type": "ui-preview",
-          "label": "Admin Dashboard",
-          "url": "assets/projects/real-estate-platform/admin-dashboard.svg"
+          "type": "reference-ui",
+          "label": "Property Details",
+          "url": "https://cdn.dribbble.com/userupload/46376368/file/7b95157440e8e8c92f37fa0c3eb22053.png?resize=%7Bwidth%7Dx%7Bheight%7D&vertical=center",
+          "source_name": "Ventora Real Estate Dashboard",
+          "source_url": "https://cdn.dribbble.com/userupload/46376368/file/7b95157440e8e8c92f37fa0c3eb22053.png?resize=%7Bwidth%7Dx%7Bheight%7D&vertical=center"
         },
         {
-          "type": "ui-preview",
-          "label": "User Dashboard",
-          "url": "assets/projects/real-estate-platform/user-dashboard.svg"
-        },
-        {
-          "type": "ui-preview",
-          "label": "Property Management",
-          "url": "assets/projects/real-estate-platform/properties.svg"
-        },
-        {
-          "type": "project-media",
-          "label": "Property Media",
-          "url": "https://raw.githubusercontent.com/abdulRahman-muhamed07/RealEstate/master/wwwroot/images/properties/4403179e-6e56-4d9d-9134-4f4d13e1316d.jpg"
-        },
-        {
-          "type": "project-media",
-          "label": "Property Media",
-          "url": "https://raw.githubusercontent.com/abdulRahman-muhamed07/RealEstate/master/wwwroot/images/properties/bb2112cb-4023-49f9-b008-a00636b0e02f.jpg"
+          "type": "reference-ui",
+          "label": "Property Records",
+          "url": "https://gdm-catalog-fmapi-prod.imgix.net/ProductScreenshot/6276f669-1566-4192-af3f-122fc09a686f.jpeg?auto=format&q=50",
+          "source_name": "Propify Property Details",
+          "source_url": "https://gdm-catalog-fmapi-prod.imgix.net/ProductScreenshot/6276f669-1566-4192-af3f-122fc09a686f.jpeg?auto=format&q=50"
         }
       ],
       "id": "real-estate-platform",
