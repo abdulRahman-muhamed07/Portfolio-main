@@ -23,7 +23,6 @@
   },
   "projects_num": "3",
   "experience_num": "2",
-  "customers_num": "4",
   "skills": {
     "technical_skills": [
       "ASP.NET Core (Web API)",
@@ -140,7 +139,39 @@
           "type": "screenshot",
           "url": "assets/covers/dashboard.png"
         }
-      ]
+      ],
+      "id": "nexus-erp",
+      "engineering_highlights": [
+        {
+          "title": "Layered Architecture",
+          "text": "Clean Architecture separates Domain, Application, Infrastructure, and API responsibilities.",
+          "icon": "ti ti-building-arch"
+        },
+        {
+          "title": "Authentication",
+          "text": "JWT authentication with refresh-token flow supports secure session handling.",
+          "icon": "ti ti-shield-lock"
+        },
+        {
+          "title": "Data Layer",
+          "text": "Entity Framework Core and SQL Server support business data across sales, inventory, procurement, finance, and HR.",
+          "icon": "ti ti-database"
+        },
+        {
+          "title": "Delivery",
+          "text": "GitHub Actions automates restore, Release build, and test execution.",
+          "icon": "ti ti-brand-github"
+        }
+      ],
+      "architecture_flow": [
+        "Vanilla JS Frontend",
+        "ASP.NET Core API",
+        "Application Layer",
+        "Domain Layer",
+        "Infrastructure / EF Core",
+        "SQL Server"
+      ],
+      "slug": "nexus-erp"
     },
     {
       "name": "HR System Backend",
@@ -183,7 +214,39 @@
           "type": "screenshot",
           "url": "assets/covers/hr-system.svg"
         }
-      ]
+      ],
+      "id": "hr-system-backend",
+      "engineering_highlights": [
+        {
+          "title": "Layered Architecture",
+          "text": "Domain, Application, Infrastructure, and API layers keep business logic and infrastructure concerns separated.",
+          "icon": "ti ti-building-arch"
+        },
+        {
+          "title": "Security",
+          "text": "JWT/RBAC authentication is combined with PBKDF2 password hashing for the application security flow.",
+          "icon": "ti ti-shield-lock"
+        },
+        {
+          "title": "Reliability",
+          "text": "Centralized errors, rate limiting support, and health checks improve API resilience and observability.",
+          "icon": "ti ti-heart-rate-monitor"
+        },
+        {
+          "title": "Testing & CI",
+          "text": "Automated tests and GitHub Actions provide repeatable verification in the delivery pipeline.",
+          "icon": "ti ti-test-pipe"
+        }
+      ],
+      "architecture_flow": [
+        "Client",
+        "ASP.NET Core API",
+        "Application Layer",
+        "Domain Layer",
+        "Infrastructure / EF Core",
+        "SQL Server / SQLite"
+      ],
+      "slug": "hr-system-backend"
     },
     {
       "name": "Real Estate Platform",
@@ -228,7 +291,40 @@
           "type": "screenshot",
           "url": "https://raw.githubusercontent.com/abdulRahman-muhamed07/RealEstate/master/wwwroot/images/properties/bb2112cb-4023-49f9-b008-a00636b0e02f.jpg"
         }
-      ]
+      ],
+      "id": "real-estate-platform",
+      "engineering_highlights": [
+        {
+          "title": "Architecture",
+          "text": "The backend is organized around Clean Architecture and SOLID principles.",
+          "icon": "ti ti-building-arch"
+        },
+        {
+          "title": "Role-Based Security",
+          "text": "JWT authorization separates User, Vendor, and Admin access and business workflows.",
+          "icon": "ti ti-user-shield"
+        },
+        {
+          "title": "Search & Data",
+          "text": "Dynamic filtering, sorting, and pagination are implemented with optimized LINQ and EF Core queries.",
+          "icon": "ti ti-filter"
+        },
+        {
+          "title": "Workflow & Delivery",
+          "text": "Property approval and booking states are modeled as workflows, with Swagger/OpenAPI and Docker Compose support.",
+          "icon": "ti ti-workflow"
+        }
+      ],
+      "architecture_flow": [
+        "Client",
+        "ASP.NET Core API",
+        "Application Layer",
+        "Domain Rules",
+        "Infrastructure / EF Core",
+        "SQL Server"
+      ],
+      "slug": "real-estate-platform"
     }
-  ]
+  ],
+  "certifications_num": 4
 }
