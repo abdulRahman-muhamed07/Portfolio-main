@@ -187,39 +187,63 @@ function populateProjectData(project) {
     });
   }
 
-  // Generate gallery
-  const gallery = document.getElementById('projectGallery');
-  gallery.innerHTML = '';
-  if (project.media && project.media.length > 0) {
-    project.media.forEach(media => {
-      const galleryItem = document.createElement('div');
-      galleryItem.className = 'gallery-item';
+  // Initialize the four-image project carousel
+  const carouselMainImage = document.getElementById('carouselMainImage');
+  const carouselCaption = document.getElementById('carouselCaption');
+  const carouselSource = document.getElementById('carouselSource');
+  const carouselCounter = document.getElementById('carouselCounter');
+  const carouselThumbs = document.getElementById('carouselThumbs');
+  const carouselPrev = document.getElementById('carouselPrev');
+  const carouselNext = document.getElementById('carouselNext');
+  const referenceBadge = document.getElementById('carouselReferenceBadge');
 
-      if (media.type === 'screenshot' || media.type === 'gif' || media.type === 'ui-preview' || media.type === 'project-media') {
-        const typeLabel = media.label || (media.type === 'gif' ? 'Demo' : media.type === 'project-media' ? 'Project Media' : media.type === 'ui-preview' ? 'UI Preview' : 'Screenshot');
-        galleryItem.innerHTML = `
-          <img src="${escapeHtml(media.url)}" alt="${escapeHtml(project.name)} ${escapeHtml(typeLabel)}" loading="lazy" decoding="async" />
-          <div class="gallery-overlay">
-            <div class="gallery-type">${escapeHtml(typeLabel)}</div>
-          </div>
-        `;
-        gallery.appendChild(galleryItem);
-      }
+  const mediaItems = (project.media || []).filter(media => media.url).slice(0, 4);
+  let currentCarouselIndex = 0;
+
+  function renderCarouselImage(index) {
+    if (!carouselMainImage || !mediaItems.length) return;
+    currentCarouselIndex = (index + mediaItems.length) % mediaItems.length;
+    const media = mediaItems[currentCarouselIndex];
+
+    carouselMainImage.src = media.url;
+    carouselMainImage.alt = `${project.name} — ${media.label || 'UI reference'}`;
+    carouselCaption.textContent = media.label || 'UI Reference';
+    carouselSource.textContent = media.source_name ? `Source: ${media.source_name}` : 'External UI reference';
+    carouselCounter.textContent = `${currentCarouselIndex + 1} / ${mediaItems.length}`;
+    referenceBadge.textContent = media.type === 'reference-ui' ? 'Reference UI' : 'Project Media';
+
+    carouselThumbs?.querySelectorAll('.carousel-thumb').forEach((thumb, thumbIndex) => {
+      thumb.classList.toggle('active', thumbIndex === currentCarouselIndex);
+      thumb.setAttribute('aria-current', thumbIndex === currentCarouselIndex ? 'true' : 'false');
     });
-  } else {
-    // Always keep a useful visual state even when a project has no gallery media.
-    const galleryItem = document.createElement('div');
-    galleryItem.className = 'gallery-item';
-    galleryItem.innerHTML = `
-      <img src="${escapeHtml(project.cover_image)}" alt="${escapeHtml(project.name)} Cover" loading="lazy" decoding="async" />
-      <div class="gallery-overlay">
-        <div class="gallery-type">Cover</div>
-      </div>
-    `;
-    gallery.appendChild(galleryItem);
-  }
-}
 
+    if (carouselPrev) carouselPrev.style.display = mediaItems.length > 1 ? 'grid' : 'none';
+    if (carouselNext) carouselNext.style.display = mediaItems.length > 1 ? 'grid' : 'none';
+  }
+
+  if (carouselThumbs) {
+    carouselThumbs.innerHTML = '';
+    mediaItems.forEach((media, index) => {
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.className = 'carousel-thumb';
+      button.setAttribute('aria-label', `Show ${media.label || 'image'}`);
+      button.innerHTML = `
+        <img src="${escapeHtml(media.url)}" alt="" loading="lazy" decoding="async" />
+        <span>${escapeHtml(media.label || `Image ${index + 1}`)}</span>
+      `;
+      button.addEventListener('click', () => renderCarouselImage(index));
+      carouselThumbs.appendChild(button);
+    });
+  }
+
+  carouselPrev?.addEventListener('click', () => renderCarouselImage(currentCarouselIndex - 1));
+  carouselNext?.addEventListener('click', () => renderCarouselImage(currentCarouselIndex + 1));
+
+  renderCarouselImage(0);
+
+  // Keep the existing modal-gallery hooks from opening unrelated elements.
+  initializeFeatures();
 // Get project link icon based on type
 function escapeHtml(str) {
   return (str || '').toString().replace(/[&<>"']/g, s => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[s]));
@@ -492,105 +516,6 @@ function initializeBackToTop() {
       top: 0,
       behavior: 'smooth'
     });
-  });
-}
-
-// Gallery System
-function initializeGallery() {
-  const galleryItems = document.querySelectorAll('.gallery-item');
-  const imageModal = document.getElementById('imageModal');
-  const modalImage = document.getElementById('modalImage');
-  const modalClose = document.getElementById('imageModalClose');
-  const modalPrev = document.getElementById('modalPrev');
-  const modalNext = document.getElementById('modalNext');
-
-  if (!imageModal || galleryItems.length === 0) return;
-
-  let currentImageIndex = 0;
-  const images = Array.from(galleryItems).filter(item =>
-    item.querySelector('img') && !item.querySelector('video')
-  );
-
-  // Open modal
-  galleryItems.forEach((item, index) => {
-    const img = item.querySelector('img');
-    const video = item.querySelector('video');
-
-    if (img && !video) {
-      item.addEventListener('click', () => {
-        currentImageIndex = images.indexOf(item);
-        openImageModal(img.src, img.alt);
-      });
-    }
-  });
-
-  function openImageModal(src, alt) {
-    modalImage.src = src;
-    modalImage.alt = alt;
-    imageModal.classList.add('active');
-    document.body.style.overflow = 'hidden';
-
-    // Update navigation buttons
-    modalPrev.style.display = currentImageIndex > 0 ? 'flex' : 'none';
-    modalNext.style.display = currentImageIndex < images.length - 1 ? 'flex' : 'none';
-  }
-
-  function closeImageModal() {
-    imageModal.classList.remove('active');
-    document.body.style.overflow = '';
-  }
-
-  function showPrevImage() {
-    if (currentImageIndex > 0) {
-      currentImageIndex--;
-      const img = images[currentImageIndex].querySelector('img');
-      modalImage.src = img.src;
-      modalImage.alt = img.alt;
-
-      modalPrev.style.display = currentImageIndex > 0 ? 'flex' : 'none';
-      modalNext.style.display = 'flex';
-    }
-  }
-
-  function showNextImage() {
-    if (currentImageIndex < images.length - 1) {
-      currentImageIndex++;
-      const img = images[currentImageIndex].querySelector('img');
-      modalImage.src = img.src;
-      modalImage.alt = img.alt;
-
-      modalNext.style.display = currentImageIndex < images.length - 1 ? 'flex' : 'none';
-      modalPrev.style.display = 'flex';
-    }
-  }
-
-  // Event listeners
-  modalClose.addEventListener('click', closeImageModal);
-  modalPrev.addEventListener('click', showPrevImage);
-  modalNext.addEventListener('click', showNextImage);
-
-  // Close on backdrop click
-  imageModal.addEventListener('click', (e) => {
-    if (e.target === imageModal || e.target.classList.contains('image-modal__backdrop')) {
-      closeImageModal();
-    }
-  });
-
-  // Keyboard navigation
-  document.addEventListener('keydown', (e) => {
-    if (imageModal.classList.contains('active')) {
-      switch (e.key) {
-        case 'Escape':
-          closeImageModal();
-          break;
-        case 'ArrowLeft':
-          showPrevImage();
-          break;
-        case 'ArrowRight':
-          showNextImage();
-          break;
-      }
-    }
   });
 }
 
