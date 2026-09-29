@@ -31,18 +31,22 @@ async function loadProjectData() {
     const data = await response.json();
     const projects = data.projects || [];
 
-    // Find the project
+    // Find the project using a stable id/slug, with a name fallback for older links.
     let project = null;
     if (projectId) {
-      project = projects[parseInt(projectId)];
-    } else {
+      project = projects.find(p => String(p.id || p.slug) === String(projectId));
+      if (!project && /^\d+$/.test(projectId)) {
+        project = projects[parseInt(projectId)];
+      }
+    }
+    if (!project && projectName) {
       project = projects.find(p =>
-        p.name.toLowerCase().replace(/[^a-z0-9\s-]/g, '').replace(/\s+/g, '-').trim() === projectName.toLowerCase()
+        (p.slug || p.name.toLowerCase().replace(/[^a-z0-9\s-]/g, '').replace(/\s+/g, '-').trim()).toLowerCase() === projectName.toLowerCase()
       );
     }
 
     if (!project) {
-      showError('Project not found');
+      showError('Project not found', 'The requested project does not exist or the link is no longer valid.');
       return;
     }
 
@@ -63,17 +67,29 @@ async function loadProjectData() {
 }
 
 // Show error message
-function showError(message) {
+function showError(title = 'Project Not Found', message = 'The requested project could not be found.') {
   document.getElementById('loadingSpinner').style.display = 'none';
   document.getElementById('errorMessage').style.display = 'flex';
   document.getElementById('mainContent').style.display = 'none';
+  document.getElementById('errorTitle')?.textContent = title;
+  document.getElementById('errorDescription')?.textContent = message;
 }
 
 // Populate project data
 function populateProjectData(project) {
-  // Update page title
-  document.getElementById('pageTitle').textContent = `${project.name} | Abdelrahman Mohamed`;
-  document.title = `${project.name} | Abdelrahman Mohamed`;
+  // Update page title and social preview metadata
+  const pageTitle = `${project.name} | Abdelrahman Elsepaay`;
+  const metaDescription = project.short_description || project.description || 'Backend project by Abdelrahman Elsepaay.';
+  document.getElementById('pageTitle').textContent = pageTitle;
+  document.title = pageTitle;
+  document.getElementById('metaDescription')?.setAttribute('content', metaDescription);
+  document.getElementById('ogTitle')?.setAttribute('content', pageTitle);
+  document.getElementById('ogDescription')?.setAttribute('content', metaDescription);
+  document.getElementById('twitterTitle')?.setAttribute('content', pageTitle);
+  document.getElementById('twitterDescription')?.setAttribute('content', metaDescription);
+  document.getElementById('canonicalLink')?.setAttribute('href', window.location.href);
+  document.getElementById('ogImage')?.setAttribute('content', new URL(project.cover_image, window.location.href).href);
+  document.getElementById('twitterImage')?.setAttribute('content', new URL(project.cover_image, window.location.href).href);
 
   // Update hero section
   document.getElementById('projectTitle').textContent = project.name;
@@ -122,6 +138,41 @@ function populateProjectData(project) {
     });
   }
 
+  // Generate engineering highlights
+  const engineeringGrid = document.getElementById('engineeringGrid');
+  if (engineeringGrid) {
+    engineeringGrid.innerHTML = '';
+    (project.engineering_highlights || []).forEach(item => {
+      const card = document.createElement('article');
+      card.className = 'engineering-card';
+      card.innerHTML = `
+        <div class="engineering-card__icon"><i class="${escapeHtml(item.icon || 'ti ti-code')}"></i></div>
+        <div>
+          <h3>${escapeHtml(item.title)}</h3>
+          <p>${escapeHtml(item.text)}</p>
+        </div>`;
+      engineeringGrid.appendChild(card);
+    });
+  }
+
+  // Generate architecture flow
+  const architectureFlow = document.getElementById('architectureFlow');
+  if (architectureFlow) {
+    architectureFlow.innerHTML = '';
+    (project.architecture_flow || []).forEach((step, index, steps) => {
+      const node = document.createElement('div');
+      node.className = 'architecture-node';
+      node.innerHTML = `<span>${index + 1}</span><strong>${escapeHtml(step)}</strong>`;
+      architectureFlow.appendChild(node);
+      if (index < steps.length - 1) {
+        const arrow = document.createElement('div');
+        arrow.className = 'architecture-arrow';
+        arrow.innerHTML = '<i class="ti ti-arrow-right"></i>';
+        architectureFlow.appendChild(arrow);
+      }
+    });
+  }
+
   // Generate technologies
   const techGrid = document.getElementById('techGrid');
   techGrid.innerHTML = '';
@@ -144,7 +195,7 @@ function populateProjectData(project) {
 
       if (media.type === 'screenshot' || media.type === 'gif') {
         galleryItem.innerHTML = `
-          <img src="${media.url}" alt="${project.name} ${media.type}" loading="lazy" />
+          <img src="${escapeHtml(media.url)}" alt="${escapeHtml(project.name)} ${escapeHtml(media.type)}" loading="lazy" decoding="async" />
           <div class="gallery-overlay">
             <div class="gallery-type">${media.type === 'gif' ? 'Demo' : 'Screenshot'}</div>
           </div>
@@ -201,53 +252,31 @@ function getFeatureIcon(feature) {
   if (lower.includes('hr') || lower.includes('employee')) return 'ti ti-users';
 
   const iconMap = {
-    'High-quality video courses': 'ti ti-video',
-    'Secure authentication': 'ti ti-shield-check',
-    'Advanced video streaming': 'ti ti-player-play',
-    'Exams & assessments': 'ti ti-clipboard-check',
-    'Transaction management': 'ti ti-credit-card',
-    'Favorites & personalization': 'ti ti-heart',
-    'Quran Recitation': 'ti ti-book-2',
-    'Hadith Collections': 'ti ti-books',
-    'Azkar': 'ti ti-rosette',
-    'Qibla Direction': 'ti ti-compass',
-    'Zakat Calculator': 'ti ti-calculator',
-    'Custom-built Islamic Chatbot': 'ti ti-message-chatbot',
-    'Light & Dark Mode Support': 'ti ti-moon-stars',
-    'Speech-to-text exercises': 'ti ti-microphone',
-    'Friendly text-to-speech output': 'ti ti-volume',
-    'Handwriting practice': 'ti ti-writing',
-    'Lottie animations': 'ti ti-player-play',
-    'Firebase-synced content': 'ti ti-cloud',
-    'AI-powered adaptive learning': 'ti ti-brain',
-    'Interactive games': 'ti ti-device-gamepad-2',
-    'Bilingual support': 'ti ti-language',
-    'Disease search': 'ti ti-search',
-    'Emergency case guides': 'ti ti-medical-cross',
-    'Built-in emergency contacts': 'ti ti-phone',
-    'Hospital locator': 'ti ti-map-pin',
-    'First aid videos': 'ti ti-video',
-    'Daily health tips': 'ti ti-bulb',
-    'Medication tracking': 'ti ti-pill',
-    'Appointment reminders': 'ti ti-calendar',
-    'Local notifications': 'ti ti-bell',
-    'User profile management': 'ti ti-user',
-    'Account overview': 'ti ti-chart-pie',
-    'Transaction history': 'ti ti-history',
-    'Money transfers': 'ti ti-arrows-exchange',
-    'Bill payments': 'ti ti-receipt',
-    'Financial analytics': 'ti ti-chart-line',
-    'Responsive design': 'ti ti-device-mobile'
+    'workflow': 'ti ti-route',
+    'architecture': 'ti ti-building-arch',
+    'jwt': 'ti ti-shield-lock',
+    'role-based': 'ti ti-user-shield',
+    'sql': 'ti ti-database',
+    'health': 'ti ti-heart-rate-monitor',
+    'docker': 'ti ti-brand-docker',
+    'swagger': 'ti ti-file-type-json',
+    'booking': 'ti ti-calendar-check',
+    'favorite': 'ti ti-heart',
+    'review': 'ti ti-star',
+    'invoice': 'ti ti-receipt',
+    'payment': 'ti ti-credit-card',
+    'inventory': 'ti ti-package',
+    'employee': 'ti ti-users',
+    'test': 'ti ti-test-pipe',
+    'ci': 'ti ti-brand-github'
   };
 
-  // Find matching feature by checking if any key is included in the feature string
+  // Find matching feature by keyword.
   for (const [key, icon] of Object.entries(iconMap)) {
-    if (feature.toLowerCase().includes(key.toLowerCase())) {
-      return icon;
-    }
+    if (lower.includes(key)) return icon;
   }
 
-  return 'ti ti-star'; // Default icon
+  return 'ti ti-star';
 }
 
 // Initialize all features after content loads
