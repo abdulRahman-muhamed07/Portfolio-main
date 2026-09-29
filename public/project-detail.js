@@ -22,14 +22,15 @@ async function loadProjectData() {
       return;
     }
 
-    // Fetch data from JSON
-    const response = await fetch('data.json');
+    // Fetch data from a stable URL so the project page works from any deployed path.
+    const dataUrl = new URL('/data.json?v=20260930', window.location.origin).href;
+    const response = await fetch(dataUrl, { cache: 'no-store' });
     if (!response.ok) {
-      throw new Error('Failed to load project data');
+      throw new Error(`Failed to load data.json (HTTP ${response.status})`);
     }
 
     const data = await response.json();
-    const projects = data.projects || [];
+    const projects = Array.isArray(data.projects) ? data.projects : [];
 
     // Find the project using a stable id/slug, with a name fallback for older links.
     let project = null;
@@ -41,28 +42,34 @@ async function loadProjectData() {
     }
     if (!project && projectName) {
       project = projects.find(p =>
-        (p.slug || p.name.toLowerCase().replace(/[^a-z0-9\s-]/g, '').replace(/\s+/g, '-').trim()).toLowerCase() === projectName.toLowerCase()
+        String(p.slug || p.name)
+          .toLowerCase()
+          .replace(/[^a-z0-9\s-]/g, '')
+          .replace(/\s+/g, '-')
+          .trim() === String(projectName).toLowerCase()
       );
     }
 
     if (!project) {
-      showError('Project not found', 'The requested project does not exist or the link is no longer valid.');
-      return;
+      throw new Error(`Project not found for id="${projectId || ''}" project="${projectName || ''}"`);
     }
 
-    // Populate the page with project data
+    // Populate first so the page is usable even if optional visual effects fail.
     populateProjectData(project);
 
-    // Hide loading spinner and show content
     document.getElementById('loadingSpinner').style.display = 'none';
     document.getElementById('mainContent').style.display = 'block';
 
-    // Initialize all features after content is loaded
-    initializeFeatures();
+    // UI effects are optional; a failure here must not turn a valid project into a loading error.
+    try {
+      initializeFeatures();
+    } catch (featureError) {
+      console.warn('Optional project-page enhancement failed:', featureError);
+    }
 
   } catch (error) {
     console.error('Error loading project data:', error);
-    showError('Failed to load project data');
+    showError('Failed to load project data', error?.message || 'The project data could not be loaded.');
   }
 }
 
