@@ -71,8 +71,10 @@ function showError(title = 'Project Not Found', message = 'The requested project
   document.getElementById('loadingSpinner').style.display = 'none';
   document.getElementById('errorMessage').style.display = 'flex';
   document.getElementById('mainContent').style.display = 'none';
-  document.getElementById('errorTitle')?.textContent = title;
-  document.getElementById('errorDescription')?.textContent = message;
+  const errorTitle = document.getElementById('errorTitle');
+  const errorDescription = document.getElementById('errorDescription');
+  if (errorTitle) errorTitle.textContent = title;
+  if (errorDescription) errorDescription.textContent = message;
 }
 
 // Populate project data
