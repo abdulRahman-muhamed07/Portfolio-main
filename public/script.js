@@ -144,7 +144,9 @@ class ParticleSystem {
 
 // Initialize particle system
 const canvas = document.getElementById('particleCanvas');
-if (canvas) new ParticleSystem(canvas);
+if (canvas && !window.matchMedia('(prefers-reduced-motion: reduce)').matches && window.innerWidth > 720) {
+  new ParticleSystem(canvas);
+}
 
 // 2. Interactive Cursor Follower
 let cursorFollower = document.getElementById('cursorFollower');
@@ -396,7 +398,7 @@ async function loadDataWithData(data) {
 
   document.getElementById('projectsNum').textContent = data.projects.length;
   document.getElementById('experienceNum').textContent = data.experience_num;
-  document.getElementById('customersNum').textContent = data.customers_num;
+  document.getElementById('customersNum').textContent = data.certifications_num ?? (data.certifications || []).length;
 
   document.getElementById('aboutMe').textContent = data.personal_info.about_me;
   document.getElementById('location').textContent = data.personal_info.location;
@@ -485,11 +487,12 @@ async function loadDataWithData(data) {
     ).join('');
 
     const githubLink = (p.links || []).find(l => l.type === 'GitHub');
+    const projectId = p.id || p.slug || String(idx);
 
     const card = el(`
-      <article class="project" data-aos="fade-up" data-aos-delay="${(idx % 3) * 100}" tabindex="0" role="button" aria-label="View ${sanitize(p.name)} details">
+      <article class="project" data-project-id="${sanitize(projectId)}" data-aos="fade-up" data-aos-delay="${(idx % 3) * 100}" tabindex="0" role="button" aria-label="View ${sanitize(p.name)} details">
         <div class="project__cover">
-          <img src="${sanitize(p.cover_image)}" alt="${sanitize(p.name)} project preview" loading="lazy" />
+          <img src="${sanitize(p.cover_image)}" alt="${sanitize(p.name)} project preview" loading="lazy" decoding="async" />
           <div class="project__cover-overlay"><i class="ti ti-arrow-up-right"></i></div>
         </div>
         <div class="project__body">
@@ -501,24 +504,24 @@ async function loadDataWithData(data) {
           <div class="project__meta">${sanitize(p.short_description)}</div>
           <div class="project-techs">${techPreview}</div>
           <div class="project__actions">
-            <span class="project__open"><i class="ti ti-arrow-right"></i> View Details</span>
-            ${githubLink ? `<a class="link" href="${sanitize(githubLink.url)}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()"><i class="ti ti-brand-github"></i><span>GitHub</span></a>` : ''}
+            <a class="project__open project-action-link" href="project-details.html?id=${encodeURIComponent(projectId)}">
+              <i class="ti ti-arrow-right"></i> View Project
+            </a>
+            ${githubLink ? `<a class="link project-action-link" href="${sanitize(githubLink.url)}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()"><i class="ti ti-brand-github"></i><span>View on GitHub</span></a>` : ''}
           </div>
         </div>
       </article>`);
 
     const openProject = () => {
-      const projectName = p.name.toLowerCase()
-        .replace(/[^a-z0-9\s-]/g, '')
-        .replace(/\s+/g, '-')
-        .replace(/-+/g, '-')
-        .trim();
-      window.location.href = `project-details.html?project=${encodeURIComponent(projectName)}`;
+      window.location.href = `project-details.html?id=${encodeURIComponent(projectId)}`;
     };
 
-    card.addEventListener('click', openProject);
+    card.addEventListener('click', e => {
+      if (e.target.closest('a')) return;
+      openProject();
+    });
     card.addEventListener('keydown', e => {
-      if (e.key === 'Enter' || e.key === ' ') {
+      if ((e.key === 'Enter' || e.key === ' ') && !e.target.closest('a')) {
         e.preventDefault();
         openProject();
       }
@@ -562,21 +565,6 @@ const skillIcons = {
   'Bootstrap': 'ti ti-brand-bootstrap',
   'default': 'ti ti-code'
 };
-
-// Get skill proficiency based on keyword matching
-function getSkillProficiency(skill) {
-  const proficiencyMap = {
-    'Flutter': 95, 'Dart': 92, 'Firebase': 88, 'Bloc': 85, 'Provider': 82,
-    'Riverpod': 88, 'REST': 86, 'SQLite': 78, 'Hive': 80, 'GoRouter': 82,
-    'Architecture': 82, 'MVVM': 84, 'Clean': 86, 'OOP': 88, 'SOLID': 84,
-    'Git': 85, 'Testing': 76, 'UI': 86, 'Widget': 84, 'API': 80
-  };
-  
-  for (const [key, value] of Object.entries(proficiencyMap)) {
-    if (skill.toLowerCase().includes(key.toLowerCase())) return value;
-  }
-  return 72 + Math.floor(Math.random() * 8);
-}
 
 // Get skill icon
 function getSkillIcon(skill) {
