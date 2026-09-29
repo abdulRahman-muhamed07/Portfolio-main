@@ -416,7 +416,9 @@ async function loadDataWithData(data) {
   emailCTA.href = emailHref; whatsappCTA.href = whatsappHref;
 
   const cv = document.getElementById('cvDownload');
-  cv.href = data.personal_info.cv_download;
+  if (cv && data.personal_info.cv_download) {
+    cv.href = data.personal_info.cv_download;
+  }
   
   // LinkedIn link in contact section
   const linkedinLink = data.personal_info.social_links.find(link => link.platform === 'LinkedIn');
@@ -586,9 +588,9 @@ function getSkillLevel(proficiency) {
 function categorizeSkills(skills) {
   const categories = {
     backend: { keywords: ['ASP.NET', 'MVC', 'C#', 'REST', 'SignalR', 'Middleware', 'Microservices', 'JWT', 'RBAC'], skills: [] },
-    architecture: { keywords: ['SQL', 'MySQL', 'Entity Framework', 'EF Core', 'LINQ', 'Dapper', 'Eloquent', 'Indexing', 'Clean Architecture', 'SOLID', 'Dependency Injection', 'Design Patterns', 'Repository', 'Unit of Work'], skills: [] },
+    architecture: { keywords: ['SQL', 'MySQL', 'Entity Framework', 'EF Core', 'LINQ', 'Dapper', 'Indexing', 'Clean Architecture', 'SOLID', 'Dependency Injection', 'Design Patterns', 'Repository', 'Unit of Work'], skills: [] },
     testing: { keywords: ['xUnit', 'Docker', 'Git', 'GitHub Actions', 'CI/CD', 'Postman', 'Swagger'], skills: [] },
-    frontend: { keywords: ['Laravel', 'Angular', 'TypeScript', 'JavaScript', 'HTML5', 'CSS3', 'Bootstrap'], skills: [] }
+    frontend: { keywords: ['Laravel', 'Angular', 'TypeScript', 'JavaScript', 'HTML5', 'CSS3', 'Bootstrap', 'Eloquent'], skills: [] }
   };
 
   skills.forEach(skill => {
@@ -599,7 +601,7 @@ function categorizeSkills(skills) {
         categorized = true;
       }
     }
-    if (!categorized) categories.testing.skills.push(skill);
+    if (!categorized) categories.frontend.skills.push(skill);
   });
 
   return categories;

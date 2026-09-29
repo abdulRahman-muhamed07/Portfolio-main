@@ -18,29 +18,28 @@
         "url": "https://www.linkedin.com/in/abdulrahmanelsepaay"
       }
     ],
-    "cv_download": "assets/downloads/AbdelrahmanElSebaay.pdf",
-    "about_me": "Back-End Developer with hands-on experience in .NET / ASP.NET Core, specializing in building high-performance RESTful Web APIs using Clean Architecture, SOLID principles, and Design Patterns. Proven track record of optimizing data retrieval performance and implementing secure JWT-based (RBAC) authentication. Experienced in Docker containerization and CI/CD pipelines."
+    "cv_download": "cv.html",
+    "about_me": "Back-End Developer with 2+ years of hands-on backend development exposure across structured .NET training, professional roles, and real-world projects. Specializing in ASP.NET Core Web APIs, Clean Architecture, SOLID principles, secure JWT/RBAC authentication, SQL/EF Core data access, performance optimization, and maintainable business workflows. Experienced with Docker, automated testing, and CI/CD."
   },
   "projects_num": "3",
   "experience_num": "2",
   "skills": {
     "technical_skills": [
-      "ASP.NET Core (Web API)",
-      "MVC",
       "C#",
+      "ASP.NET Core (Web API)",
       "RESTful APIs",
-      "SignalR",
+      "MVC",
       "Middleware",
-      "Microservices",
       "JWT",
       "RBAC",
-      "SQL Server",
-      "MySQL",
+      "SignalR",
+      "Microservices",
       "Entity Framework Core",
       "LINQ",
-      "Dapper",
-      "Eloquent",
+      "SQL Server",
       "Indexing & Query Optimization",
+      "Dapper",
+      "MySQL",
       "Clean Architecture",
       "SOLID Principles",
       "Dependency Injection",
@@ -53,12 +52,13 @@
       "CI/CD",
       "Postman",
       "Swagger",
-      "Laravel",
+      "JavaScript (ES6+)",
       "Angular",
       "TypeScript",
-      "JavaScript (ES6+)",
       "HTML5/CSS3",
-      "Bootstrap"
+      "Bootstrap",
+      "Laravel",
+      "Eloquent"
     ]
   },
   "education": [
@@ -103,7 +103,7 @@
       "name": "Nexus ERP",
       "role": "Back-End / Full-Stack",
       "category": "Enterprise ERP",
-      "cover_image": "assets/covers/dashboard.png",
+      "cover_image": "assets/projects/nexus-erp/admin-dashboard.svg",
       "short_description": "Full-stack business management platform with an ASP.NET Core backend and a standalone Vanilla JavaScript frontend.",
       "description": "Nexus ERP is a full-stack business management system built around Clean Architecture. The backend uses ASP.NET Core Web API with Entity Framework Core and relational persistence, while the frontend is maintained separately with Vanilla HTML, CSS, and JavaScript. The platform brings sales, inventory, procurement, HR, finance, payments, reporting, notifications, and audit logging into one business suite.",
       "features": [
@@ -136,8 +136,29 @@
       ],
       "media": [
         {
-          "type": "screenshot",
-          "url": "assets/covers/dashboard.png"
+          "type": "ui-preview",
+          "label": "Login",
+          "url": "assets/projects/nexus-erp/login.svg"
+        },
+        {
+          "type": "ui-preview",
+          "label": "Register",
+          "url": "assets/projects/nexus-erp/register.svg"
+        },
+        {
+          "type": "ui-preview",
+          "label": "Admin Dashboard",
+          "url": "assets/projects/nexus-erp/admin-dashboard.svg"
+        },
+        {
+          "type": "ui-preview",
+          "label": "User Dashboard",
+          "url": "assets/projects/nexus-erp/user-dashboard.svg"
+        },
+        {
+          "type": "ui-preview",
+          "label": "Inventory & Orders",
+          "url": "assets/projects/nexus-erp/management.svg"
         }
       ],
       "id": "nexus-erp",
@@ -177,7 +198,7 @@
       "name": "HR System Backend",
       "role": "Back-End",
       "category": "HR Management API",
-      "cover_image": "assets/covers/hr-system.svg",
+      "cover_image": "assets/projects/hr-system-backend/admin-dashboard.svg",
       "short_description": "Production-style HR management API built with ASP.NET Core and Clean Architecture for secure, maintainable employee workflows.",
       "description": "A backend-focused HR management API built with Clean Architecture and separation of concerns. The system is organized into Domain, Application, Infrastructure, and API layers and includes secure authentication, role-based access control, centralized error handling, repository abstractions, EF Core persistence, pagination and search, rate limiting support, health checks, CI, and automated tests.",
       "features": [
@@ -211,8 +232,29 @@
       ],
       "media": [
         {
-          "type": "screenshot",
-          "url": "assets/covers/hr-system.svg"
+          "type": "ui-preview",
+          "label": "Login",
+          "url": "assets/projects/hr-system-backend/login.svg"
+        },
+        {
+          "type": "ui-preview",
+          "label": "Register",
+          "url": "assets/projects/hr-system-backend/register.svg"
+        },
+        {
+          "type": "ui-preview",
+          "label": "Admin Dashboard",
+          "url": "assets/projects/hr-system-backend/admin-dashboard.svg"
+        },
+        {
+          "type": "ui-preview",
+          "label": "Employee Dashboard",
+          "url": "assets/projects/hr-system-backend/employee-dashboard.svg"
+        },
+        {
+          "type": "ui-preview",
+          "label": "Employee Management",
+          "url": "assets/projects/hr-system-backend/employees.svg"
         }
       ],
       "id": "hr-system-backend",
@@ -252,7 +294,7 @@
       "name": "Real Estate Platform",
       "role": "Back-End",
       "category": "Real Estate API",
-      "cover_image": "assets/covers/real-estate.svg",
+      "cover_image": "assets/projects/real-estate-platform/admin-dashboard.svg",
       "short_description": "ASP.NET Core real-estate backend for listings, advanced search, bookings, favorites, reviews, and admin moderation.",
       "description": "A backend for a real-estate platform built with ASP.NET Core, Entity Framework Core, and SQL Server. The API supports property listing management, search and filtering, sale and rent scenarios, booking lifecycle workflows, favorites, reviews, image storage, and admin moderation with role-based access.",
       "features": [
@@ -284,11 +326,38 @@
       ],
       "media": [
         {
-          "type": "screenshot",
+          "type": "ui-preview",
+          "label": "Login",
+          "url": "assets/projects/real-estate-platform/login.svg"
+        },
+        {
+          "type": "ui-preview",
+          "label": "Register",
+          "url": "assets/projects/real-estate-platform/register.svg"
+        },
+        {
+          "type": "ui-preview",
+          "label": "Admin Dashboard",
+          "url": "assets/projects/real-estate-platform/admin-dashboard.svg"
+        },
+        {
+          "type": "ui-preview",
+          "label": "User Dashboard",
+          "url": "assets/projects/real-estate-platform/user-dashboard.svg"
+        },
+        {
+          "type": "ui-preview",
+          "label": "Property Management",
+          "url": "assets/projects/real-estate-platform/properties.svg"
+        },
+        {
+          "type": "project-media",
+          "label": "Property Media",
           "url": "https://raw.githubusercontent.com/abdulRahman-muhamed07/RealEstate/master/wwwroot/images/properties/4403179e-6e56-4d9d-9134-4f4d13e1316d.jpg"
         },
         {
-          "type": "screenshot",
+          "type": "project-media",
+          "label": "Property Media",
           "url": "https://raw.githubusercontent.com/abdulRahman-muhamed07/RealEstate/master/wwwroot/images/properties/bb2112cb-4023-49f9-b008-a00636b0e02f.jpg"
         }
       ],

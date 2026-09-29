@@ -195,22 +195,23 @@ function populateProjectData(project) {
       const galleryItem = document.createElement('div');
       galleryItem.className = 'gallery-item';
 
-      if (media.type === 'screenshot' || media.type === 'gif') {
+      if (media.type === 'screenshot' || media.type === 'gif' || media.type === 'ui-preview' || media.type === 'project-media') {
+        const typeLabel = media.label || (media.type === 'gif' ? 'Demo' : media.type === 'project-media' ? 'Project Media' : media.type === 'ui-preview' ? 'UI Preview' : 'Screenshot');
         galleryItem.innerHTML = `
-          <img src="${escapeHtml(media.url)}" alt="${escapeHtml(project.name)} ${escapeHtml(media.type)}" loading="lazy" decoding="async" />
+          <img src="${escapeHtml(media.url)}" alt="${escapeHtml(project.name)} ${escapeHtml(typeLabel)}" loading="lazy" decoding="async" />
           <div class="gallery-overlay">
-            <div class="gallery-type">${media.type === 'gif' ? 'Demo' : 'Screenshot'}</div>
+            <div class="gallery-type">${escapeHtml(typeLabel)}</div>
           </div>
         `;
         gallery.appendChild(galleryItem);
       }
     });
   } else {
-    // Show cover image if no media available
+    // Always keep a useful visual state even when a project has no gallery media.
     const galleryItem = document.createElement('div');
     galleryItem.className = 'gallery-item';
     galleryItem.innerHTML = `
-      <img src="${project.cover_image}" alt="${project.name} Cover" loading="lazy" />
+      <img src="${escapeHtml(project.cover_image)}" alt="${escapeHtml(project.name)} Cover" loading="lazy" decoding="async" />
       <div class="gallery-overlay">
         <div class="gallery-type">Cover</div>
       </div>

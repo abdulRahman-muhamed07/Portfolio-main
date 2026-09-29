@@ -2473,3 +2473,25 @@ section.section {
     transition-duration: .01ms !important;
   }
 }
+
+
+/* ===== Backend experience emphasis ===== */
+.hero-experience {
+  margin: .8rem 0 0;
+  display: inline-flex;
+  align-items: center;
+  gap: .45rem;
+  color: var(--accent);
+  font-weight: 800;
+  font-size: .9rem;
+}
+.hero-experience i {
+  font-size: 1rem;
+}
+
+.project__cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
