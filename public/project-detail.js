@@ -242,8 +242,8 @@ function populateProjectData(project) {
 
   renderCarouselImage(0);
 
-  // Keep the existing modal-gallery hooks from opening unrelated elements.
-  initializeFeatures();
+}
+
 // Get project link icon based on type
 function escapeHtml(str) {
   return (str || '').toString().replace(/[&<>"']/g, s => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[s]));
