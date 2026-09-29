@@ -335,8 +335,7 @@ function initializeFeatures() {
   // Initialize back to top button
   initializeBackToTop();
 
-  // Initialize gallery
-  initializeGallery();
+  // The project page now uses the dedicated four-image carousel initialized in populateProjectData().
 
   // Set current year
   document.getElementById('year').textContent = new Date().getFullYear();
