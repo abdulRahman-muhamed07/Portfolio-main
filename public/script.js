@@ -492,7 +492,7 @@ async function loadDataWithData(data) {
     const projectId = p.id || p.slug || String(idx);
 
     const card = el(`
-      <article class="project" data-project-id="${sanitize(projectId)}" data-aos="fade-up" data-aos-delay="${(idx % 3) * 100}" tabindex="0" role="button" aria-label="View ${sanitize(p.name)} details">
+      <article class="project" data-project-id="${sanitize(projectId)}" data-aos="fade-up" data-aos-delay="${(idx % 3) * 100}" tabindex="0" role="button" aria-label="Click to explore ${sanitize(p.name)}">
         <div class="project__cover">
           <img src="${sanitize(p.cover_image)}" alt="${sanitize(p.name)} project preview" loading="lazy" decoding="async" />
           <div class="project__cover-overlay"><i class="ti ti-arrow-up-right"></i></div>
@@ -507,7 +507,7 @@ async function loadDataWithData(data) {
           <div class="project-techs">${techPreview}</div>
           <div class="project__actions">
             <a class="project__open project-action-link" href="project-details.html?id=${encodeURIComponent(projectId)}">
-              <i class="ti ti-arrow-right"></i> View Project
+              <i class="ti ti-arrow-right"></i> Click to Explore
             </a>
             ${githubLink ? `<a class="link project-action-link" href="${sanitize(githubLink.url)}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()"><i class="ti ti-brand-github"></i><span>View on GitHub</span></a>` : ''}
           </div>
