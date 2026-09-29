@@ -205,6 +205,10 @@ function populateProjectData(project) {
     currentCarouselIndex = (index + mediaItems.length) % mediaItems.length;
     const media = mediaItems[currentCarouselIndex];
 
+    carouselMainImage.onerror = () => {
+      carouselMainImage.onerror = null;
+      carouselMainImage.src = project.cover_image;
+    };
     carouselMainImage.src = media.url;
     carouselMainImage.alt = `${project.name} — ${media.label || 'UI reference'}`;
     carouselCaption.textContent = media.label || 'UI Reference';
