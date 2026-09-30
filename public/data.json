@@ -103,7 +103,7 @@
       "name": "Nexus ERP",
       "role": "Back-End / Full-Stack",
       "category": "Enterprise ERP",
-      "cover_image": "https://res.cloudinary.com/upwork-cloud/image/upload/c_scale%2Cw_1000/v1699182873/catalog/1720839747095412736/luiqpawlx2nart7kyuox.jpg",
+      "cover_image": "https://erpnext.com/files/accounts-dashboard-1335c7cb.png",
       "short_description": "Full-stack business management platform with an ASP.NET Core backend and a standalone Vanilla JavaScript frontend.",
       "description": "Nexus ERP is a full-stack business management system built around Clean Architecture. The backend uses ASP.NET Core Web API with Entity Framework Core and relational persistence, while the frontend is maintained separately with Vanilla HTML, CSS, and JavaScript. The platform brings sales, inventory, procurement, HR, finance, payments, reporting, notifications, and audit logging into one business suite.",
       "features": [
@@ -145,23 +145,23 @@
         {
           "type": "reference-ui",
           "label": "Admin Dashboard",
-          "url": "https://res.cloudinary.com/upwork-cloud/image/upload/c_scale%2Cw_1000/v1699182873/catalog/1720839747095412736/luiqpawlx2nart7kyuox.jpg",
-          "source_name": "ERPNext Selling Dashboard",
-          "source_url": "https://res.cloudinary.com/upwork-cloud/image/upload/c_scale%2Cw_1000/v1699182873/catalog/1720839747095412736/luiqpawlx2nart7kyuox.jpg"
+          "url": "https://erpnext.com/files/accounts-dashboard-1335c7cb.png",
+          "source_name": "ERPNext",
+          "source_url": "https://erpnext.com/files/accounts-dashboard-1335c7cb.png"
         },
         {
           "type": "reference-ui",
-          "label": "User Portal / Sales Order",
+          "label": "Customer Portal",
           "url": "https://erpnext.com/files/customer-accessef27fc.png",
           "source_name": "ERPNext Customer Portal",
           "source_url": "https://erpnext.com/files/customer-accessef27fc.png"
         },
         {
           "type": "reference-ui",
-          "label": "Inventory / Stock Ledger",
-          "url": "https://frappe.io/files/stock-ledger.png",
-          "source_name": "ERPNext Inventory",
-          "source_url": "https://frappe.io/files/stock-ledger.png"
+          "label": "Inventory / Stock",
+          "url": "https://erpnext.com/files/v13-stock-post.png",
+          "source_name": "ERPNext",
+          "source_url": "https://erpnext.com/files/v13-stock-post.png"
         }
       ],
       "id": "nexus-erp",
@@ -201,7 +201,7 @@
       "name": "HR System Backend",
       "role": "Back-End",
       "category": "HR Management API",
-      "cover_image": "https://help.orangehrm.com/hc/article_attachments/6262523758233/Screenshot_2022-05-02_at_16.40.28.png",
+      "cover_image": "https://hrmserp.com/assets/images/screenshots/dashboard.png",
       "short_description": "Production-style HR management API built with ASP.NET Core and Clean Architecture for secure, maintainable employee workflows.",
       "description": "A backend-focused HR management API built with Clean Architecture and separation of concerns. The system is organized into Domain, Application, Infrastructure, and API layers and includes secure authentication, role-based access control, centralized error handling, repository abstractions, EF Core persistence, pagination and search, rate limiting support, health checks, CI, and automated tests.",
       "features": [
@@ -244,23 +244,23 @@
         {
           "type": "reference-ui",
           "label": "Admin Dashboard",
-          "url": "https://help.orangehrm.com/hc/article_attachments/6262523758233/Screenshot_2022-05-02_at_16.40.28.png",
-          "source_name": "OrangeHRM Admin Dashboard",
-          "source_url": "https://help.orangehrm.com/hc/article_attachments/6262523758233/Screenshot_2022-05-02_at_16.40.28.png"
+          "url": "https://hrmserp.com/assets/images/screenshots/dashboard.png",
+          "source_name": "HRMS ERP",
+          "source_url": "https://hrmserp.com/assets/images/screenshots/dashboard.png"
         },
         {
           "type": "reference-ui",
-          "label": "Employee / User Dashboard",
-          "url": "https://help.orangehrm.com/hc/article_attachments/41367766940441",
-          "source_name": "OrangeHRM Employee Management",
-          "source_url": "https://help.orangehrm.com/hc/article_attachments/41367766940441"
+          "label": "Employee Directory",
+          "url": "https://hrmserp.com/assets/images/screenshots/employee-management.png",
+          "source_name": "HRMS ERP",
+          "source_url": "https://hrmserp.com/assets/images/screenshots/employee-management.png"
         },
         {
           "type": "reference-ui",
-          "label": "Attendance / Workforce",
-          "url": "https://s3.envato.com/files/808860408/13_attedance.jpg",
-          "source_name": "SmartHR Employee Attendance",
-          "source_url": "https://s3.envato.com/files/808860408/13_attedance.jpg"
+          "label": "Payroll",
+          "url": "https://hrmserp.com/assets/images/screenshots/payroll.png",
+          "source_name": "HRMS ERP",
+          "source_url": "https://hrmserp.com/assets/images/screenshots/payroll.png"
         }
       ],
       "id": "hr-system-backend",
@@ -300,7 +300,7 @@
       "name": "Real Estate Platform",
       "role": "Back-End",
       "category": "Real Estate API",
-      "cover_image": "https://www.propflowapp.io/static/images/dashboard_1.png",
+      "cover_image": "https://nextheights.in/assets/screenshots/next-heights-crm-dashboard-agency-overview.webp",
       "short_description": "ASP.NET Core real-estate backend for listings, advanced search, bookings, favorites, reviews, and admin moderation.",
       "description": "A backend for a real-estate platform built with ASP.NET Core, Entity Framework Core, and SQL Server. The API supports property listing management, search and filtering, sale and rent scenarios, booking lifecycle workflows, favorites, reviews, image storage, and admin moderation with role-based access.",
       "features": [
@@ -334,30 +334,30 @@
         {
           "type": "reference-ui",
           "label": "Login",
-          "url": "https://cdn.dribbble.com/userupload/17275368/file/original-cc8dce2b42d018a42b9b3719df92b6e1.png?format=webp&resize=1200x900&vertical=center",
-          "source_name": "Real Nest Property Management",
-          "source_url": "https://cdn.dribbble.com/userupload/17275368/file/original-cc8dce2b42d018a42b9b3719df92b6e1.png?format=webp&resize=1200x900&vertical=center"
+          "url": "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/519a1a37-df8d-49d9-9515-80c1ae9245f7/id-preview-92ef0c5d--97f3e447-5066-466a-bfef-3862a78e54b9.lovable.app-1777141560053.png",
+          "source_name": "Affordable Rentals Group",
+          "source_url": "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/519a1a37-df8d-49d9-9515-80c1ae9245f7/id-preview-92ef0c5d--97f3e447-5066-466a-bfef-3862a78e54b9.lovable.app-1777141560053.png"
         },
         {
           "type": "reference-ui",
           "label": "Admin Dashboard",
-          "url": "https://www.propflowapp.io/static/images/dashboard_1.png",
-          "source_name": "PropFlow Real Estate CRM",
-          "source_url": "https://www.propflowapp.io/static/images/dashboard_1.png"
+          "url": "https://nextheights.in/assets/screenshots/next-heights-crm-dashboard-agency-overview.webp",
+          "source_name": "Next Heights CRM",
+          "source_url": "https://nextheights.in/assets/screenshots/next-heights-crm-dashboard-agency-overview.webp"
         },
         {
           "type": "reference-ui",
-          "label": "User Dashboard / Saved Properties",
-          "url": "https://images.prismic.io/aegas/Z8F4IJ7c43Q3gW3e_SFL6.webp?auto=format%2Ccompress",
-          "source_name": "Real Fine Homes",
-          "source_url": "https://images.prismic.io/aegas/Z8F4IJ7c43Q3gW3e_SFL6.webp?auto=format%2Ccompress"
+          "label": "Property Inventory",
+          "url": "https://nextheights.in/assets/screenshots/next-heights-crm-dashboard-property-inventory-summary.webp",
+          "source_name": "Next Heights CRM",
+          "source_url": "https://nextheights.in/assets/screenshots/next-heights-crm-dashboard-property-inventory-summary.webp"
         },
         {
           "type": "reference-ui",
-          "label": "Bookings / Calendar",
-          "url": "https://chacaraclub.com/agenda-mockup.png",
-          "source_name": "Chácara Club Property Booking",
-          "source_url": "https://chacaraclub.com/agenda-mockup.png"
+          "label": "Lead Pipeline",
+          "url": "https://nextheights.in/assets/screenshots/next-heights-crm-lead-pipeline-kanban-board.webp",
+          "source_name": "Next Heights CRM",
+          "source_url": "https://nextheights.in/assets/screenshots/next-heights-crm-lead-pipeline-kanban-board.webp"
         }
       ],
       "id": "real-estate-platform",
