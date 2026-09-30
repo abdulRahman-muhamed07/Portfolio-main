@@ -137,31 +137,31 @@
       "media": [
         {
           "type": "reference-ui",
-          "label": "ERP Dashboard",
+          "label": "Login",
+          "url": "https://www.cloudclusters.io/docs/erpnext/media/editor/erpnext-login_20220505220905453459.png",
+          "source_name": "ERPNext / Cloud Clusters",
+          "source_url": "https://www.cloudclusters.io/docs/erpnext/media/editor/erpnext-login_20220505220905453459.png"
+        },
+        {
+          "type": "reference-ui",
+          "label": "Admin Dashboard",
           "url": "https://erpnext.com/files/accounts-dashboard-1335c7cb.png",
           "source_name": "ERPNext",
           "source_url": "https://erpnext.com/files/accounts-dashboard-1335c7cb.png"
         },
         {
           "type": "reference-ui",
-          "label": "Stock / Inventory",
+          "label": "Customer Portal",
+          "url": "https://erpnext.com/files/customer-accessef27fc.png",
+          "source_name": "ERPNext Customer Portal",
+          "source_url": "https://erpnext.com/files/customer-accessef27fc.png"
+        },
+        {
+          "type": "reference-ui",
+          "label": "Inventory / Stock",
           "url": "https://erpnext.com/files/v13-stock-post.png",
           "source_name": "ERPNext",
           "source_url": "https://erpnext.com/files/v13-stock-post.png"
-        },
-        {
-          "type": "reference-ui",
-          "label": "Sales Order",
-          "url": "https://erpnext.com/files/print-order-13-1.png",
-          "source_name": "ERPNext",
-          "source_url": "https://erpnext.com/files/print-order-13-1.png"
-        },
-        {
-          "type": "reference-ui",
-          "label": "Customer Portal",
-          "url": "https://erpnext.com/files/customer-accessef27fc.png",
-          "source_name": "ERPNext",
-          "source_url": "https://erpnext.com/files/customer-accessef27fc.png"
         }
       ],
       "id": "nexus-erp",
@@ -236,24 +236,17 @@
       "media": [
         {
           "type": "reference-ui",
-          "label": "HR Admin Dashboard",
+          "label": "Login",
+          "url": "https://cdn.mos.cms.futurecdn.net/gd7SyUYVFvF9QRbRzx4h7X.jpg",
+          "source_name": "OrangeHRM",
+          "source_url": "https://cdn.mos.cms.futurecdn.net/gd7SyUYVFvF9QRbRzx4h7X.jpg"
+        },
+        {
+          "type": "reference-ui",
+          "label": "Admin Dashboard",
           "url": "https://hrmserp.com/assets/images/screenshots/dashboard.png",
           "source_name": "HRMS ERP",
           "source_url": "https://hrmserp.com/assets/images/screenshots/dashboard.png"
-        },
-        {
-          "type": "reference-ui",
-          "label": "Attendance Management",
-          "url": "https://hrmserp.com/assets/images/screenshots/attendance.png",
-          "source_name": "HRMS ERP",
-          "source_url": "https://hrmserp.com/assets/images/screenshots/attendance.png"
-        },
-        {
-          "type": "reference-ui",
-          "label": "Payroll Processing",
-          "url": "https://hrmserp.com/assets/images/screenshots/payroll.png",
-          "source_name": "HRMS ERP",
-          "source_url": "https://hrmserp.com/assets/images/screenshots/payroll.png"
         },
         {
           "type": "reference-ui",
@@ -261,6 +254,13 @@
           "url": "https://hrmserp.com/assets/images/screenshots/employee-management.png",
           "source_name": "HRMS ERP",
           "source_url": "https://hrmserp.com/assets/images/screenshots/employee-management.png"
+        },
+        {
+          "type": "reference-ui",
+          "label": "Payroll",
+          "url": "https://hrmserp.com/assets/images/screenshots/payroll.png",
+          "source_name": "HRMS ERP",
+          "source_url": "https://hrmserp.com/assets/images/screenshots/payroll.png"
         }
       ],
       "id": "hr-system-backend",
@@ -333,7 +333,14 @@
       "media": [
         {
           "type": "reference-ui",
-          "label": "Real Estate CRM Dashboard",
+          "label": "Login",
+          "url": "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/519a1a37-df8d-49d9-9515-80c1ae9245f7/id-preview-92ef0c5d--97f3e447-5066-466a-bfef-3862a78e54b9.lovable.app-1777141560053.png",
+          "source_name": "Affordable Rentals Group",
+          "source_url": "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/519a1a37-df8d-49d9-9515-80c1ae9245f7/id-preview-92ef0c5d--97f3e447-5066-466a-bfef-3862a78e54b9.lovable.app-1777141560053.png"
+        },
+        {
+          "type": "reference-ui",
+          "label": "Admin Dashboard",
           "url": "https://nextheights.in/assets/screenshots/next-heights-crm-dashboard-agency-overview.webp",
           "source_name": "Next Heights CRM",
           "source_url": "https://nextheights.in/assets/screenshots/next-heights-crm-dashboard-agency-overview.webp"
@@ -351,13 +358,6 @@
           "url": "https://nextheights.in/assets/screenshots/next-heights-crm-lead-pipeline-kanban-board.webp",
           "source_name": "Next Heights CRM",
           "source_url": "https://nextheights.in/assets/screenshots/next-heights-crm-lead-pipeline-kanban-board.webp"
-        },
-        {
-          "type": "reference-ui",
-          "label": "Sales & Analytics",
-          "url": "https://nextheights.in/assets/screenshots/next-heights-crm-analytics-leads-vs-closed-chart.webp",
-          "source_name": "Next Heights CRM",
-          "source_url": "https://nextheights.in/assets/screenshots/next-heights-crm-analytics-leads-vs-closed-chart.webp"
         }
       ],
       "id": "real-estate-platform",
