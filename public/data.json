@@ -103,7 +103,7 @@
       "name": "HR System Backend",
       "role": "Back-End",
       "category": "HR Management API",
-      "cover_image": "assets/projects/hr-system-backend/admin-dashboard.svg",
+      "cover_image": "https://cdn.dribbble.com/userupload/45500394/file/8a9a1c5a12fa8afd2d8e40e05f5e6ec6.png?resize=1200x900&vertical=center",
       "short_description": "Production-style HR management API built with ASP.NET Core and Clean Architecture for secure, maintainable employee workflows.",
       "description": "A backend-focused HR management API built with Clean Architecture and separation of concerns. The system is organized into Domain, Application, Infrastructure, and API layers and includes secure authentication, role-based access control, centralized error handling, repository abstractions, EF Core persistence, pagination and search, rate limiting support, health checks, CI, and automated tests.",
       "features": [
@@ -137,24 +137,32 @@
       ],
       "media": [
         {
-          "type": "project-preview",
+          "type": "reference-ui",
           "label": "Login",
-          "url": "assets/projects/hr-system-backend/login.svg"
+          "url": "https://app.zerobytebd.com/images/hrms_app/login.png",
+          "source_name": "Zero Byte HRMS",
+          "source_url": "https://app.zerobytebd.com/hrms-app"
         },
         {
-          "type": "project-preview",
+          "type": "reference-ui",
           "label": "Admin Dashboard",
-          "url": "assets/projects/hr-system-backend/admin-dashboard.svg"
+          "url": "https://app.zerobytebd.com/images/hrms_app/dashboard.png",
+          "source_name": "Zero Byte HRMS",
+          "source_url": "https://app.zerobytebd.com/hrms-app"
         },
         {
-          "type": "project-preview",
+          "type": "reference-ui",
           "label": "Employee Directory",
-          "url": "assets/projects/hr-system-backend/employees.svg"
+          "url": "https://www.shivtatva.tech/marketing/product-previews/product-preview-hrms.png",
+          "source_name": "Shiv Tatva HRMS UI",
+          "source_url": "https://www.shivtatva.tech/products"
         },
         {
-          "type": "project-preview",
+          "type": "reference-ui",
           "label": "Employee Dashboard",
-          "url": "assets/projects/hr-system-backend/employee-dashboard.svg"
+          "url": "https://app.zerobytebd.com/images/hrms_app/Employee_Dashboard.png",
+          "source_name": "Zero Byte HRMS",
+          "source_url": "https://app.zerobytebd.com/hrms-app"
         }
       ],
       "id": "hr-system-backend",
@@ -189,13 +197,15 @@
         "SQL Server / SQLite"
       ],
       "slug": "hr-system-backend",
-      "media_note": "Illustrative portfolio UI previews; these are not presented as captured production screenshots."
+      "media_note": "Third-party UI reference images are used for visual illustration only; they are not screenshots captured from this project's own running application.",
+      "cover_source_name": "HR Management Dashboard UI (Dribbble)",
+      "cover_source_url": "https://dribbble.com/shots/26708959-HR-management-Dashboard"
     },
     {
       "name": "Nexus ERP",
       "role": "Back-End / Full-Stack",
       "category": "Enterprise ERP",
-      "cover_image": "assets/projects/nexus-erp/admin-dashboard.svg",
+      "cover_image": "https://www.shivtatva.tech/marketing/product-previews/product-preview-erp.png",
       "short_description": "Full-stack business management platform with an ASP.NET Core backend and a standalone Vanilla JavaScript frontend.",
       "description": "Nexus ERP is a full-stack business management system built around Clean Architecture. The backend uses ASP.NET Core Web API with Entity Framework Core and relational persistence, while the frontend is maintained separately with Vanilla HTML, CSS, and JavaScript. The platform brings sales, inventory, procurement, HR, finance, payments, reporting, notifications, and audit logging into one business suite.",
       "features": [
@@ -228,24 +238,32 @@
       ],
       "media": [
         {
-          "type": "project-preview",
+          "type": "reference-ui",
           "label": "Login",
-          "url": "assets/projects/nexus-erp/login.svg"
+          "url": "https://gdm-catalog-fmapi-prod.imgix.net/ProductScreenshot/1236f486-8933-4eb0-b65d-d427b33d5950.jpeg",
+          "source_name": "Horizon EBS",
+          "source_url": "https://www.getapp.com.au/software/2048031/horizon-ebs"
         },
         {
-          "type": "project-preview",
+          "type": "reference-ui",
           "label": "Admin Dashboard",
-          "url": "assets/projects/nexus-erp/admin-dashboard.svg"
+          "url": "https://americagis.com.ar/img/software/captura-1.png",
+          "source_name": "America GIS ERP",
+          "source_url": "https://americagis.com.ar/administrativo-contable.html"
         },
         {
-          "type": "project-preview",
+          "type": "reference-ui",
           "label": "Business Management",
-          "url": "assets/projects/nexus-erp/management.svg"
+          "url": "https://gdm-catalog-fmapi-prod.imgix.net/ProductScreenshot/477e5484-2e76-4356-b419-89751b8670c9.png",
+          "source_name": "ProBuilt ERP",
+          "source_url": "https://www.capterra.com/p/10031636/ProBuilt/"
         },
         {
-          "type": "project-preview",
-          "label": "User Dashboard",
-          "url": "assets/projects/nexus-erp/user-dashboard.svg"
+          "type": "reference-ui",
+          "label": "Inventory Management",
+          "url": "https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/004/684/905/datas/original.png",
+          "source_name": "InvenPro Smart Inventory",
+          "source_url": "https://devpost.com/software/invenpro-smart-inventory"
         }
       ],
       "id": "nexus-erp",
@@ -280,13 +298,15 @@
         "SQL Server"
       ],
       "slug": "nexus-erp",
-      "media_note": "Illustrative portfolio UI previews; these are not presented as captured production screenshots."
+      "media_note": "Third-party UI reference images are used for visual illustration only; they are not screenshots captured from this project's own running application.",
+      "cover_source_name": "ERP System UI (Shiv Tatva Solutions)",
+      "cover_source_url": "https://www.shivtatva.tech/products"
     },
     {
       "name": "Real Estate Platform",
       "role": "Back-End",
       "category": "Real Estate API",
-      "cover_image": "assets/projects/real-estate-platform/properties.svg",
+      "cover_image": "https://cdn.dribbble.com/userupload/46324692/file/68e8074ea1929dc61126f096d8c464d4.jpg?resize=752x&vertical=center",
       "short_description": "ASP.NET Core real-estate backend for listings, advanced search, bookings, favorites, reviews, and admin moderation.",
       "description": "A backend for a real-estate platform built with ASP.NET Core, Entity Framework Core, and SQL Server. The API supports property listing management, search and filtering, sale and rent scenarios, booking lifecycle workflows, favorites, reviews, image storage, and admin moderation with role-based access.",
       "features": [
@@ -318,24 +338,32 @@
       ],
       "media": [
         {
-          "type": "project-preview",
+          "type": "reference-ui",
           "label": "Login",
-          "url": "assets/projects/real-estate-platform/login.svg"
+          "url": "https://cdn.dribbble.com/userupload/44483832/file/f7cf564900113bf69c34ea798919df51.jpg?resize=1600x1200",
+          "source_name": "Houseobay Login UI",
+          "source_url": "https://dribbble.com/shots/26395051-Houseobay-login-page"
         },
         {
-          "type": "project-preview",
+          "type": "reference-ui",
           "label": "Admin Dashboard",
-          "url": "assets/projects/real-estate-platform/admin-dashboard.svg"
+          "url": "https://www.engmohamedsamer.com/uploads/projects/68fca8b6c3f9a-Screenshot_25-10-2025_142712_localhost.jpeg",
+          "source_name": "PrimeEstate Property Manager",
+          "source_url": "https://www.engmohamedsamer.com/view_projects.php?id=12"
         },
         {
-          "type": "project-preview",
+          "type": "reference-ui",
           "label": "Property Listings",
-          "url": "assets/projects/real-estate-platform/properties.svg"
+          "url": "https://cdn.dribbble.com/userupload/17355381/file/original-d7c962569143e72f8628437d6a7d26b3.png?format=webp&resize=1440x&vertical=center",
+          "source_name": "Real Estate Listing Dashboard UI",
+          "source_url": "https://www.subframe.com/tips/listing-website-design-examples"
         },
         {
-          "type": "project-preview",
-          "label": "User Dashboard",
-          "url": "assets/projects/real-estate-platform/user-dashboard.svg"
+          "type": "reference-ui",
+          "label": "Property Detail View",
+          "url": "https://cdn.dribbble.com/userupload/44899717/file/427ef828c098156838e2b91d1c642906.jpg?resize=752x&vertical=center",
+          "source_name": "Zenvia Property Page UI",
+          "source_url": "https://dribbble.com/shots/26522520-Modern-Real-Estate-Property-Page-UI-Zenvia"
         }
       ],
       "id": "real-estate-platform",
@@ -370,7 +398,9 @@
         "SQL Server"
       ],
       "slug": "real-estate-platform",
-      "media_note": "Illustrative portfolio UI previews; these are not presented as captured production screenshots."
+      "media_note": "Third-party UI reference images are used for visual illustration only; they are not screenshots captured from this project's own running application.",
+      "cover_source_name": "Real Estate Admin Dashboard (Dribbble)",
+      "cover_source_url": "https://dribbble.com/shots/26965530-Real-Estate-Admin-Dashboard-Property-Listings-Management-UI"
     }
   ],
   "certifications_num": 4
