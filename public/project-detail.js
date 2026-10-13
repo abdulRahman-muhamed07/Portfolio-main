@@ -23,7 +23,7 @@ async function loadProjectData() {
     }
 
     // Fetch data from a stable URL so the project page works from any deployed path.
-    const dataUrl = new URL('/data.json?v=20260930', window.location.origin).href;
+    const dataUrl = new URL('data.json?v=20261013', document.baseURI).href;
     const response = await fetch(dataUrl, { cache: 'no-store' });
     if (!response.ok) {
       throw new Error(`Failed to load data.json (HTTP ${response.status})`);
@@ -219,9 +219,9 @@ function populateProjectData(project) {
     carouselMainImage.src = media.url;
     carouselMainImage.alt = `${project.name} — ${media.label || 'UI reference'}`;
     carouselCaption.textContent = media.label || 'UI Reference';
-    carouselSource.textContent = media.source_name ? `Source: ${media.source_name}` : 'External UI reference';
+    carouselSource.textContent = media.source_name ? `Source: ${media.source_name}` : (media.type === 'project-preview' ? 'Illustrative portfolio preview — not a production screenshot' : 'Project media');
     carouselCounter.textContent = `${currentCarouselIndex + 1} / ${mediaItems.length}`;
-    referenceBadge.textContent = media.type === 'reference-ui' ? 'Reference UI' : 'Project Media';
+    referenceBadge.textContent = media.type === 'reference-ui' ? 'Reference UI' : (media.type === 'project-preview' ? 'Illustrative Preview' : 'Project Media');
 
     carouselThumbs?.querySelectorAll('.carousel-thumb').forEach((thumb, thumbIndex) => {
       thumb.classList.toggle('active', thumbIndex === currentCarouselIndex);
