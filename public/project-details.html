@@ -33,7 +33,7 @@
 
   <!-- Styles -->
   <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="project-detail.css" />
+  <link rel="stylesheet" href="project-detail.css?v=20261013-inline-carousel" />
 </head>
 
 <body>
@@ -109,14 +109,34 @@
           </div>
         </div>
 
-        <div class="project-hero__media" data-aos="zoom-in" data-aos-delay="200">
-          <div class="project-cover-container">
-            <img id="projectCover" src="" alt="" class="project-cover" />
-            <div class="project-cover-overlay">
-              <i class="ti ti-external-link"></i>
+        <div class="project-hero__media project-hero__media--gallery" data-aos="zoom-in" data-aos-delay="200">
+          <div class="project-gallery-inline-header">
+            <div>
+              <span class="project-gallery-eyebrow">PROJECT GALLERY</span>
+              <h2>Explore the interface</h2>
             </div>
+            <span class="project-gallery-count">4 images</span>
           </div>
-          <p id="coverSourceCredit" class="project-cover-credit muted">External UI reference image</p>
+          <div class="project-carousel" id="projectCarousel">
+            <div class="project-carousel__main">
+              <button class="carousel-nav prev" id="carouselPrev" type="button" aria-label="Previous image">
+                <i class="ti ti-chevron-left"></i>
+              </button>
+              <img id="carouselMainImage" src="" alt="" />
+              <div class="carousel-reference-badge" id="carouselReferenceBadge">Reference UI</div>
+              <button class="carousel-nav next" id="carouselNext" type="button" aria-label="Next image">
+                <i class="ti ti-chevron-right"></i>
+              </button>
+            </div>
+            <div class="project-carousel__caption">
+              <div>
+                <strong id="carouselCaption">—</strong>
+                <span id="carouselSource">—</span>
+              </div>
+              <span id="carouselCounter">1 / 4</span>
+            </div>
+            <div class="project-carousel__thumbs" id="carouselThumbs" aria-label="Project image thumbnails"></div>
+          </div>
         </div>
       </section>
 
@@ -183,37 +203,6 @@
         </header>
         <div class="tech-grid" id="techGrid" data-aos="fade-up" data-aos-delay="100">
           <!-- Technologies will be populated dynamically -->
-        </div>
-      </section>
-
-      <!-- Project Gallery -->
-      <section class="section container" id="gallery">
-        <header class="section__header" data-aos="fade-up">
-          <div class="section__icon floating" aria-hidden="true"><i class="ti ti-photo"></i></div>
-          <div>
-            <h2>Project Gallery</h2>
-            <p class="muted">Four business-specific UI references selected to match the workflows this project covers.</p>
-          </div>
-        </header>
-        <div class="project-carousel" id="projectCarousel" data-aos="fade-up" data-aos-delay="100">
-          <div class="project-carousel__main">
-            <button class="carousel-nav prev" id="carouselPrev" type="button" aria-label="Previous image">
-              <i class="ti ti-chevron-left"></i>
-            </button>
-            <img id="carouselMainImage" src="" alt="" />
-            <div class="carousel-reference-badge" id="carouselReferenceBadge">Reference UI</div>
-            <button class="carousel-nav next" id="carouselNext" type="button" aria-label="Next image">
-              <i class="ti ti-chevron-right"></i>
-            </button>
-          </div>
-          <div class="project-carousel__caption">
-            <div>
-              <strong id="carouselCaption">—</strong>
-              <span id="carouselSource">—</span>
-            </div>
-            <span id="carouselCounter">1 / 4</span>
-          </div>
-          <div class="project-carousel__thumbs" id="carouselThumbs" aria-label="Project image thumbnails"></div>
         </div>
       </section>
 
@@ -304,7 +293,7 @@
   <!-- AOS (Animate On Scroll) JS -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <!-- App Script -->
-  <script src="project-detail.js?v=20261013-reference-images"></script>
+  <script src="project-detail.js?v=20261013-inline-carousel"></script>
 </body>
 
 </html>
