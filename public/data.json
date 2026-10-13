@@ -103,7 +103,7 @@
       "name": "HR System Backend",
       "role": "Back-End",
       "category": "HR Management API",
-      "cover_image": "https://cdn.dribbble.com/userupload/45500394/file/8a9a1c5a12fa8afd2d8e40e05f5e6ec6.png?resize=1200x900&vertical=center",
+      "cover_image": "https://datasofttechnologies.com/storage/work/paylap-hrm/web/1.webp",
       "short_description": "Production-style HR management API built with ASP.NET Core and Clean Architecture for secure, maintainable employee workflows.",
       "description": "A backend-focused HR management API built with Clean Architecture and separation of concerns. The system is organized into Domain, Application, Infrastructure, and API layers and includes secure authentication, role-based access control, centralized error handling, repository abstractions, EF Core persistence, pagination and search, rate limiting support, health checks, CI, and automated tests.",
       "features": [
@@ -138,31 +138,31 @@
       "media": [
         {
           "type": "reference-ui",
-          "label": "Login",
-          "url": "https://app.zerobytebd.com/images/hrms_app/login.png",
-          "source_name": "Zero Byte HRMS",
-          "source_url": "https://app.zerobytebd.com/hrms-app"
+          "label": "Employee Directory & Records",
+          "url": "https://datasofttechnologies.com/storage/work/paylap-hrm/web/4.webp",
+          "source_name": "Paylap HRM — Employee Directory",
+          "source_url": "https://datasofttechnologies.com/our-work/paylap-hrm"
         },
         {
           "type": "reference-ui",
-          "label": "Admin Dashboard",
-          "url": "https://app.zerobytebd.com/images/hrms_app/dashboard.png",
-          "source_name": "Zero Byte HRMS",
-          "source_url": "https://app.zerobytebd.com/hrms-app"
+          "label": "Attendance Records & Check-In",
+          "url": "https://datasofttechnologies.com/storage/work/paylap-hrm/web/5.webp",
+          "source_name": "Paylap HRM — Daily Attendance",
+          "source_url": "https://datasofttechnologies.com/our-work/paylap-hrm"
         },
         {
           "type": "reference-ui",
-          "label": "Employee Directory",
-          "url": "https://www.shivtatva.tech/marketing/product-previews/product-preview-hrms.png",
-          "source_name": "Shiv Tatva HRMS UI",
-          "source_url": "https://www.shivtatva.tech/products"
+          "label": "Leave Requests & Decisions",
+          "url": "https://datasofttechnologies.com/storage/work/paylap-hrm/web/6.webp",
+          "source_name": "Paylap HRM — Leave Management",
+          "source_url": "https://datasofttechnologies.com/our-work/paylap-hrm"
         },
         {
           "type": "reference-ui",
-          "label": "Employee Dashboard",
-          "url": "https://app.zerobytebd.com/images/hrms_app/Employee_Dashboard.png",
-          "source_name": "Zero Byte HRMS",
-          "source_url": "https://app.zerobytebd.com/hrms-app"
+          "label": "Payroll Generation",
+          "url": "https://datasofttechnologies.com/storage/work/paylap-hrm/web/7.webp",
+          "source_name": "Paylap HRM — Payroll",
+          "source_url": "https://datasofttechnologies.com/our-work/paylap-hrm"
         }
       ],
       "id": "hr-system-backend",
@@ -197,15 +197,15 @@
         "SQL Server / SQLite"
       ],
       "slug": "hr-system-backend",
-      "media_note": "Third-party UI reference images are used for visual illustration only; they are not screenshots captured from this project's own running application.",
-      "cover_source_name": "HR Management Dashboard UI (Dribbble)",
-      "cover_source_url": "https://dribbble.com/shots/26708959-HR-management-Dashboard"
+      "media_note": "These are attributed external UI reference images selected to match backend capabilities in the code. They are not screenshots captured from this repository's running application.",
+      "cover_source_name": "Paylap HRM — HR Operations Dashboard",
+      "cover_source_url": "https://datasofttechnologies.com/our-work/paylap-hrm"
     },
     {
       "name": "Nexus ERP",
       "role": "Back-End / Full-Stack",
       "category": "Enterprise ERP",
-      "cover_image": "https://www.shivtatva.tech/marketing/product-previews/product-preview-erp.png",
+      "cover_image": "https://www.onsbill.in/workflow_dashboard.png",
       "short_description": "Full-stack business management platform with an ASP.NET Core backend and a standalone Vanilla JavaScript frontend.",
       "description": "Nexus ERP is a full-stack business management system built around Clean Architecture. The backend uses ASP.NET Core Web API with Entity Framework Core and relational persistence, while the frontend is maintained separately with Vanilla HTML, CSS, and JavaScript. The platform brings sales, inventory, procurement, HR, finance, payments, reporting, notifications, and audit logging into one business suite.",
       "features": [
@@ -239,31 +239,31 @@
       "media": [
         {
           "type": "reference-ui",
-          "label": "Login",
-          "url": "https://gdm-catalog-fmapi-prod.imgix.net/ProductScreenshot/1236f486-8933-4eb0-b65d-d427b33d5950.jpeg",
-          "source_name": "Horizon EBS",
-          "source_url": "https://www.getapp.com.au/software/2048031/horizon-ebs"
+          "label": "Sales Orders & Quotes",
+          "url": "https://vasyerp.com/en-ae/assets-new/images/home-page/sales-management-software.webp",
+          "source_name": "VasyERP — Sales Order Management",
+          "source_url": "https://vasyerp.com/en-ae/"
         },
         {
           "type": "reference-ui",
-          "label": "Admin Dashboard",
-          "url": "https://americagis.com.ar/img/software/captura-1.png",
-          "source_name": "America GIS ERP",
-          "source_url": "https://americagis.com.ar/administrativo-contable.html"
+          "label": "Products & Inventory",
+          "url": "https://vasyerp.com/en-ae/assets-new/images/home-page/inventory-management-software.webp",
+          "source_name": "VasyERP — Inventory Management",
+          "source_url": "https://vasyerp.com/en-ae/"
         },
         {
           "type": "reference-ui",
-          "label": "Business Management",
-          "url": "https://gdm-catalog-fmapi-prod.imgix.net/ProductScreenshot/477e5484-2e76-4356-b419-89751b8670c9.png",
-          "source_name": "ProBuilt ERP",
-          "source_url": "https://www.capterra.com/p/10031636/ProBuilt/"
+          "label": "Procurement & Purchase Orders",
+          "url": "https://vasyerp.com/en-ae/assets-new/images/home-page/purchase-management-software.webp",
+          "source_name": "VasyERP — Purchase Management",
+          "source_url": "https://vasyerp.com/en-ae/"
         },
         {
           "type": "reference-ui",
-          "label": "Inventory Management",
-          "url": "https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/004/684/905/datas/original.png",
-          "source_name": "InvenPro Smart Inventory",
-          "source_url": "https://devpost.com/software/invenpro-smart-inventory"
+          "label": "Invoices & Accounting",
+          "url": "https://www.vasyerp.com/assets-new/images/gst-compliant%20Invoicing.webp",
+          "source_name": "VasyERP — Invoicing",
+          "source_url": "https://www.vasyerp.com/best-gst-accounting-software-retail"
         }
       ],
       "id": "nexus-erp",
@@ -298,15 +298,15 @@
         "SQL Server"
       ],
       "slug": "nexus-erp",
-      "media_note": "Third-party UI reference images are used for visual illustration only; they are not screenshots captured from this project's own running application.",
-      "cover_source_name": "ERP System UI (Shiv Tatva Solutions)",
-      "cover_source_url": "https://www.shivtatva.tech/products"
+      "media_note": "These are attributed external UI reference images selected to match backend capabilities in the code. They are not screenshots captured from this repository's running application.",
+      "cover_source_name": "SamriddhiERP — Business Dashboard",
+      "cover_source_url": "https://www.onsbill.in/"
     },
     {
       "name": "Real Estate Platform",
       "role": "Back-End",
       "category": "Real Estate API",
-      "cover_image": "https://cdn.dribbble.com/userupload/46324692/file/68e8074ea1929dc61126f096d8c464d4.jpg?resize=752x&vertical=center",
+      "cover_image": "https://cdn.dribbble.com/userupload/46324691/file/003bd5a54428842b52a942aa1882ce9d.jpg?resize=1600x1200",
       "short_description": "ASP.NET Core real-estate backend for listings, advanced search, bookings, favorites, reviews, and admin moderation.",
       "description": "A backend for a real-estate platform built with ASP.NET Core, Entity Framework Core, and SQL Server. The API supports property listing management, search and filtering, sale and rent scenarios, booking lifecycle workflows, favorites, reviews, image storage, and admin moderation with role-based access.",
       "features": [
@@ -339,31 +339,31 @@
       "media": [
         {
           "type": "reference-ui",
-          "label": "Login",
-          "url": "https://cdn.dribbble.com/userupload/44483832/file/f7cf564900113bf69c34ea798919df51.jpg?resize=1600x1200",
-          "source_name": "Houseobay Login UI",
-          "source_url": "https://dribbble.com/shots/26395051-Houseobay-login-page"
+          "label": "Property Search & Listings",
+          "url": "https://www.arqelo.com/_next/image?q=75&url=%2Fimages%2Ffeatures%2Fproperty-scanner.jpg&w=3840",
+          "source_name": "Arqelo — Property Search",
+          "source_url": "https://www.arqelo.com/"
         },
         {
           "type": "reference-ui",
-          "label": "Admin Dashboard",
-          "url": "https://www.engmohamedsamer.com/uploads/projects/68fca8b6c3f9a-Screenshot_25-10-2025_142712_localhost.jpeg",
-          "source_name": "PrimeEstate Property Manager",
-          "source_url": "https://www.engmohamedsamer.com/view_projects.php?id=12"
+          "label": "Property Details & Images",
+          "url": "https://cdn.dribbble.com/userupload/41491715/file/original-0b7747bda1a6fda4fc308d81eabbb285.png?resize=2400x1800&vertical=center",
+          "source_name": "HouseMade — Property Details UI",
+          "source_url": "https://dribbble.com/shots/25737954-HouseMade-Real-Estate-Property-Details-Page-UI-UX"
         },
         {
           "type": "reference-ui",
-          "label": "Property Listings",
-          "url": "https://cdn.dribbble.com/userupload/17355381/file/original-d7c962569143e72f8628437d6a7d26b3.png?format=webp&resize=1440x&vertical=center",
-          "source_name": "Real Estate Listing Dashboard UI",
-          "source_url": "https://www.subframe.com/tips/listing-website-design-examples"
+          "label": "Property Approval & Moderation",
+          "url": "https://s3.envato.com/files/481348388/ScreenShots/4.png",
+          "source_name": "RentOut — Property Approval Queue",
+          "source_url": "https://codecanyon.net/item/rentout-multivendor-property-hosting-platform/49899679"
         },
         {
           "type": "reference-ui",
-          "label": "Property Detail View",
-          "url": "https://cdn.dribbble.com/userupload/44899717/file/427ef828c098156838e2b91d1c642906.jpg?resize=752x&vertical=center",
-          "source_name": "Zenvia Property Page UI",
-          "source_url": "https://dribbble.com/shots/26522520-Modern-Real-Estate-Property-Page-UI-Zenvia"
+          "label": "Bookings & Viewing Overview",
+          "url": "https://s3.envato.com/files/478337716/screenshot_9.jpg",
+          "source_name": "vRent — Booking Dashboard",
+          "source_url": "https://codecanyon.net/item/vrent-vacation-rental-marketplace/19418596"
         }
       ],
       "id": "real-estate-platform",
@@ -398,8 +398,8 @@
         "SQL Server"
       ],
       "slug": "real-estate-platform",
-      "media_note": "Third-party UI reference images are used for visual illustration only; they are not screenshots captured from this project's own running application.",
-      "cover_source_name": "Real Estate Admin Dashboard (Dribbble)",
+      "media_note": "These are attributed external UI reference images selected to match backend capabilities in the code. They are not screenshots captured from this repository's running application.",
+      "cover_source_name": "Real Estate Admin Dashboard — Property Listings",
       "cover_source_url": "https://dribbble.com/shots/26965530-Real-Estate-Admin-Dashboard-Property-Listings-Management-UI"
     }
   ],
