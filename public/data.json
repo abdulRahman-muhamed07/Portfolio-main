@@ -19,7 +19,7 @@
       }
     ],
     "cv_download": "cv.html",
-    "about_me": "Back-End Developer with 2+ years of hands-on backend development exposure across structured .NET training, professional roles, and real-world projects. Specializing in ASP.NET Core Web APIs, Clean Architecture, SOLID principles, secure JWT/RBAC authentication, SQL/EF Core data access, performance optimization, and maintainable business workflows. Experienced with Docker, automated testing, and CI/CD."
+    "about_me": "Back-End Developer with 1.5 years of backend experience in C# and ASP.NET Core, building RESTful APIs, secure JWT/RBAC authentication, and business workflows. Worked on e-commerce and mobile APIs, optimized EF Core and SQL Server queries, and contributed to 6+ ERP modules spanning finance, inventory, HR, sales, and purchasing. Also experienced with Angular, TypeScript, and Vanilla JavaScript for full-stack collaboration. Focused on Clean Architecture, SOLID principles, maintainable code, testing, and CI/CD."
   },
   "projects_num": "3",
   "experience_num": "2",
@@ -100,108 +100,10 @@
   ],
   "projects": [
     {
-      "name": "Nexus ERP",
-      "role": "Back-End / Full-Stack",
-      "category": "Enterprise ERP",
-      "cover_image": "https://erpnext.com/files/accounts-dashboard-1335c7cb.png",
-      "short_description": "Full-stack business management platform with an ASP.NET Core backend and a standalone Vanilla JavaScript frontend.",
-      "description": "Nexus ERP is a full-stack business management system built around Clean Architecture. The backend uses ASP.NET Core Web API with Entity Framework Core and relational persistence, while the frontend is maintained separately with Vanilla HTML, CSS, and JavaScript. The platform brings sales, inventory, procurement, HR, finance, payments, reporting, notifications, and audit logging into one business suite.",
-      "features": [
-        "Clean Architecture across Domain, Application, Infrastructure, and API layers",
-        "JWT authentication with refresh-token flow",
-        "Customers, suppliers, products, inventory, sales orders, and quotes",
-        "Payments, invoices, returns, procurement, and purchase orders",
-        "HR, finance, budgets, expenses, assets, and depreciation workflows",
-        "Dashboard metrics, reports, notifications, audit logging, and health checks",
-        "Automated CI with restore, Release build, and tests"
-      ],
-      "technologies_used": [
-        "C#",
-        ".NET 10",
-        "ASP.NET Core Web API",
-        "Entity Framework Core",
-        "SQL Server",
-        "Clean Architecture",
-        "JWT",
-        "AutoMapper",
-        "xUnit",
-        "GitHub Actions",
-        "Vanilla JavaScript"
-      ],
-      "links": [
-        {
-          "type": "GitHub",
-          "url": "https://github.com/abdulRahman-muhamed07/nexus-erp"
-        }
-      ],
-      "media": [
-        {
-          "type": "reference-ui",
-          "label": "Login",
-          "url": "https://www.cloudclusters.io/docs/erpnext/media/editor/erpnext-login_20220505220905453459.png",
-          "source_name": "ERPNext / Cloud Clusters",
-          "source_url": "https://www.cloudclusters.io/docs/erpnext/media/editor/erpnext-login_20220505220905453459.png"
-        },
-        {
-          "type": "reference-ui",
-          "label": "Admin Dashboard",
-          "url": "https://erpnext.com/files/accounts-dashboard-1335c7cb.png",
-          "source_name": "ERPNext",
-          "source_url": "https://erpnext.com/files/accounts-dashboard-1335c7cb.png"
-        },
-        {
-          "type": "reference-ui",
-          "label": "Customer Portal",
-          "url": "https://erpnext.com/files/customer-accessef27fc.png",
-          "source_name": "ERPNext Customer Portal",
-          "source_url": "https://erpnext.com/files/customer-accessef27fc.png"
-        },
-        {
-          "type": "reference-ui",
-          "label": "Inventory / Stock",
-          "url": "https://erpnext.com/files/v13-stock-post.png",
-          "source_name": "ERPNext",
-          "source_url": "https://erpnext.com/files/v13-stock-post.png"
-        }
-      ],
-      "id": "nexus-erp",
-      "engineering_highlights": [
-        {
-          "title": "Layered Architecture",
-          "text": "Clean Architecture separates Domain, Application, Infrastructure, and API responsibilities.",
-          "icon": "ti ti-building-arch"
-        },
-        {
-          "title": "Authentication",
-          "text": "JWT authentication with refresh-token flow supports secure session handling.",
-          "icon": "ti ti-shield-lock"
-        },
-        {
-          "title": "Data Layer",
-          "text": "Entity Framework Core and SQL Server support business data across sales, inventory, procurement, finance, and HR.",
-          "icon": "ti ti-database"
-        },
-        {
-          "title": "Delivery",
-          "text": "GitHub Actions automates restore, Release build, and test execution.",
-          "icon": "ti ti-brand-github"
-        }
-      ],
-      "architecture_flow": [
-        "Vanilla JS Frontend",
-        "ASP.NET Core API",
-        "Application Layer",
-        "Domain Layer",
-        "Infrastructure / EF Core",
-        "SQL Server"
-      ],
-      "slug": "nexus-erp"
-    },
-    {
       "name": "HR System Backend",
       "role": "Back-End",
       "category": "HR Management API",
-      "cover_image": "https://hrmserp.com/assets/images/screenshots/dashboard.png",
+      "cover_image": "assets/projects/hr-system-backend/admin-dashboard.svg",
       "short_description": "Production-style HR management API built with ASP.NET Core and Clean Architecture for secure, maintainable employee workflows.",
       "description": "A backend-focused HR management API built with Clean Architecture and separation of concerns. The system is organized into Domain, Application, Infrastructure, and API layers and includes secure authentication, role-based access control, centralized error handling, repository abstractions, EF Core persistence, pagination and search, rate limiting support, health checks, CI, and automated tests.",
       "features": [
@@ -235,32 +137,24 @@
       ],
       "media": [
         {
-          "type": "reference-ui",
+          "type": "project-preview",
           "label": "Login",
-          "url": "https://cdn.mos.cms.futurecdn.net/gd7SyUYVFvF9QRbRzx4h7X.jpg",
-          "source_name": "OrangeHRM",
-          "source_url": "https://cdn.mos.cms.futurecdn.net/gd7SyUYVFvF9QRbRzx4h7X.jpg"
+          "url": "assets/projects/hr-system-backend/login.svg"
         },
         {
-          "type": "reference-ui",
+          "type": "project-preview",
           "label": "Admin Dashboard",
-          "url": "https://hrmserp.com/assets/images/screenshots/dashboard.png",
-          "source_name": "HRMS ERP",
-          "source_url": "https://hrmserp.com/assets/images/screenshots/dashboard.png"
+          "url": "assets/projects/hr-system-backend/admin-dashboard.svg"
         },
         {
-          "type": "reference-ui",
+          "type": "project-preview",
           "label": "Employee Directory",
-          "url": "https://hrmserp.com/assets/images/screenshots/employee-management.png",
-          "source_name": "HRMS ERP",
-          "source_url": "https://hrmserp.com/assets/images/screenshots/employee-management.png"
+          "url": "assets/projects/hr-system-backend/employees.svg"
         },
         {
-          "type": "reference-ui",
-          "label": "Payroll",
-          "url": "https://hrmserp.com/assets/images/screenshots/payroll.png",
-          "source_name": "HRMS ERP",
-          "source_url": "https://hrmserp.com/assets/images/screenshots/payroll.png"
+          "type": "project-preview",
+          "label": "Employee Dashboard",
+          "url": "assets/projects/hr-system-backend/employee-dashboard.svg"
         }
       ],
       "id": "hr-system-backend",
@@ -294,13 +188,105 @@
         "Infrastructure / EF Core",
         "SQL Server / SQLite"
       ],
-      "slug": "hr-system-backend"
+      "slug": "hr-system-backend",
+      "media_note": "Illustrative portfolio UI previews; these are not presented as captured production screenshots."
+    },
+    {
+      "name": "Nexus ERP",
+      "role": "Back-End / Full-Stack",
+      "category": "Enterprise ERP",
+      "cover_image": "assets/projects/nexus-erp/admin-dashboard.svg",
+      "short_description": "Full-stack business management platform with an ASP.NET Core backend and a standalone Vanilla JavaScript frontend.",
+      "description": "Nexus ERP is a full-stack business management system built around Clean Architecture. The backend uses ASP.NET Core Web API with Entity Framework Core and relational persistence, while the frontend is maintained separately with Vanilla HTML, CSS, and JavaScript. The platform brings sales, inventory, procurement, HR, finance, payments, reporting, notifications, and audit logging into one business suite.",
+      "features": [
+        "Clean Architecture across Domain, Application, Infrastructure, and API layers",
+        "JWT authentication with refresh-token flow",
+        "Customers, suppliers, products, inventory, sales orders, and quotes",
+        "Payments, invoices, returns, procurement, and purchase orders",
+        "HR, finance, budgets, expenses, assets, and depreciation workflows",
+        "Dashboard metrics, reports, notifications, audit logging, and health checks",
+        "Automated CI with restore, Release build, and tests"
+      ],
+      "technologies_used": [
+        "C#",
+        ".NET 10",
+        "ASP.NET Core Web API",
+        "Entity Framework Core",
+        "SQL Server",
+        "Clean Architecture",
+        "JWT",
+        "AutoMapper",
+        "xUnit",
+        "GitHub Actions",
+        "Vanilla JavaScript"
+      ],
+      "links": [
+        {
+          "type": "GitHub",
+          "url": "https://github.com/abdulRahman-muhamed07/nexus-erp"
+        }
+      ],
+      "media": [
+        {
+          "type": "project-preview",
+          "label": "Login",
+          "url": "assets/projects/nexus-erp/login.svg"
+        },
+        {
+          "type": "project-preview",
+          "label": "Admin Dashboard",
+          "url": "assets/projects/nexus-erp/admin-dashboard.svg"
+        },
+        {
+          "type": "project-preview",
+          "label": "Business Management",
+          "url": "assets/projects/nexus-erp/management.svg"
+        },
+        {
+          "type": "project-preview",
+          "label": "User Dashboard",
+          "url": "assets/projects/nexus-erp/user-dashboard.svg"
+        }
+      ],
+      "id": "nexus-erp",
+      "engineering_highlights": [
+        {
+          "title": "Layered Architecture",
+          "text": "Clean Architecture separates Domain, Application, Infrastructure, and API responsibilities.",
+          "icon": "ti ti-building-arch"
+        },
+        {
+          "title": "Authentication",
+          "text": "JWT authentication with refresh-token flow supports secure session handling.",
+          "icon": "ti ti-shield-lock"
+        },
+        {
+          "title": "Data Layer",
+          "text": "Entity Framework Core and SQL Server support business data across sales, inventory, procurement, finance, and HR.",
+          "icon": "ti ti-database"
+        },
+        {
+          "title": "Delivery",
+          "text": "GitHub Actions automates restore, Release build, and test execution.",
+          "icon": "ti ti-brand-github"
+        }
+      ],
+      "architecture_flow": [
+        "Vanilla JS Frontend",
+        "ASP.NET Core API",
+        "Application Layer",
+        "Domain Layer",
+        "Infrastructure / EF Core",
+        "SQL Server"
+      ],
+      "slug": "nexus-erp",
+      "media_note": "Illustrative portfolio UI previews; these are not presented as captured production screenshots."
     },
     {
       "name": "Real Estate Platform",
       "role": "Back-End",
       "category": "Real Estate API",
-      "cover_image": "https://nextheights.in/assets/screenshots/next-heights-crm-dashboard-agency-overview.webp",
+      "cover_image": "assets/projects/real-estate-platform/properties.svg",
       "short_description": "ASP.NET Core real-estate backend for listings, advanced search, bookings, favorites, reviews, and admin moderation.",
       "description": "A backend for a real-estate platform built with ASP.NET Core, Entity Framework Core, and SQL Server. The API supports property listing management, search and filtering, sale and rent scenarios, booking lifecycle workflows, favorites, reviews, image storage, and admin moderation with role-based access.",
       "features": [
@@ -332,32 +318,24 @@
       ],
       "media": [
         {
-          "type": "reference-ui",
+          "type": "project-preview",
           "label": "Login",
-          "url": "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/519a1a37-df8d-49d9-9515-80c1ae9245f7/id-preview-92ef0c5d--97f3e447-5066-466a-bfef-3862a78e54b9.lovable.app-1777141560053.png",
-          "source_name": "Affordable Rentals Group",
-          "source_url": "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/519a1a37-df8d-49d9-9515-80c1ae9245f7/id-preview-92ef0c5d--97f3e447-5066-466a-bfef-3862a78e54b9.lovable.app-1777141560053.png"
+          "url": "assets/projects/real-estate-platform/login.svg"
         },
         {
-          "type": "reference-ui",
+          "type": "project-preview",
           "label": "Admin Dashboard",
-          "url": "https://nextheights.in/assets/screenshots/next-heights-crm-dashboard-agency-overview.webp",
-          "source_name": "Next Heights CRM",
-          "source_url": "https://nextheights.in/assets/screenshots/next-heights-crm-dashboard-agency-overview.webp"
+          "url": "assets/projects/real-estate-platform/admin-dashboard.svg"
         },
         {
-          "type": "reference-ui",
-          "label": "Property Inventory",
-          "url": "https://nextheights.in/assets/screenshots/next-heights-crm-dashboard-property-inventory-summary.webp",
-          "source_name": "Next Heights CRM",
-          "source_url": "https://nextheights.in/assets/screenshots/next-heights-crm-dashboard-property-inventory-summary.webp"
+          "type": "project-preview",
+          "label": "Property Listings",
+          "url": "assets/projects/real-estate-platform/properties.svg"
         },
         {
-          "type": "reference-ui",
-          "label": "Lead Pipeline",
-          "url": "https://nextheights.in/assets/screenshots/next-heights-crm-lead-pipeline-kanban-board.webp",
-          "source_name": "Next Heights CRM",
-          "source_url": "https://nextheights.in/assets/screenshots/next-heights-crm-lead-pipeline-kanban-board.webp"
+          "type": "project-preview",
+          "label": "User Dashboard",
+          "url": "assets/projects/real-estate-platform/user-dashboard.svg"
         }
       ],
       "id": "real-estate-platform",
@@ -391,7 +369,8 @@
         "Infrastructure / EF Core",
         "SQL Server"
       ],
-      "slug": "real-estate-platform"
+      "slug": "real-estate-platform",
+      "media_note": "Illustrative portfolio UI previews; these are not presented as captured production screenshots."
     }
   ],
   "certifications_num": 4
