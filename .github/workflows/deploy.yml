@@ -1,0 +1,68 @@
+name: Deploy portfolio to Cloudflare Workers
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "public/**"
+      - "src/**"
+      - "wrangler.toml"
+      - "package.json"
+      - "package-lock.json"
+      - ".github/workflows/deploy.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    name: Deploy portfolio assets and Worker
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check Cloudflare deployment credentials
+        id: credentials
+        shell: bash
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          if [[ -n "$CLOUDFLARE_API_TOKEN" && -n "$CLOUDFLARE_ACCOUNT_ID" ]]; then
+            echo "ready=true" >> "$GITHUB_OUTPUT"
+            echo "Cloudflare credentials are configured." >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "ready=false" >> "$GITHUB_OUTPUT"
+            {
+              echo "## Cloudflare deployment was skipped"
+              echo
+              echo "Add both repository Actions secrets before deployment can run:"
+              echo "- `CLOUDFLARE_API_TOKEN` — a Cloudflare API token with permission to deploy Workers."
+              echo "- `CLOUDFLARE_ACCOUNT_ID` — the account ID that owns the `portfolio` Worker."
+              echo
+              echo "Then re-run this workflow from Actions or push a new change to `main`."
+            } >> "$GITHUB_STEP_SUMMARY"
+            echo "Cloudflare deployment skipped because one or both required repository secrets are missing."
+          fi
+
+      - name: Check out repository
+        if: steps.credentials.outputs.ready == 'true'
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        if: steps.credentials.outputs.ready == 'true'
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        if: steps.credentials.outputs.ready == 'true'
+        run: npm ci
+
+      - name: Deploy to Cloudflare Workers
+        if: steps.credentials.outputs.ready == 'true'
+        run: npm run deploy
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
