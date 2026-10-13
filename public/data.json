@@ -141,28 +141,32 @@
           "label": "Employee Directory & Records",
           "url": "https://datasofttechnologies.com/storage/work/paylap-hrm/web/4.webp",
           "source_name": "Paylap HRM — Employee Directory",
-          "source_url": "https://datasofttechnologies.com/our-work/paylap-hrm"
+          "source_url": "https://datasofttechnologies.com/our-work/paylap-hrm",
+          "fallback_url": "assets/projects/hr-system-backend/employees.svg"
         },
         {
           "type": "reference-ui",
           "label": "Attendance Records & Check-In",
           "url": "https://datasofttechnologies.com/storage/work/paylap-hrm/web/5.webp",
           "source_name": "Paylap HRM — Daily Attendance",
-          "source_url": "https://datasofttechnologies.com/our-work/paylap-hrm"
+          "source_url": "https://datasofttechnologies.com/our-work/paylap-hrm",
+          "fallback_url": "assets/projects/hr-system-backend/employee-dashboard.svg"
         },
         {
           "type": "reference-ui",
           "label": "Leave Requests & Decisions",
           "url": "https://datasofttechnologies.com/storage/work/paylap-hrm/web/6.webp",
           "source_name": "Paylap HRM — Leave Management",
-          "source_url": "https://datasofttechnologies.com/our-work/paylap-hrm"
+          "source_url": "https://datasofttechnologies.com/our-work/paylap-hrm",
+          "fallback_url": "assets/projects/hr-system-backend/employee-dashboard.svg"
         },
         {
           "type": "reference-ui",
           "label": "Payroll Generation",
           "url": "https://datasofttechnologies.com/storage/work/paylap-hrm/web/7.webp",
           "source_name": "Paylap HRM — Payroll",
-          "source_url": "https://datasofttechnologies.com/our-work/paylap-hrm"
+          "source_url": "https://datasofttechnologies.com/our-work/paylap-hrm",
+          "fallback_url": "assets/projects/hr-system-backend/admin-dashboard.svg"
         }
       ],
       "id": "hr-system-backend",
@@ -199,7 +203,8 @@
       "slug": "hr-system-backend",
       "media_note": "These are attributed external UI reference images selected to match backend capabilities in the code. They are not screenshots captured from this repository's running application.",
       "cover_source_name": "Paylap HRM — HR Operations Dashboard",
-      "cover_source_url": "https://datasofttechnologies.com/our-work/paylap-hrm"
+      "cover_source_url": "https://datasofttechnologies.com/our-work/paylap-hrm",
+      "cover_fallback_image": "assets/projects/hr-system-backend/admin-dashboard.svg"
     },
     {
       "name": "Nexus ERP",
@@ -242,28 +247,32 @@
           "label": "Sales Orders & Quotes",
           "url": "https://vasyerp.com/en-ae/assets-new/images/home-page/sales-management-software.webp",
           "source_name": "VasyERP — Sales Order Management",
-          "source_url": "https://vasyerp.com/en-ae/"
+          "source_url": "https://vasyerp.com/en-ae/",
+          "fallback_url": "assets/projects/nexus-erp/management.svg"
         },
         {
           "type": "reference-ui",
           "label": "Products & Inventory",
           "url": "https://vasyerp.com/en-ae/assets-new/images/home-page/inventory-management-software.webp",
           "source_name": "VasyERP — Inventory Management",
-          "source_url": "https://vasyerp.com/en-ae/"
+          "source_url": "https://vasyerp.com/en-ae/",
+          "fallback_url": "assets/projects/nexus-erp/admin-dashboard.svg"
         },
         {
           "type": "reference-ui",
           "label": "Procurement & Purchase Orders",
           "url": "https://vasyerp.com/en-ae/assets-new/images/home-page/purchase-management-software.webp",
           "source_name": "VasyERP — Purchase Management",
-          "source_url": "https://vasyerp.com/en-ae/"
+          "source_url": "https://vasyerp.com/en-ae/",
+          "fallback_url": "assets/projects/nexus-erp/management.svg"
         },
         {
           "type": "reference-ui",
           "label": "Invoices & Accounting",
           "url": "https://www.vasyerp.com/assets-new/images/gst-compliant%20Invoicing.webp",
           "source_name": "VasyERP — Invoicing",
-          "source_url": "https://www.vasyerp.com/best-gst-accounting-software-retail"
+          "source_url": "https://www.vasyerp.com/best-gst-accounting-software-retail",
+          "fallback_url": "assets/projects/nexus-erp/admin-dashboard.svg"
         }
       ],
       "id": "nexus-erp",
@@ -300,7 +309,8 @@
       "slug": "nexus-erp",
       "media_note": "These are attributed external UI reference images selected to match backend capabilities in the code. They are not screenshots captured from this repository's running application.",
       "cover_source_name": "SamriddhiERP — Business Dashboard",
-      "cover_source_url": "https://www.onsbill.in/"
+      "cover_source_url": "https://www.onsbill.in/",
+      "cover_fallback_image": "assets/projects/nexus-erp/admin-dashboard.svg"
     },
     {
       "name": "Real Estate Platform",
@@ -342,28 +352,32 @@
           "label": "Property Search & Listings",
           "url": "https://www.arqelo.com/_next/image?q=75&url=%2Fimages%2Ffeatures%2Fproperty-scanner.jpg&w=3840",
           "source_name": "Arqelo — Property Search",
-          "source_url": "https://www.arqelo.com/"
+          "source_url": "https://www.arqelo.com/",
+          "fallback_url": "assets/projects/real-estate-platform/properties.svg"
         },
         {
           "type": "reference-ui",
           "label": "Property Details & Images",
           "url": "https://cdn.dribbble.com/userupload/41491715/file/original-0b7747bda1a6fda4fc308d81eabbb285.png?resize=2400x1800&vertical=center",
           "source_name": "HouseMade — Property Details UI",
-          "source_url": "https://dribbble.com/shots/25737954-HouseMade-Real-Estate-Property-Details-Page-UI-UX"
+          "source_url": "https://dribbble.com/shots/25737954-HouseMade-Real-Estate-Property-Details-Page-UI-UX",
+          "fallback_url": "assets/projects/real-estate-platform/properties.svg"
         },
         {
           "type": "reference-ui",
           "label": "Property Approval & Moderation",
           "url": "https://s3.envato.com/files/481348388/ScreenShots/4.png",
           "source_name": "RentOut — Property Approval Queue",
-          "source_url": "https://codecanyon.net/item/rentout-multivendor-property-hosting-platform/49899679"
+          "source_url": "https://codecanyon.net/item/rentout-multivendor-property-hosting-platform/49899679",
+          "fallback_url": "assets/projects/real-estate-platform/admin-dashboard.svg"
         },
         {
           "type": "reference-ui",
           "label": "Bookings & Viewing Overview",
           "url": "https://s3.envato.com/files/478337716/screenshot_9.jpg",
           "source_name": "vRent — Booking Dashboard",
-          "source_url": "https://codecanyon.net/item/vrent-vacation-rental-marketplace/19418596"
+          "source_url": "https://codecanyon.net/item/vrent-vacation-rental-marketplace/19418596",
+          "fallback_url": "assets/projects/real-estate-platform/user-dashboard.svg"
         }
       ],
       "id": "real-estate-platform",
@@ -400,7 +414,8 @@
       "slug": "real-estate-platform",
       "media_note": "These are attributed external UI reference images selected to match backend capabilities in the code. They are not screenshots captured from this repository's running application.",
       "cover_source_name": "Real Estate Admin Dashboard — Property Listings",
-      "cover_source_url": "https://dribbble.com/shots/26965530-Real-Estate-Admin-Dashboard-Property-Listings-Management-UI"
+      "cover_source_url": "https://dribbble.com/shots/26965530-Real-Estate-Admin-Dashboard-Property-Listings-Management-UI",
+      "cover_fallback_image": "assets/projects/real-estate-platform/properties.svg"
     }
   ],
   "certifications_num": 4
