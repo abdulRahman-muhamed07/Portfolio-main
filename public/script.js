@@ -494,7 +494,7 @@ async function loadDataWithData(data) {
     const card = el(`
       <article class="project" data-project-id="${sanitize(projectId)}" data-aos="fade-up" data-aos-delay="${(idx % 3) * 100}" tabindex="0" role="button" aria-label="Click to explore ${sanitize(p.name)}">
         <div class="project__cover">
-          <img src="${sanitize(p.cover_image)}" alt="${sanitize(p.name)} project preview" loading="lazy" decoding="async" />
+          <img src="${sanitize(p.cover_image)}" data-fallback-src="${sanitize(p.cover_fallback_image || '')}" alt="${sanitize(p.name)} project preview" loading="lazy" decoding="async" />
           <div class="project__cover-overlay"><i class="ti ti-arrow-up-right"></i></div>
         </div>
         <div class="project__body">
@@ -513,6 +513,15 @@ async function loadDataWithData(data) {
           </div>
         </div>
       </article>`);
+
+    const coverImg = card.querySelector('.project__cover img');
+    coverImg?.addEventListener('error', () => {
+      coverImg.onerror = null;
+      const fallback = coverImg.dataset.fallbackSrc;
+      if (fallback && !coverImg.src.endsWith(fallback)) {
+        coverImg.src = fallback;
+      }
+    });
 
     const openProject = () => {
       window.location.href = `project-details.html?id=${encodeURIComponent(projectId)}`;
