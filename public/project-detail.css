@@ -833,3 +833,20 @@
     flex-direction: column;
   }
 }
+
+
+/* Project preview clarity and keyboard accessibility */
+#carouselMainImage {
+  object-fit: contain;
+  background: rgba(9, 14, 28, .35);
+}
+.carousel-thumb img {
+  object-fit: contain;
+  background: rgba(9, 14, 28, .35);
+}
+.carousel-thumb:focus-visible,
+.carousel-nav:focus-visible,
+.project-link:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
