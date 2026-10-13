@@ -139,3 +139,50 @@ strong { font-weight: 700; }
   }
   @page { size: A4; margin: 14mm; }
 }
+
+
+/* CV version navigation */
+.cv-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: .65rem 1rem;
+}
+.cv-switcher {
+  display: inline-flex;
+  align-items: center;
+  gap: .35rem;
+  flex-wrap: wrap;
+}
+.cv-switcher a {
+  display: inline-flex;
+  align-items: center;
+  padding: .45rem .75rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--ink);
+  text-decoration: none;
+  font-size: .85rem;
+  font-weight: 700;
+}
+.cv-switcher a.active,
+.cv-switcher a[aria-current="page"] {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+.cv-toolbar a:focus-visible,
+.cv-toolbar button:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+@media (max-width: 700px) {
+  .cv-toolbar {
+    align-items: stretch;
+    flex-direction: column;
+  }
+  .cv-switcher {
+    width: 100%;
+  }
+}
