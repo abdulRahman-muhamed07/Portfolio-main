@@ -2571,7 +2571,7 @@ section.section {
     display: none;
     padding: .35rem 0 .55rem;
   }
-  .nav__links.open {
+  .nav__links.show {
     display: flex;
   }
   .hero {
