@@ -2495,3 +2495,121 @@ section.section {
   object-fit: cover;
   object-position: center;
 }
+
+
+/* ===== Portfolio polish: clarity, accessibility, and responsive CV actions ===== */
+:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+.cv-secondary-link {
+  white-space: nowrap;
+}
+.hero-experience {
+  line-height: 1.7;
+}
+.project__cover {
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(124, 92, 255, .11), transparent 70%),
+    var(--bg-elev);
+}
+.project__cover img {
+  object-fit: contain;
+  object-position: center;
+}
+.project__body {
+  min-width: 0;
+}
+.project__actions {
+  flex-wrap: wrap;
+}
+.project-action-link {
+  min-height: 42px;
+}
+@media (max-width: 1080px) {
+  .nav {
+    grid-template-columns: auto auto;
+  }
+  .nav__links {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    justify-self: start;
+    flex-wrap: wrap;
+    gap: .2rem .45rem;
+  }
+  .actions {
+    justify-self: end;
+  }
+}
+@media (max-width: 700px) {
+  .nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .55rem;
+  }
+  .brand {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+  .brand__text {
+    font-size: .9rem;
+  }
+  .actions {
+    order: 3;
+    width: 100%;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+  .actions .btn {
+    padding: .58rem .75rem;
+    border-radius: 12px;
+    font-size: .88rem;
+  }
+  .nav__links {
+    order: 4;
+    width: 100%;
+    display: none;
+    padding: .35rem 0 .55rem;
+  }
+  .nav__links.open {
+    display: flex;
+  }
+  .hero {
+    padding-top: 2.25rem;
+    gap: 1.5rem;
+  }
+  .hero__stats {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: .55rem;
+  }
+  .stat {
+    min-width: 0;
+    padding: .75rem .4rem;
+    border-radius: 14px;
+  }
+  .stat small {
+    font-size: .72rem;
+  }
+  .hero__cta {
+    flex-wrap: wrap;
+  }
+  .section {
+    padding-top: 2.8rem;
+    padding-bottom: 2.8rem;
+  }
+  .cv-secondary-link {
+    display: inline-flex;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto !important;
+  }
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
