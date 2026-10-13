@@ -115,6 +115,14 @@ function populateProjectData(project) {
   projectCover.src = project.cover_image;
   projectCover.alt = `${project.name} project preview`;
   projectCover.onerror = () => { projectCover.onerror = null; projectCover.src = 'assets/covers/dummy.png'; };
+  const coverSourceCredit = document.getElementById('coverSourceCredit');
+  if (coverSourceCredit) {
+    if (project.cover_source_url) {
+      coverSourceCredit.innerHTML = `Cover image reference: <a href="${escapeHtml(project.cover_source_url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(project.cover_source_name || 'Source website')}</a>`;
+    } else {
+      coverSourceCredit.textContent = 'Illustrative cover image.';
+    }
+  }
 
   // Generate project links
   const linksContainer = document.getElementById('projectLinks');
@@ -219,7 +227,11 @@ function populateProjectData(project) {
     carouselMainImage.src = media.url;
     carouselMainImage.alt = `${project.name} — ${media.label || 'UI reference'}`;
     carouselCaption.textContent = media.label || 'UI Reference';
-    carouselSource.textContent = media.source_name ? `Source: ${media.source_name}` : (media.type === 'project-preview' ? 'Illustrative portfolio preview — not a production screenshot' : 'Project media');
+    if (media.source_url) {
+      carouselSource.innerHTML = `Source: <a href="${escapeHtml(media.source_url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(media.source_name || 'Original source')}</a>`;
+    } else {
+      carouselSource.textContent = media.source_name ? `Source: ${media.source_name}` : (media.type === 'project-preview' ? 'Illustrative portfolio preview — not a production screenshot' : 'Project media');
+    }
     carouselCounter.textContent = `${currentCarouselIndex + 1} / ${mediaItems.length}`;
     referenceBadge.textContent = media.type === 'reference-ui' ? 'Reference UI' : (media.type === 'project-preview' ? 'Illustrative Preview' : 'Project Media');
 
