@@ -871,3 +871,103 @@
   outline-offset: 3px;
   border-radius: 2px;
 }
+
+
+/* Put the four-image carousel in the project hero so it is immediately visible on click. */
+.project-hero {
+  grid-template-columns: minmax(0, .88fr) minmax(0, 1.12fr);
+  gap: clamp(1.25rem, 3vw, 3rem);
+  align-items: start;
+}
+.project-hero__media--gallery {
+  min-width: 0;
+  width: 100%;
+}
+.project-gallery-inline-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 0 0 .9rem;
+}
+.project-gallery-inline-header h2 {
+  margin: .22rem 0 0;
+  color: var(--text-primary);
+  font-size: clamp(1.15rem, 1.7vw, 1.55rem);
+  line-height: 1.2;
+}
+.project-gallery-eyebrow {
+  color: var(--accent);
+  font-size: .72rem;
+  font-weight: 800;
+  letter-spacing: .14em;
+}
+.project-gallery-count {
+  flex: 0 0 auto;
+  padding: .4rem .7rem;
+  border: 1px solid var(--glass-border);
+  border-radius: 999px;
+  color: var(--text-muted);
+  font-size: .78rem;
+  font-weight: 700;
+}
+.project-hero__media--gallery .project-carousel {
+  width: 100%;
+  gap: .7rem;
+}
+.project-hero__media--gallery .project-carousel__main {
+  height: clamp(270px, 31vw, 400px);
+  min-height: 270px;
+  border-radius: 18px;
+}
+.project-hero__media--gallery .project-carousel__main > img {
+  height: 100%;
+  min-height: 0;
+  max-height: 400px;
+  padding: .35rem;
+  object-fit: contain;
+}
+.project-hero__media--gallery .project-carousel__caption {
+  padding: .7rem .85rem;
+}
+.project-hero__media--gallery .project-carousel__thumbs {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: .6rem;
+}
+.project-hero__media--gallery .carousel-thumb {
+  min-width: 0;
+}
+.project-hero__media--gallery .carousel-thumb img {
+  height: 72px;
+}
+.project-hero__media--gallery .carousel-thumb span {
+  font-size: .72rem;
+}
+#carouselSource a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+@media (max-width: 900px) {
+  .project-hero {
+    grid-template-columns: 1fr;
+    padding-top: 6rem;
+  }
+  .project-hero__media--gallery {
+    max-width: 760px;
+  }
+  .project-hero__media--gallery .project-carousel__main {
+    height: clamp(280px, 55vw, 420px);
+  }
+}
+@media (max-width: 640px) {
+  .project-hero__media--gallery .project-carousel__thumbs {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .project-hero__media--gallery .project-carousel__thumbs .carousel-thumb img {
+    height: 95px;
+  }
+  .project-gallery-inline-header h2 {
+    font-size: 1.2rem;
+  }
+}
