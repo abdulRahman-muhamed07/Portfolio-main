@@ -110,18 +110,13 @@ function populateProjectData(project) {
     projectMeta.innerHTML = [project.category, project.role].filter(Boolean).map(value => `<span>${escapeHtml(value)}</span>`).join('');
   }
 
-  // Update project cover
+  // The hero now opens directly on the gallery carousel. Keep the cover as social-preview metadata above,
+  // but do not require a separate hero cover image element for the details page to initialize.
   const projectCover = document.getElementById('projectCover');
-  projectCover.src = project.cover_image;
-  projectCover.alt = `${project.name} project preview`;
-  projectCover.onerror = () => { projectCover.onerror = null; projectCover.src = 'assets/covers/dummy.png'; };
-  const coverSourceCredit = document.getElementById('coverSourceCredit');
-  if (coverSourceCredit) {
-    if (project.cover_source_url) {
-      coverSourceCredit.innerHTML = `Cover image reference: <a href="${escapeHtml(project.cover_source_url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(project.cover_source_name || 'Source website')}</a>`;
-    } else {
-      coverSourceCredit.textContent = 'Illustrative cover image.';
-    }
+  if (projectCover) {
+    projectCover.src = project.cover_image;
+    projectCover.alt = `${project.name} project preview`;
+    projectCover.onerror = () => { projectCover.onerror = null; projectCover.src = 'assets/covers/dummy.png'; };
   }
 
   // Generate project links
@@ -222,7 +217,9 @@ function populateProjectData(project) {
 
     carouselMainImage.onerror = () => {
       carouselMainImage.onerror = null;
-      carouselMainImage.src = project.cover_image;
+      carouselMainImage.alt = `${project.name} — ${media.label || 'UI reference'} (image could not be loaded)`;
+      carouselMainImage.src = 'assets/covers/dummy.png';
+      if (carouselSource) carouselSource.textContent = 'This external image is unavailable. Try another carousel image.';
     };
     carouselMainImage.src = media.url;
     carouselMainImage.alt = `${project.name} — ${media.label || 'UI reference'}`;
