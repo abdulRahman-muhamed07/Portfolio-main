@@ -23,7 +23,7 @@ async function loadProjectData() {
     }
 
     // Fetch data from a stable URL so the project page works from any deployed path.
-    const dataUrl = new URL('data.json?v=20261013', document.baseURI).href;
+    const dataUrl = new URL('data.json?v=20261013-code-matched-refs2', document.baseURI).href;
     const response = await fetch(dataUrl, { cache: 'no-store' });
     if (!response.ok) {
       throw new Error(`Failed to load data.json (HTTP ${response.status})`);
@@ -217,9 +217,19 @@ function populateProjectData(project) {
 
     carouselMainImage.onerror = () => {
       carouselMainImage.onerror = null;
-      carouselMainImage.alt = `${project.name} — ${media.label || 'UI reference'} (image could not be loaded)`;
-      carouselMainImage.src = 'assets/covers/dummy.png';
-      if (carouselSource) carouselSource.textContent = 'This external image is unavailable. Try another carousel image.';
+      carouselMainImage.alt = `${project.name} — ${media.label || 'UI reference'} (local fallback preview)`;
+      if (media.fallback_url) {
+        carouselMainImage.src = media.fallback_url;
+        if (carouselSource) {
+          const sourceLink = media.source_url
+            ? `<a href="${escapeHtml(media.source_url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(media.source_name || 'original source')}</a>`
+            : escapeHtml(media.source_name || 'original source');
+          carouselSource.innerHTML = `External reference unavailable; showing local preview. Source: ${sourceLink}`;
+        }
+      } else {
+        carouselMainImage.removeAttribute('src');
+        if (carouselSource) carouselSource.textContent = 'This external reference image is unavailable.';
+      }
     };
     carouselMainImage.src = media.url;
     carouselMainImage.alt = `${project.name} — ${media.label || 'UI reference'}`;
@@ -252,6 +262,11 @@ function populateProjectData(project) {
         <img src="${escapeHtml(media.url)}" alt="" loading="lazy" decoding="async" />
         <span>${escapeHtml(media.label || `Image ${index + 1}`)}</span>
       `;
+      const thumbnailImage = button.querySelector('img');
+      thumbnailImage?.addEventListener('error', () => {
+        thumbnailImage.onerror = null;
+        if (media.fallback_url) thumbnailImage.src = media.fallback_url;
+      }, { once: true });
       button.addEventListener('click', () => renderCarouselImage(index));
       carouselThumbs.appendChild(button);
     });
