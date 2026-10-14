@@ -339,7 +339,7 @@ async function loadDataWithEffects() {
     updateProgress(30, 'Fetching data...');
     
     // Fetch data from JSON
-    const res = await fetch('data.json');
+    const res = await fetch('data.json?v=20261015-single-cv');
     const data = await res.json();
     
     updateProgress(60, 'Processing content...');
